@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/project/atacks/choph.cpp
+iostream
+-
+map
+-
+string
+-
+utility
+-
+vector
+-
+algorithm
+-
+random
+-
+chrono
+-
+string.h
+-
+stdlib.h
+-
+

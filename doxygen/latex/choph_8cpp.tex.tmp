@@ -1,0 +1,838 @@
+\hypertarget{choph_8cpp}{}\section{Файл choph.\+cpp}
+\label{choph_8cpp}\index{choph.\+cpp@{choph.\+cpp}}
+
+
+Основной файл  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Граф включаемых заголовочных файлов для choph.\+cpp\+:
+% FIG 0
+\subsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__ulong64}{\+\_\+ulong64}
+\begin{DoxyCompactList}\small\item\em Структура блока \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Определения типов}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{choph_8cpp_a65f85814a8290f9797005d3b28e7e5fc}\label{choph_8cpp_a65f85814a8290f9797005d3b28e7e5fc}} 
+typedef unsigned char {\bfseries uchar}
+\item 
+\mbox{\Hypertarget{choph_8cpp_ab95f123a6c9bcfee6a343170ef8c5f69}\label{choph_8cpp_ab95f123a6c9bcfee6a343170ef8c5f69}} 
+typedef unsigned short {\bfseries ushort}
+\item 
+\mbox{\Hypertarget{choph_8cpp_ab2bb0e5480d1d957383df6b350794313}\label{choph_8cpp_ab2bb0e5480d1d957383df6b350794313}} 
+typedef long unsigned int {\bfseries ulong}
+\item 
+\mbox{\Hypertarget{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}\label{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}} 
+typedef struct \hyperlink{struct__ulong64}{\+\_\+ulong64} \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}
+\begin{DoxyCompactList}\small\item\em Структура блока \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{choph_8cpp_a3ca4d0af16188b041e1af649c460b98a}{encode} (unsigned char $\ast$output, ulong $\ast$input, int len)
+\begin{DoxyCompactList}\small\item\em coding ulong in char \end{DoxyCompactList}\item 
+void \hyperlink{choph_8cpp_a61d315464ffdb36f599f2b0f8067e000}{encode\+\_\+rev} (unsigned char $\ast$output, ulong $\ast$input, int len)
+\begin{DoxyCompactList}\small\item\em кодирование ulong в char с обратным порядком бит \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{choph_8cpp_a54cf0cedf9fcf85779ff296fdf28fb31}\label{choph_8cpp_a54cf0cedf9fcf85779ff296fdf28fb31}} 
+void \hyperlink{choph_8cpp_a54cf0cedf9fcf85779ff296fdf28fb31}{decode} (ulong $\ast$output, unsigned char $\ast$input, int len)
+\begin{DoxyCompactList}\small\item\em декодирование char в ulong. \end{DoxyCompactList}\item 
+void \hyperlink{choph_8cpp_ae50a28be55a088be549b7a16a671c1f7}{decode\+\_\+rev} (ulong $\ast$output, unsigned char $\ast$input, int len)
+\begin{DoxyCompactList}\small\item\em декодирование char в ulong в обратном порядке бит \end{DoxyCompactList}\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_a4c5e58fd0158cbc22713a1a52d0ea38e}{pc1} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} v)
+\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_a3a8662dee8b44b10f657fbf505eed4af}{pc2} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} v)
+\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_a30d1f38597ba7a35c171026bf169e534}{ip} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} v)
+\begin{DoxyCompactList}\small\item\em Начальная перестановка \end{DoxyCompactList}\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_a9ed46a7091b0ec3c8169cb8c0513692b}{rip} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} v)
+\begin{DoxyCompactList}\small\item\em Обратная к начальной перестановка \end{DoxyCompactList}\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_aa51a81bbb99f03b6e97c134f89fde1e2}{ep} (ulong v)
+\begin{DoxyCompactList}\small\item\em Расширяющая перестановка \end{DoxyCompactList}\item 
+ulong \hyperlink{choph_8cpp_aa55f5557fa0e92b71bc73e28225f15d3}{s\+\_\+matrix} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} v)
+\begin{DoxyCompactList}\small\item\em Матрица S. \end{DoxyCompactList}\item 
+ulong \hyperlink{choph_8cpp_a684ff62b705d2cee96d311e5d7f0edd7}{p} (ulong v)
+\begin{DoxyCompactList}\small\item\em Перестановка \end{DoxyCompactList}\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_ab24b3386abfd3e1188be96b23a7a52ee}{fk} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} v, \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} key)
+\begin{DoxyCompactList}\small\item\em Основное (раундовое) преобразование \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{choph_8cpp_a40cdf551614393311a075223e2330168}\label{choph_8cpp_a40cdf551614393311a075223e2330168}} 
+char {\bfseries xor\+\_\+2\+\_\+7\+\_\+13\+\_\+24} (ulong v)
+\item 
+\mbox{\Hypertarget{choph_8cpp_a14d6dce4bd8aa56d6fc641a3dcdf4b99}\label{choph_8cpp_a14d6dce4bd8aa56d6fc641a3dcdf4b99}} 
+char {\bfseries fk\+\_\+2\+\_\+7\+\_\+13\+\_\+24} (ulong v, ulong key)
+\item 
+void \hyperlink{choph_8cpp_a8ab508dc9c6552a6bab041b90c9efc3f}{des\+\_\+create\+\_\+keys} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} src, \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} $\ast$key)
+\begin{DoxyCompactList}\small\item\em Основное (раундовое) преобразование \end{DoxyCompactList}\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_ad5b5a6e675b0e4513057ec56b57f6918}{des\+\_\+encrypt\+\_\+block} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} src, \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} $\ast$keys)
+\item 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} \hyperlink{choph_8cpp_a35d2ed8fc7946e569676ed266b86fa61}{des\+\_\+decrypt\+\_\+block} (\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} src, \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} $\ast$keys)
+\item 
+ulong \hyperlink{choph_8cpp_ae321186e7d851b6a95b0061df1104300}{des\+\_\+encrypt\+\_\+ecb} (uchar $\ast$src, ulong srclen, uchar $\ast$dst, \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} key)
+\item 
+ulong \hyperlink{choph_8cpp_ac4870045cbac50ea2ccf790d4285f9a5}{des\+\_\+decrypt\+\_\+ecb} (uchar $\ast$src, ulong srclen, uchar $\ast$dst, \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} key)
+\item 
+ulong \hyperlink{choph_8cpp_a5be68b9cf00d63e2d6f392b4d98ec8d2}{des\+\_\+break} (uchar $\ast$src, ulong srclen, uchar $\ast$dst)
+\item 
+\mbox{\Hypertarget{choph_8cpp_a35fef7ad27a9409a50f1890513293292}\label{choph_8cpp_a35fef7ad27a9409a50f1890513293292}} 
+int {\bfseries count} (string \&pat, string \&txt)
+\item 
+int \hyperlink{choph_8cpp_ab84334abaf3c4ee10870aab4a92031c9}{trigram\+\_\+count} (string msg)
+\item 
+double \hyperlink{choph_8cpp_aa5cc96c7e3b1423aa78b9508c2c1a74c}{trigram\+\_\+freq} (string msg, string trig)
+\item 
+double \hyperlink{choph_8cpp_aafef85ef482b36718e0e0f7de6681ab1}{trigram\+\_\+fit} (string msg)
+\item 
+map$<$ char, uint $>$ \hyperlink{choph_8cpp_a114c1b88516cb2dfa3e4b187be27036b}{letterscount} (string msg)
+\item 
+double \hyperlink{choph_8cpp_a3047b71f458e416b39c120c9c1a9876f}{indexcoincidence} (string msg)
+\item 
+string \hyperlink{choph_8cpp_aa9366e01e655f794dc68ca1a288d0e7e}{columnrepresentation} (string msg, uint step, uint start)
+\item 
+\mbox{\Hypertarget{choph_8cpp_a7493541e5d1d9946050c68f6bb02d74f}\label{choph_8cpp_a7493541e5d1d9946050c68f6bb02d74f}} 
+map$<$ uint, double $>$ {\bfseries shiftedindexcoincidence} (string msg)
+\item 
+uint \hyperlink{choph_8cpp_ac5d7d9e2d516baabee4fc6305589715e}{findvigenerekeylength} (string chiphertext, double serchborder)
+\item 
+string \hyperlink{choph_8cpp_ab62035af87109c24dd1ad405fa110a22}{caesar\+\_\+decrypt} (string chiphertext, uint step)
+\item 
+map$<$ char, double $>$ \hyperlink{choph_8cpp_ad30c3f68889de7752a0e4bd40ffed47e}{frequency} (string msg)
+\item 
+double \hyperlink{choph_8cpp_a65b82dfcf5d0f2ad7dd89dba6073638b}{alphabetcorrelation} (map$<$ char, double $>$ msg\+\_\+frequency)
+\item 
+char \hyperlink{choph_8cpp_a7a2e470bc9542fcb1ff14b14455c9515}{breakcaesar} (string chiphertext)
+\item 
+string \hyperlink{choph_8cpp_af1c6b7a014d3a7ac4733b768901ae446}{recovervigenerekey} (string chiphertext, uint keylength)
+\item 
+string \hyperlink{choph_8cpp_a6852ebfd23ab1670561bbe3b730be912}{viziner\+\_\+encrypt} (string pl, string key)
+\item 
+string \hyperlink{choph_8cpp_af37cb0f7ec33702d9c9b27eda1d5548c}{viziner\+\_\+decrypt} (string ch, string key)
+\item 
+string \hyperlink{choph_8cpp_acad9c4fabb6634dc5ef1416c7c834757}{substitute\+\_\+generate\+\_\+key} ()
+\item 
+string \hyperlink{choph_8cpp_a3a6c1ce5c2f56412885a40fcd2bc8e86}{substitute\+\_\+encrypt} (string plaintext, string key)
+\item 
+string \hyperlink{choph_8cpp_a9c53a049332fae6cdfad786bf4eeea11}{substitute\+\_\+decrypt} (string chiphertext, string key)
+\item 
+pair$<$ string, string $>$ \hyperlink{choph_8cpp_a427f14fb678ee255afc52fd7e0d6975e}{substitute\+\_\+break} (string ch)
+\item 
+string \hyperlink{choph_8cpp_ada09d21882f492e26698430c55561f1f}{polibiy\+\_\+generate\+\_\+key} ()
+\item 
+string \hyperlink{choph_8cpp_a7ea6838ef647048d812f8b5b567e48c7}{polibiy\+\_\+encrypt} (string pl, string key)
+\item 
+string \hyperlink{choph_8cpp_aed234856c1bd5b094a088ca3b552f80e}{polibiy\+\_\+decrypt} (string ch, string key)
+\item 
+pair$<$ string, string $>$ \hyperlink{choph_8cpp_a9816b1afec7350cd2a746cdf7324e901}{polibiy\+\_\+break} (string ch)
+\item 
+int \hyperlink{choph_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Функция \hyperlink{choph_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main()} − точка входа в программу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char {\bfseries P\+A\+D\+D\+I\+NG} \mbox{[}64\mbox{]}
+\item 
+\mbox{\Hypertarget{choph_8cpp_afcd6f441a1b591e4dd845658ec9a9edc}\label{choph_8cpp_afcd6f441a1b591e4dd845658ec9a9edc}} 
+\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} {\bfseries key0}
+\item 
+\mbox{\Hypertarget{choph_8cpp_a7229df0557d27b7221cf944066faa323}\label{choph_8cpp_a7229df0557d27b7221cf944066faa323}} 
+map$<$ string, int $>$ {\bfseries E\+N\+G\+L\+I\+S\+H\+\_\+\+T\+R\+I\+G\+R\+A\+MS} = \{\{ \char`\"{}ezo\char`\"{} , 1 \}, \{ \char`\"{}apr\char`\"{} , 1 \}, \{ \char`\"{}ref\char`\"{} , 2 \}, \{ \char`\"{}nav\char`\"{} , 1 \}, \{ \char`\"{}lyr\char`\"{} , 1 \}, \{ \char`\"{}wle\char`\"{} , 1 \}, \{ \char`\"{}pos\char`\"{} , 16 \}, \{ \char`\"{}pto\char`\"{} , 4 \}, \{ \char`\"{}tef\char`\"{} , 1 \}, \{ \char`\"{}lla\char`\"{} , 3 \}, \{ \char`\"{}hem\char`\"{} , 22 \}, \{ \char`\"{}omr\char`\"{} , 1 \}, \{ \char`\"{}sse\char`\"{} , 1 \}, \{ \char`\"{}tth\char`\"{} , 9 \}, \{ \char`\"{}dna\char`\"{} , 1 \}, \{ \char`\"{}asu\char`\"{} , 3 \}, \{ \char`\"{}rsd\char`\"{} , 1 \}, \{ \char`\"{}opu\char`\"{} , 1 \}, \{ \char`\"{}eds\char`\"{} , 1 \}, \{ \char`\"{}tno\char`\"{} , 1 \}, \{ \char`\"{}ndz\char`\"{} , 1 \}, \{ \char`\"{}eha\char`\"{} , 1 \}, \{ \char`\"{}ssa\char`\"{} , 22 \}, \{ \char`\"{}ich\char`\"{} , 5 \}, \{ \char`\"{}kss\char`\"{} , 1 \}, \{ \char`\"{}tic\char`\"{} , 9 \}, \{ \char`\"{}sth\char`\"{} , 23 \}, \{ \char`\"{}fou\char`\"{} , 1 \}, \{ \char`\"{}uli\char`\"{} , 1 \}, \{ \char`\"{}ogr\char`\"{} , 3 \}, \{ \char`\"{}osi\char`\"{} , 12 \}, \{ \char`\"{}ker\char`\"{} , 3 \}, \{ \char`\"{}aen\char`\"{} , 1 \}, \{ \char`\"{}equ\char`\"{} , 5 \}, \{ \char`\"{}kie\char`\"{} , 1 \}, \{ \char`\"{}anh\char`\"{} , 1 \}, \{ \char`\"{}igp\char`\"{} , 1 \}, \{ \char`\"{}xto\char`\"{} , 4 \}, \{ \char`\"{}uag\char`\"{} , 1 \}, \{ \char`\"{}iae\char`\"{} , 1 \}, \{ \char`\"{}yto\char`\"{} , 3 \}, \{ \char`\"{}des\char`\"{} , 4 \}, \{ \char`\"{}eol\char`\"{} , 1 \}, \{ \char`\"{}iab\char`\"{} , 1 \}, \{ \char`\"{}ewe\char`\"{} , 1 \}, \{ \char`\"{}chi\char`\"{} , 6 \}, \{ \char`\"{}phy\char`\"{} , 2 \}, \{ \char`\"{}kth\char`\"{} , 2 \}, \{ \char`\"{}ret\char`\"{} , 5 \}, \{ \char`\"{}igu\char`\"{} , 1 \}, \{ \char`\"{}rda\char`\"{} , 4 \}, \{ \char`\"{}ndr\char`\"{} , 1 \}, \{ \char`\"{}sso\char`\"{} , 3 \}, \{ \char`\"{}tal\char`\"{} , 3 \}, \{ \char`\"{}dha\char`\"{} , 1 \}, \{ \char`\"{}mai\char`\"{} , 1 \}, \{ \char`\"{}dva\char`\"{} , 2 \}, \{ \char`\"{}bli\char`\"{} , 1 \}, \{ \char`\"{}pes\char`\"{} , 3 \}, \{ \char`\"{}ana\char`\"{} , 8 \}, \{ \char`\"{}lvi\char`\"{} , 1 \}, \{ \char`\"{}ust\char`\"{} , 4 \}, \{ \char`\"{}liu\char`\"{} , 1 \}, \{ \char`\"{}anu\char`\"{} , 1 \}, \{ \char`\"{}rus\char`\"{} , 1 \}, \{ \char`\"{}gci\char`\"{} , 1 \}, \{ \char`\"{}hni\char`\"{} , 2 \}, \{ \char`\"{}sen\char`\"{} , 5 \}, \{ \char`\"{}ema\char`\"{} , 5 \}, \{ \char`\"{}gfo\char`\"{} , 1 \}, \{ \char`\"{}obr\char`\"{} , 2 \}, \{ \char`\"{}fth\char`\"{} , 20 \}, \{ \char`\"{}ngl\char`\"{} , 3 \}, \{ \char`\"{}cry\char`\"{} , 9 \}, \{ \char`\"{}etb\char`\"{} , 2 \}, \{ \char`\"{}ran\char`\"{} , 23 \}, \{ \char`\"{}raj\char`\"{} , 1 \}, \{ \char`\"{}mit\char`\"{} , 1 \}, \{ \char`\"{}sof\char`\"{} , 16 \}, \{ \char`\"{}ame\char`\"{} , 8 \}, \{ \char`\"{}ckc\char`\"{} , 1 \}, \{ \char`\"{}had\char`\"{} , 1 \}, \{ \char`\"{}hab\char`\"{} , 28 \}, \{ \char`\"{}kwa\char`\"{} , 1 \}, \{ \char`\"{}wha\char`\"{} , 5 \}, \{ \char`\"{}git\char`\"{} , 1 \}, \{ \char`\"{}otb\char`\"{} , 1 \}, \{ \char`\"{}fte\char`\"{} , 4 \}, \{ \char`\"{}hya\char`\"{} , 1 \}, \{ \char`\"{}net\char`\"{} , 3 \}, \{ \char`\"{}bys\char`\"{} , 1 \}, \{ \char`\"{}ehy\char`\"{} , 1 \}, \{ \char`\"{}sat\char`\"{} , 3 \}, \{ \char`\"{}kso\char`\"{} , 1 \}, \{ \char`\"{}oni\char`\"{} , 1 \}, \{ \char`\"{}esh\char`\"{} , 2 \}, \{ \char`\"{}mov\char`\"{} , 1 \}, \{ \char`\"{}ubl\char`\"{} , 1 \}, \{ \char`\"{}sch\char`\"{} , 5 \}, \{ \char`\"{}dsa\char`\"{} , 1 \}, \{ \char`\"{}ewc\char`\"{} , 1 \}, \{ \char`\"{}ebr\char`\"{} , 3 \}, \{ \char`\"{}asj\char`\"{} , 1 \}, \{ \char`\"{}gou\char`\"{} , 1 \}, \{ \char`\"{}blo\char`\"{} , 1 \}, \{ \char`\"{}yta\char`\"{} , 1 \}, \{ \char`\"{}kep\char`\"{} , 1 \}, \{ \char`\"{}sar\char`\"{} , 22 \}, \{ \char`\"{}pro\char`\"{} , 3 \}, \{ \char`\"{}byf\char`\"{} , 1 \}, \{ \char`\"{}col\char`\"{} , 7 \}, \{ \char`\"{}sma\char`\"{} , 4 \}, \{ \char`\"{}rsf\char`\"{} , 1 \}, \{ \char`\"{}beo\char`\"{} , 1 \}, \{ \char`\"{}ldl\char`\"{} , 2 \}, \{ \char`\"{}ewr\char`\"{} , 1 \}, \{ \char`\"{}ksb\char`\"{} , 1 \}, \{ \char`\"{}hec\char`\"{} , 18 \}, \{ \char`\"{}cit\char`\"{} , 2 \}, \{ \char`\"{}edi\char`\"{} , 8 \}, \{ \char`\"{}rse\char`\"{} , 3 \}, \{ \char`\"{}lum\char`\"{} , 7 \}, \{ \char`\"{}ryi\char`\"{} , 1 \}, \{ \char`\"{}hoc\char`\"{} , 1 \}, \{ \char`\"{}hou\char`\"{} , 4 \}, \{ \char`\"{}bef\char`\"{} , 1 \}, \{ \char`\"{}dto\char`\"{} , 11 \}, \{ \char`\"{}fle\char`\"{} , 4 \}, \{ \char`\"{}orw\char`\"{} , 2 \}, \{ \char`\"{}lss\char`\"{} , 1 \}, \{ \char`\"{}its\char`\"{} , 3 \}, \{ \char`\"{}fmo\char`\"{} , 1 \}, \{ \char`\"{}ena\char`\"{} , 1 \}, \{ \char`\"{}rma\char`\"{} , 2 \}, \{ \char`\"{}now\char`\"{} , 7 \}, \{ \char`\"{}iga\char`\"{} , 1 \}, \{ \char`\"{}isb\char`\"{} , 8 \}, \{ \char`\"{}rpa\char`\"{} , 2 \}, \{ \char`\"{}hha\char`\"{} , 1 \}, \{ \char`\"{}per\char`\"{} , 2 \}, \{ \char`\"{}mac\char`\"{} , 3 \}, \{ \char`\"{}tis\char`\"{} , 11 \}, \{ \char`\"{}nan\char`\"{} , 6 \}, \{ \char`\"{}gat\char`\"{} , 1 \}, \{ \char`\"{}ned\char`\"{} , 3 \}, \{ \char`\"{}ndo\char`\"{} , 4 \}, \{ \char`\"{}esf\char`\"{} , 1 \}, \{ \char`\"{}fet\char`\"{} , 1 \}, \{ \char`\"{}sty\char`\"{} , 1 \}, \{ \char`\"{}agr\char`\"{} , 1 \}, \{ \char`\"{}lec\char`\"{} , 3 \}, \{ \char`\"{}hto\char`\"{} , 1 \}, \{ \char`\"{}nge\char`\"{} , 9 \}, \{ \char`\"{}veu\char`\"{} , 1 \}, \{ \char`\"{}cur\char`\"{} , 1 \}, \{ \char`\"{}tim\char`\"{} , 3 \}, \{ \char`\"{}swe\char`\"{} , 4 \}, \{ \char`\"{}sil\char`\"{} , 2 \}, \{ \char`\"{}owb\char`\"{} , 1 \}, \{ \char`\"{}rdo\char`\"{} , 3 \}, \{ \char`\"{}ign\char`\"{} , 4 \}, \{ \char`\"{}nak\char`\"{} , 2 \}, \{ \char`\"{}fnu\char`\"{} , 1 \}, \{ \char`\"{}cat\char`\"{} , 2 \}, \{ \char`\"{}ngf\char`\"{} , 1 \}, \{ \char`\"{}reu\char`\"{} , 6 \}, \{ \char`\"{}tco\char`\"{} , 1 \}, \{ \char`\"{}and\char`\"{} , 36 \}, \{ \char`\"{}ert\char`\"{} , 24 \}, \{ \char`\"{}ong\char`\"{} , 4 \}, \{ \char`\"{}nov\char`\"{} , 2 \}, \{ \char`\"{}ofr\char`\"{} , 3 \}, \{ \char`\"{}iou\char`\"{} , 3 \}, \{ \char`\"{}dit\char`\"{} , 1 \}, \{ \char`\"{}uct\char`\"{} , 1 \}, \{ \char`\"{}nbe\char`\"{} , 3 \}, \{ \char`\"{}pec\char`\"{} , 3 \}, \{ \char`\"{}ype\char`\"{} , 4 \}, \{ \char`\"{}cor\char`\"{} , 6 \}, \{ \char`\"{}rac\char`\"{} , 2 \}, \{ \char`\"{}nam\char`\"{} , 2 \}, \{ \char`\"{}onw\char`\"{} , 2 \}, \{ \char`\"{}mle\char`\"{} , 1 \}, \{ \char`\"{}lat\char`\"{} , 3 \}, \{ \char`\"{}fir\char`\"{} , 6 \}, \{ \char`\"{}tst\char`\"{} , 2 \}, \{ \char`\"{}ckt\char`\"{} , 1 \}, \{ \char`\"{}fro\char`\"{} , 4 \}, \{ \char`\"{}lnl\char`\"{} , 1 \}, \{ \char`\"{}tab\char`\"{} , 1 \}, \{ \char`\"{}bym\char`\"{} , 1 \}, \{ \char`\"{}ess\char`\"{} , 25 \}, \{ \char`\"{}ubs\char`\"{} , 17 \}, \{ \char`\"{}ekn\char`\"{} , 1 \}, \{ \char`\"{}ltt\char`\"{} , 1 \}, \{ \char`\"{}yte\char`\"{} , 1 \}, \{ \char`\"{}szo\char`\"{} , 1 \}, \{ \char`\"{}ott\char`\"{} , 1 \}, \{ \char`\"{}esc\char`\"{} , 1 \}, \{ \char`\"{}fic\char`\"{} , 2 \}, \{ \char`\"{}inc\char`\"{} , 4 \}, \{ \char`\"{}xin\char`\"{} , 1 \}, \{ \char`\"{}rme\char`\"{} , 6 \}, \{ \char`\"{}fsu\char`\"{} , 2 \}, \{ \char`\"{}ctp\char`\"{} , 1 \}, \{ \char`\"{}ecu\char`\"{} , 1 \}, \{ \char`\"{}cla\char`\"{} , 15 \}, \{ \char`\"{}cco\char`\"{} , 2 \}, \{ \char`\"{}gsu\char`\"{} , 1 \}, \{ \char`\"{}lsh\char`\"{} , 1 \}, \{ \char`\"{}dsf\char`\"{} , 1 \}, \{ \char`\"{}bre\char`\"{} , 3 \}, \{ \char`\"{}ngk\char`\"{} , 1 \}, \{ \char`\"{}ude\char`\"{} , 2 \}, \{ \char`\"{}nsu\char`\"{} , 2 \}, \{ \char`\"{}erc\char`\"{} , 3 \}, \{ \char`\"{}edp\char`\"{} , 1 \}, \{ \char`\"{}epi\char`\"{} , 1 \}, \{ \char`\"{}smu\char`\"{} , 1 \}, \{ \char`\"{}dse\char`\"{} , 1 \}, \{ \char`\"{}pon\char`\"{} , 4 \}, \{ \char`\"{}isw\char`\"{} , 2 \}, \{ \char`\"{}ssu\char`\"{} , 10 \}, \{ \char`\"{}lfu\char`\"{} , 1 \}, \{ \char`\"{}meh\char`\"{} , 1 \}, \{ \char`\"{}arr\char`\"{} , 5 \}, \{ \char`\"{}leh\char`\"{} , 2 \}, \{ \char`\"{}sby\char`\"{} , 2 \}, \{ \char`\"{}icw\char`\"{} , 1 \}, \{ \char`\"{}ldh\char`\"{} , 1 \}, \{ \char`\"{}twh\char`\"{} , 1 \}, \{ \char`\"{}tur\char`\"{} , 1 \}, \{ \char`\"{}bro\char`\"{} , 2 \}, \{ \char`\"{}ede\char`\"{} , 2 \}, \{ \char`\"{}rer\char`\"{} , 2 \}, \{ \char`\"{}cre\char`\"{} , 3 \}, \{ \char`\"{}yst\char`\"{} , 4 \}, \{ \char`\"{}amo\char`\"{} , 2 \}, \{ \char`\"{}lis\char`\"{} , 2 \}, \{ \char`\"{}eon\char`\"{} , 4 \}, \{ \char`\"{}nto\char`\"{} , 4 \}, \{ \char`\"{}nli\char`\"{} , 1 \}, \{ \char`\"{}byw\char`\"{} , 1 \}, \{ \char`\"{}yis\char`\"{} , 4 \}, \{ \char`\"{}rsh\char`\"{} , 4 \}, \{ \char`\"{}stm\char`\"{} , 1 \}, \{ \char`\"{}aju\char`\"{} , 2 \}, \{ \char`\"{}whi\char`\"{} , 5 \}, \{ \char`\"{}nbi\char`\"{} , 1 \}, \{ \char`\"{}lue\char`\"{} , 2 \}, \{ \char`\"{}ate\char`\"{} , 10 \}, \{ \char`\"{}rid\char`\"{} , 1 \}, \{ \char`\"{}bes\char`\"{} , 1 \}, \{ \char`\"{}sti\char`\"{} , 18 \}, \{ \char`\"{}iff\char`\"{} , 4 \}, \{ \char`\"{}tia\char`\"{} , 1 \}, \{ \char`\"{}uwa\char`\"{} , 1 \}, \{ \char`\"{}pco\char`\"{} , 1 \}, \{ \char`\"{}tav\char`\"{} , 1 \}, \{ \char`\"{}ath\char`\"{} , 2 \}, \{ \char`\"{}nex\char`\"{} , 4 \}, \{ \char`\"{}own\char`\"{} , 4 \}, \{ \char`\"{}ped\char`\"{} , 5 \}, \{ \char`\"{}ewo\char`\"{} , 2 \}, \{ \char`\"{}cae\char`\"{} , 6 \}, \{ \char`\"{}las\char`\"{} , 16 \}, \{ \char`\"{}dke\char`\"{} , 1 \}, \{ \char`\"{}atu\char`\"{} , 2 \}, \{ \char`\"{}yar\char`\"{} , 2 \}, \{ \char`\"{}xtf\char`\"{} , 1 \}, \{ \char`\"{}nsn\char`\"{} , 1 \}, \{ \char`\"{}ork\char`\"{} , 1 \}, \{ \char`\"{}tea\char`\"{} , 3 \}, \{ \char`\"{}ilo\char`\"{} , 1 \}, \{ \char`\"{}hci\char`\"{} , 4 \}, \{ \char`\"{}onl\char`\"{} , 5 \}, \{ \char`\"{}dby\char`\"{} , 9 \}, \{ \char`\"{}ata\char`\"{} , 4 \}, \{ \char`\"{}lew\char`\"{} , 1 \}, \{ \char`\"{}nsf\char`\"{} , 1 \}, \{ \char`\"{}ita\char`\"{} , 4 \}, \{ \char`\"{}nco\char`\"{} , 7 \}, \{ \char`\"{}omm\char`\"{} , 1 \}, \{ \char`\"{}nac\char`\"{} , 1 \}, \{ \char`\"{}fto\char`\"{} , 1 \}, \{ \char`\"{}twi\char`\"{} , 1 \}, \{ \char`\"{}mod\char`\"{} , 4 \}, \{ \char`\"{}saw\char`\"{} , 1 \}, \{ \char`\"{}ptt\char`\"{} , 1 \}, \{ \char`\"{}ymi\char`\"{} , 1 \}, \{ \char`\"{}rly\char`\"{} , 1 \}, \{ \char`\"{}tyo\char`\"{} , 4 \}, \{ \char`\"{}eti\char`\"{} , 14 \}, \{ \char`\"{}ski\char`\"{} , 1 \}, \{ \char`\"{}cdo\char`\"{} , 1 \}, \{ \char`\"{}owi\char`\"{} , 1 \}, \{ \char`\"{}nnu\char`\"{} , 1 \}, \{ \char`\"{}lei\char`\"{} , 6 \}, \{ \char`\"{}ves\char`\"{} , 3 \}, \{ \char`\"{}afi\char`\"{} , 1 \}, \{ \char`\"{}ewt\char`\"{} , 1 \}, \{ \char`\"{}csu\char`\"{} , 3 \}, \{ \char`\"{}llk\char`\"{} , 3 \}, \{ \char`\"{}sfy\char`\"{} , 1 \}, \{ \char`\"{}cwa\char`\"{} , 1 \}, \{ \char`\"{}oun\char`\"{} , 1 \}, \{ \char`\"{}tos\char`\"{} , 3 \}, \{ \char`\"{}phr\char`\"{} , 1 \}, \{ \char`\"{}tbo\char`\"{} , 1 \}, \{ \char`\"{}uen\char`\"{} , 5 \}, \{ \char`\"{}ldu\char`\"{} , 1 \}, \{ \char`\"{}ugh\char`\"{} , 2 \}, \{ \char`\"{}rea\char`\"{} , 18 \}, \{ \char`\"{}rst\char`\"{} , 11 \}, \{ \char`\"{}heo\char`\"{} , 5 \}, \{ \char`\"{}ual\char`\"{} , 1 \}, \{ \char`\"{}alc\char`\"{} , 16 \}, \{ \char`\"{}fhe\char`\"{} , 2 \}, \{ \char`\"{}gor\char`\"{} , 2 \}, \{ \char`\"{}chn\char`\"{} , 4 \}, \{ \char`\"{}yat\char`\"{} , 3 \}, \{ \char`\"{}eco\char`\"{} , 14 \}, \{ \char`\"{}ult\char`\"{} , 4 \}, \{ \char`\"{}abe\char`\"{} , 27 \}, \{ \char`\"{}ose\char`\"{} , 9 \}, \{ \char`\"{}sre\char`\"{} , 4 \}, \{ \char`\"{}sin\char`\"{} , 23 \}, \{ \char`\"{}eyi\char`\"{} , 2 \}, \{ \char`\"{}lom\char`\"{} , 1 \}, \{ \char`\"{}tem\char`\"{} , 4 \}, \{ \char`\"{}ldt\char`\"{} , 1 \}, \{ \char`\"{}oos\char`\"{} , 2 \}, \{ \char`\"{}lpa\char`\"{} , 1 \}, \{ \char`\"{}tob\char`\"{} , 4 \}, \{ \char`\"{}ckw\char`\"{} , 1 \}, \{ \char`\"{}gma\char`\"{} , 1 \}, \{ \char`\"{}wsa\char`\"{} , 1 \}, \{ \char`\"{}ass\char`\"{} , 16 \}, \{ \char`\"{}dew\char`\"{} , 1 \}, \{ \char`\"{}ees\char`\"{} , 1 \}, \{ \char`\"{}nls\char`\"{} , 1 \}, \{ \char`\"{}cha\char`\"{} , 11 \}, \{ \char`\"{}cle\char`\"{} , 3 \}, \{ \char`\"{}ila\char`\"{} , 2 \}, \{ \char`\"{}dda\char`\"{} , 2 \}, \{ \char`\"{}rew\char`\"{} , 1 \}, \{ \char`\"{}rev\char`\"{} , 3 \}, \{ \char`\"{}olo\char`\"{} , 3 \}, \{ \char`\"{}rto\char`\"{} , 6 \}, \{ \char`\"{}dig\char`\"{} , 1 \}, \{ \char`\"{}ang\char`\"{} , 9 \}, \{ \char`\"{}cth\char`\"{} , 1 \}, \{ \char`\"{}tsy\char`\"{} , 1 \}, \{ \char`\"{}lly\char`\"{} , 6 \}, \{ \char`\"{}gen\char`\"{} , 7 \}, \{ \char`\"{}nev\char`\"{} , 1 \}, \{ \char`\"{}myn\char`\"{} , 1 \}, \{ \char`\"{}aus\char`\"{} , 3 \}, \{ \char`\"{}xtl\char`\"{} , 1 \}, \{ \char`\"{}cya\char`\"{} , 3 \}, \{ \char`\"{}lar\char`\"{} , 3 \}, \{ \char`\"{}und\char`\"{} , 4 \}, \{ \char`\"{}cde\char`\"{} , 1 \}, \{ \char`\"{}nks\char`\"{} , 1 \}, \{ \char`\"{}ble\char`\"{} , 11 \}, \{ \char`\"{}asy\char`\"{} , 3 \}, \{ \char`\"{}ncy\char`\"{} , 4 \}, \{ \char`\"{}ecb\char`\"{} , 1 \}, \{ \char`\"{}niq\char`\"{} , 2 \}, \{ \char`\"{}com\char`\"{} , 4 \}, \{ \char`\"{}lve\char`\"{} , 4 \}, \{ \char`\"{}rnb\char`\"{} , 1 \}, \{ \char`\"{}wri\char`\"{} , 3 \}, \{ \char`\"{}cho\char`\"{} , 5 \}, \{ \char`\"{}mul\char`\"{} , 2 \}, \{ \char`\"{}hgl\char`\"{} , 1 \}, \{ \char`\"{}req\char`\"{} , 5 \}, \{ \char`\"{}rne\char`\"{} , 2 \}, \{ \char`\"{}rtr\char`\"{} , 2 \}, \{ \char`\"{}cks\char`\"{} , 9 \}, \{ \char`\"{}gua\char`\"{} , 1 \}, \{ \char`\"{}sex\char`\"{} , 1 \}, \{ \char`\"{}dno\char`\"{} , 2 \}, \{ \char`\"{}age\char`\"{} , 25 \}, \{ \char`\"{}odi\char`\"{} , 4 \}, \{ \char`\"{}ide\char`\"{} , 4 \}, \{ \char`\"{}nbl\char`\"{} , 1 \}, \{ \char`\"{}tta\char`\"{} , 11 \}, \{ \char`\"{}eme\char`\"{} , 19 \}, \{ \char`\"{}efo\char`\"{} , 5 \}, \{ \char`\"{}fme\char`\"{} , 2 \}, \{ \char`\"{}dou\char`\"{} , 1 \}, \{ \char`\"{}ryr\char`\"{} , 1 \}, \{ \char`\"{}sop\char`\"{} , 2 \}, \{ \char`\"{}nif\char`\"{} , 3 \}, \{ \char`\"{}erd\char`\"{} , 1 \}, \{ \char`\"{}ntl\char`\"{} , 3 \}, \{ \char`\"{}ngn\char`\"{} , 1 \}, \{ \char`\"{}ina\char`\"{} , 10 \}, \{ \char`\"{}toc\char`\"{} , 2 \}, \{ \char`\"{}gpe\char`\"{} , 2 \}, \{ \char`\"{}vin\char`\"{} , 2 \}, \{ \char`\"{}kes\char`\"{} , 1 \}, \{ \char`\"{}les\char`\"{} , 9 \}, \{ \char`\"{}dot\char`\"{} , 4 \}, \{ \char`\"{}stf\char`\"{} , 1 \}, \{ \char`\"{}tee\char`\"{} , 2 \}, \{ \char`\"{}ghs\char`\"{} , 1 \}, \{ \char`\"{}tbe\char`\"{} , 3 \}, \{ \char`\"{}oas\char`\"{} , 1 \}, \{ \char`\"{}dcf\char`\"{} , 1 \}, \{ \char`\"{}hcl\char`\"{} , 1 \}, \{ \char`\"{}aft\char`\"{} , 1 \}, \{ \char`\"{}rdi\char`\"{} , 7 \}, \{ \char`\"{}eal\char`\"{} , 11 \}, \{ \char`\"{}cal\char`\"{} , 23 \}, \{ \char`\"{}ngr\char`\"{} , 1 \}, \{ \char`\"{}acw\char`\"{} , 1 \}, \{ \char`\"{}mew\char`\"{} , 1 \}, \{ \char`\"{}tac\char`\"{} , 11 \}, \{ \char`\"{}orc\char`\"{} , 4 \}, \{ \char`\"{}min\char`\"{} , 4 \}, \{ \char`\"{}ftt\char`\"{} , 1 \}, \{ \char`\"{}mwi\char`\"{} , 1 \}, \{ \char`\"{}cht\char`\"{} , 2 \}, \{ \char`\"{}ifh\char`\"{} , 2 \}, \{ \char`\"{}nec\char`\"{} , 3 \}, \{ \char`\"{}rap\char`\"{} , 2 \}, \{ \char`\"{}ehe\char`\"{} , 1 \}, \{ \char`\"{}ntt\char`\"{} , 2 \}, \{ \char`\"{}ood\char`\"{} , 4 \}, \{ \char`\"{}lia\char`\"{} , 1 \}, \{ \char`\"{}edt\char`\"{} , 13 \}, \{ \char`\"{}eim\char`\"{} , 2 \}, \{ \char`\"{}ems\char`\"{} , 1 \}, \{ \char`\"{}ncl\char`\"{} , 4 \}, \{ \char`\"{}lsp\char`\"{} , 1 \}, \{ \char`\"{}eea\char`\"{} , 2 \}, \{ \char`\"{}ane\char`\"{} , 1 \}, \{ \char`\"{}tsp\char`\"{} , 1 \}, \{ \char`\"{}efi\char`\"{} , 5 \}, \{ \char`\"{}ove\char`\"{} , 4 \}, \{ \char`\"{}ydb\char`\"{} , 1 \}, \{ \char`\"{}nyl\char`\"{} , 1 \}, \{ \char`\"{}lem\char`\"{} , 2 \}, \{ \char`\"{}ngo\char`\"{} , 2 \}, \{ \char`\"{}war\char`\"{} , 1 \}, \{ \char`\"{}yaf\char`\"{} , 1 \}, \{ \char`\"{}cty\char`\"{} , 1 \}, \{ \char`\"{}dwa\char`\"{} , 1 \}, \{ \char`\"{}ona\char`\"{} , 6 \}, \{ \char`\"{}exa\char`\"{} , 19 \}, \{ \char`\"{}rsa\char`\"{} , 14 \}, \{ \char`\"{}tra\char`\"{} , 15 \}, \{ \char`\"{}awo\char`\"{} , 1 \}, \{ \char`\"{}snt\char`\"{} , 1 \}, \{ \char`\"{}ean\char`\"{} , 3 \}, \{ \char`\"{}ook\char`\"{} , 3 \}, \{ \char`\"{}ngp\char`\"{} , 1 \}, \{ \char`\"{}you\char`\"{} , 13 \}, \{ \char`\"{}emo\char`\"{} , 5 \}, \{ \char`\"{}nee\char`\"{} , 3 \}, \{ \char`\"{}ffe\char`\"{} , 3 \}, \{ \char`\"{}tat\char`\"{} , 6 \}, \{ \char`\"{}ebu\char`\"{} , 1 \}, \{ \char`\"{}peo\char`\"{} , 3 \}, \{ \char`\"{}aga\char`\"{} , 2 \}, \{ \char`\"{}aci\char`\"{} , 3 \}, \{ \char`\"{}woo\char`\"{} , 1 \}, \{ \char`\"{}iea\char`\"{} , 1 \}, \{ \char`\"{}qua\char`\"{} , 4 \}, \{ \char`\"{}eir\char`\"{} , 5 \}, \{ \char`\"{}tro\char`\"{} , 5 \}, \{ \char`\"{}rit\char`\"{} , 5 \}, \{ \char`\"{}med\char`\"{} , 2 \}, \{ \char`\"{}ale\char`\"{} , 2 \}, \{ \char`\"{}sem\char`\"{} , 1 \}, \{ \char`\"{}eyo\char`\"{} , 6 \}, \{ \char`\"{}gey\char`\"{} , 5 \}, \{ \char`\"{}chs\char`\"{} , 2 \}, \{ \char`\"{}nig\char`\"{} , 1 \}, \{ \char`\"{}bst\char`\"{} , 17 \}, \{ \char`\"{}pop\char`\"{} , 1 \}, \{ \char`\"{}chc\char`\"{} , 4 \}, \{ \char`\"{}tof\char`\"{} , 9 \}, \{ \char`\"{}eka\char`\"{} , 1 \}, \{ \char`\"{}yus\char`\"{} , 2 \}, \{ \char`\"{}eas\char`\"{} , 4 \}, \{ \char`\"{}ave\char`\"{} , 5 \}, \{ \char`\"{}hoo\char`\"{} , 2 \}, \{ \char`\"{}ump\char`\"{} , 1 \}, \{ \char`\"{}wel\char`\"{} , 4 \}, \{ \char`\"{}ptw\char`\"{} , 1 \}, \{ \char`\"{}xth\char`\"{} , 1 \}, \{ \char`\"{}nap\char`\"{} , 2 \}, \{ \char`\"{}odw\char`\"{} , 1 \}, \{ \char`\"{}utb\char`\"{} , 1 \}, \{ \char`\"{}him\char`\"{} , 1 \}, \{ \char`\"{}zod\char`\"{} , 2 \}, \{ \char`\"{}bet\char`\"{} , 29 \}, \{ \char`\"{}ctc\char`\"{} , 1 \}, \{ \char`\"{}heg\char`\"{} , 1 \}, \{ \char`\"{}byh\char`\"{} , 1 \}, \{ \char`\"{}rej\char`\"{} , 1 \}, \{ \char`\"{}tet\char`\"{} , 2 \}, \{ \char`\"{}dtr\char`\"{} , 3 \}, \{ \char`\"{}oll\char`\"{} , 1 \}, \{ \char`\"{}sed\char`\"{} , 17 \}, \{ \char`\"{}gse\char`\"{} , 1 \}, \{ \char`\"{}ain\char`\"{} , 8 \}, \{ \char`\"{}yll\char`\"{} , 2 \}, \{ \char`\"{}ent\char`\"{} , 16 \}, \{ \char`\"{}ali\char`\"{} , 3 \}, \{ \char`\"{}kst\char`\"{} , 1 \}, \{ \char`\"{}stc\char`\"{} , 1 \}, \{ \char`\"{}ntc\char`\"{} , 2 \}, \{ \char`\"{}ode\char`\"{} , 17 \}, \{ \char`\"{}ely\char`\"{} , 1 \}, \{ \char`\"{}urm\char`\"{} , 2 \}, \{ \char`\"{}rpr\char`\"{} , 1 \}, \{ \char`\"{}one\char`\"{} , 5 \}, \{ \char`\"{}gna\char`\"{} , 2 \}, \{ \char`\"{}ime\char`\"{} , 3 \}, \{ \char`\"{}nst\char`\"{} , 8 \}, \{ \char`\"{}oor\char`\"{} , 1 \}, \{ \char`\"{}mna\char`\"{} , 1 \}, \{ \char`\"{}lac\char`\"{} , 7 \}, \{ \char`\"{}eye\char`\"{} , 1 \}, \{ \char`\"{}way\char`\"{} , 1 \}, \{ \char`\"{}hey\char`\"{} , 2 \}, \{ \char`\"{}hek\char`\"{} , 8 \}, \{ \char`\"{}lya\char`\"{} , 8 \}, \{ \char`\"{}wso\char`\"{} , 1 \}, \{ \char`\"{}etw\char`\"{} , 4 \}, \{ \char`\"{}dpe\char`\"{} , 1 \}, \{ \char`\"{}wnc\char`\"{} , 1 \}, \{ \char`\"{}era\char`\"{} , 25 \}, \{ \char`\"{}sim\char`\"{} , 5 \}, \{ \char`\"{}wit\char`\"{} , 12 \}, \{ \char`\"{}rep\char`\"{} , 13 \}, \{ \char`\"{}etc\char`\"{} , 3 \}, \{ \char`\"{}tai\char`\"{} , 1 \}, \{ \char`\"{}enp\char`\"{} , 2 \}, \{ \char`\"{}igi\char`\"{} , 4 \}, \{ \char`\"{}aph\char`\"{} , 2 \}, \{ \char`\"{}ven\char`\"{} , 5 \}, \{ \char`\"{}tus\char`\"{} , 2 \}, \{ \char`\"{}ppl\char`\"{} , 1 \}, \{ \char`\"{}dza\char`\"{} , 1 \}, \{ \char`\"{}ary\char`\"{} , 1 \}, \{ \char`\"{}gnu\char`\"{} , 1 \}, \{ \char`\"{}mil\char`\"{} , 2 \}, \{ \char`\"{}sha\char`\"{} , 2 \}, \{ \char`\"{}uwo\char`\"{} , 4 \}, \{ \char`\"{}eli\char`\"{} , 1 \}, \{ \char`\"{}rwi\char`\"{} , 3 \}, \{ \char`\"{}isa\char`\"{} , 9 \}, \{ \char`\"{}bru\char`\"{} , 1 \}, \{ \char`\"{}tcw\char`\"{} , 1 \}, \{ \char`\"{}etm\char`\"{} , 1 \}, \{ \char`\"{}nsa\char`\"{} , 1 \}, \{ \char`\"{}sis\char`\"{} , 11 \}, \{ \char`\"{}tit\char`\"{} , 19 \}, \{ \char`\"{}itt\char`\"{} , 1 \}, \{ \char`\"{}utu\char`\"{} , 1 \}, \{ \char`\"{}cke\char`\"{} , 3 \}, \{ \char`\"{}bot\char`\"{} , 2 \}, \{ \char`\"{}sag\char`\"{} , 24 \}, \{ \char`\"{}tpa\char`\"{} , 1 \}, \{ \char`\"{}nca\char`\"{} , 1 \}, \{ \char`\"{}rya\char`\"{} , 1 \}, \{ \char`\"{}iqu\char`\"{} , 2 \}, \{ \char`\"{}nun\char`\"{} , 4 \}, \{ \char`\"{}oso\char`\"{} , 2 \}, \{ \char`\"{}uet\char`\"{} , 1 \}, \{ \char`\"{}vat\char`\"{} , 1 \}, \{ \char`\"{}nta\char`\"{} , 2 \}, \{ \char`\"{}tsa\char`\"{} , 7 \}, \{ \char`\"{}ets\char`\"{} , 4 \}, \{ \char`\"{}sic\char`\"{} , 16 \}, \{ \char`\"{}ery\char`\"{} , 3 \}, \{ \char`\"{}asa\char`\"{} , 2 \}, \{ \char`\"{}gea\char`\"{} , 3 \}, \{ \char`\"{}mei\char`\"{} , 1 \}, \{ \char`\"{}don\char`\"{} , 6 \}, \{ \char`\"{}ost\char`\"{} , 2 \}, \{ \char`\"{}rex\char`\"{} , 11 \}, \{ \char`\"{}int\char`\"{} , 22 \}, \{ \char`\"{}asb\char`\"{} , 1 \}, \{ \char`\"{}erp\char`\"{} , 3 \}, \{ \char`\"{}epo\char`\"{} , 1 \}, \{ \char`\"{}dan\char`\"{} , 2 \}, \{ \char`\"{}rut\char`\"{} , 1 \}, \{ \char`\"{}raf\char`\"{} , 1 \}, \{ \char`\"{}for\char`\"{} , 26 \}, \{ \char`\"{}eci\char`\"{} , 21 \}, \{ \char`\"{}alg\char`\"{} , 1 \}, \{ \char`\"{}tve\char`\"{} , 1 \}, \{ \char`\"{}enc\char`\"{} , 24 \}, \{ \char`\"{}rnc\char`\"{} , 2 \}, \{ \char`\"{}ksi\char`\"{} , 2 \}, \{ \char`\"{}iaj\char`\"{} , 1 \}, \{ \char`\"{}cil\char`\"{} , 1 \}, \{ \char`\"{}urc\char`\"{} , 1 \}, \{ \char`\"{}rbe\char`\"{} , 2 \}, \{ \char`\"{}usc\char`\"{} , 4 \}, \{ \char`\"{}ntd\char`\"{} , 1 \}, \{ \char`\"{}nas\char`\"{} , 3 \}, \{ \char`\"{}wis\char`\"{} , 1 \}, \{ \char`\"{}lea\char`\"{} , 3 \}, \{ \char`\"{}wor\char`\"{} , 15 \}, \{ \char`\"{}phe\char`\"{} , 83 \}, \{ \char`\"{}ols\char`\"{} , 5 \}, \{ \char`\"{}lyt\char`\"{} , 2 \}, \{ \char`\"{}erw\char`\"{} , 8 \}, \{ \char`\"{}cou\char`\"{} , 2 \}, \{ \char`\"{}tsh\char`\"{} , 1 \}, \{ \char`\"{}lld\char`\"{} , 1 \}, \{ \char`\"{}sho\char`\"{} , 4 \}, \{ \char`\"{}ors\char`\"{} , 4 \}, \{ \char`\"{}ive\char`\"{} , 2 \}, \{ \char`\"{}otv\char`\"{} , 1 \}, \{ \char`\"{}gek\char`\"{} , 1 \}, \{ \char`\"{}eto\char`\"{} , 11 \}, \{ \char`\"{}esi\char`\"{} , 7 \}, \{ \char`\"{}ete\char`\"{} , 2 \}, \{ \char`\"{}our\char`\"{} , 4 \}, \{ \char`\"{}vem\char`\"{} , 1 \}, \{ \char`\"{}upi\char`\"{} , 1 \}, \{ \char`\"{}omy\char`\"{} , 1 \}, \{ \char`\"{}nfa\char`\"{} , 1 \}, \{ \char`\"{}esu\char`\"{} , 10 \}, \{ \char`\"{}see\char`\"{} , 2 \}, \{ \char`\"{}orr\char`\"{} , 4 \}, \{ \char`\"{}nsh\char`\"{} , 1 \}, \{ \char`\"{}tpl\char`\"{} , 1 \}, \{ \char`\"{}typ\char`\"{} , 4 \}, \{ \char`\"{}scl\char`\"{} , 2 \}, \{ \char`\"{}arb\char`\"{} , 1 \}, \{ \char`\"{}rct\char`\"{} , 1 \}, \{ \char`\"{}ots\char`\"{} , 5 \}, \{ \char`\"{}ids\char`\"{} , 2 \}, \{ \char`\"{}utr\char`\"{} , 1 \}, \{ \char`\"{}ron\char`\"{} , 3 \}, \{ \char`\"{}aki\char`\"{} , 1 \}, \{ \char`\"{}bac\char`\"{} , 1 \}, \{ \char`\"{}sst\char`\"{} , 1 \}, \{ \char`\"{}leb\char`\"{} , 1 \}, \{ \char`\"{}ica\char`\"{} , 23 \}, \{ \char`\"{}dar\char`\"{} , 2 \}, \{ \char`\"{}gmo\char`\"{} , 2 \}, \{ \char`\"{}mpt\char`\"{} , 1 \}, \{ \char`\"{}bol\char`\"{} , 4 \}, \{ \char`\"{}wbe\char`\"{} , 1 \}, \{ \char`\"{}edf\char`\"{} , 3 \}, \{ \char`\"{}qui\char`\"{} , 1 \}, \{ \char`\"{}hst\char`\"{} , 3 \}, \{ \char`\"{}rwo\char`\"{} , 5 \}, \{ \char`\"{}geo\char`\"{} , 3 \}, \{ \char`\"{}rco\char`\"{} , 2 \}, \{ \char`\"{}lee\char`\"{} , 1 \}, \{ \char`\"{}ofn\char`\"{} , 1 \}, \{ \char`\"{}ser\char`\"{} , 1 \}, \{ \char`\"{}edg\char`\"{} , 1 \}, \{ \char`\"{}onc\char`\"{} , 23 \}, \{ \char`\"{}sot\char`\"{} , 2 \}, \{ \char`\"{}pai\char`\"{} , 2 \}, \{ \char`\"{}dos\char`\"{} , 1 \}, \{ \char`\"{}rks\char`\"{} , 1 \}, \{ \char`\"{}lyx\char`\"{} , 1 \}, \{ \char`\"{}cea\char`\"{} , 5 \}, \{ \char`\"{}vel\char`\"{} , 2 \}, \{ \char`\"{}een\char`\"{} , 8 \}, \{ \char`\"{}gkn\char`\"{} , 1 \}, \{ \char`\"{}ssc\char`\"{} , 1 \}, \{ \char`\"{}ele\char`\"{} , 17 \}, \{ \char`\"{}utt\char`\"{} , 2 \}, \{ \char`\"{}rdb\char`\"{} , 1 \}, \{ \char`\"{}scr\char`\"{} , 3 \}, \{ \char`\"{}inv\char`\"{} , 4 \}, \{ \char`\"{}dec\char`\"{} , 3 \}, \{ \char`\"{}ley\char`\"{} , 1 \}, \{ \char`\"{}squ\char`\"{} , 4 \}, \{ \char`\"{}art\char`\"{} , 7 \}, \{ \char`\"{}wyo\char`\"{} , 2 \}, \{ \char`\"{}oaf\char`\"{} , 1 \}, \{ \char`\"{}tak\char`\"{} , 5 \}, \{ \char`\"{}nce\char`\"{} , 9 \}, \{ \char`\"{}osc\char`\"{} , 1 \}, \{ \char`\"{}swh\char`\"{} , 5 \}, \{ \char`\"{}tut\char`\"{} , 17 \}, \{ \char`\"{}who\char`\"{} , 1 \}, \{ \char`\"{}ish\char`\"{} , 4 \}, \{ \char`\"{}ont\char`\"{} , 3 \}, \{ \char`\"{}her\char`\"{} , 104 \}, \{ \char`\"{}gme\char`\"{} , 1 \}, \{ \char`\"{}ues\char`\"{} , 2 \}, \{ \char`\"{}alm\char`\"{} , 1 \}, \{ \char`\"{}ehk\char`\"{} , 1 \}, \{ \char`\"{}oan\char`\"{} , 1 \}, \{ \char`\"{}epe\char`\"{} , 4 \}, \{ \char`\"{}son\char`\"{} , 2 \}, \{ \char`\"{}ice\char`\"{} , 2 \}, \{ \char`\"{}ofs\char`\"{} , 2 \}, \{ \char`\"{}hev\char`\"{} , 5 \}, \{ \char`\"{}sun\char`\"{} , 1 \}, \{ \char`\"{}sut\char`\"{} , 1 \}, \{ \char`\"{}umb\char`\"{} , 8 \}, \{ \char`\"{}lor\char`\"{} , 2 \}, \{ \char`\"{}ngt\char`\"{} , 10 \}, \{ \char`\"{}ink\char`\"{} , 1 \}, \{ \char`\"{}sit\char`\"{} , 12 \}, \{ \char`\"{}htw\char`\"{} , 1 \}, \{ \char`\"{}alo\char`\"{} , 2 \}, \{ \char`\"{}tou\char`\"{} , 1 \}, \{ \char`\"{}oub\char`\"{} , 1 \}, \{ \char`\"{}uti\char`\"{} , 17 \}, \{ \char`\"{}sou\char`\"{} , 1 \}, \{ \char`\"{}ety\char`\"{} , 2 \}, \{ \char`\"{}ene\char`\"{} , 10 \}, \{ \char`\"{}ear\char`\"{} , 9 \}, \{ \char`\"{}noa\char`\"{} , 1 \}, \{ \char`\"{}epr\char`\"{} , 5 \}, \{ \char`\"{}ace\char`\"{} , 9 \}, \{ \char`\"{}ddo\char`\"{} , 2 \}, \{ \char`\"{}ver\char`\"{} , 7 \}, \{ \char`\"{}tme\char`\"{} , 1 \}, \{ \char`\"{}mix\char`\"{} , 1 \}, \{ \char`\"{}mnu\char`\"{} , 3 \}, \{ \char`\"{}sys\char`\"{} , 4 \}, \{ \char`\"{}gns\char`\"{} , 1 \}, \{ \char`\"{}aba\char`\"{} , 1 \}, \{ \char`\"{}lai\char`\"{} , 5 \}, \{ \char`\"{}ash\char`\"{} , 3 \}, \{ \char`\"{}cip\char`\"{} , 83 \}, \{ \char`\"{}htt\char`\"{} , 1 \}, \{ \char`\"{}cby\char`\"{} , 1 \}, \{ \char`\"{}hav\char`\"{} , 6 \}, \{ \char`\"{}yan\char`\"{} , 6 \}, \{ \char`\"{}dsc\char`\"{} , 1 \}, \{ \char`\"{}nth\char`\"{} , 16 \}, \{ \char`\"{}iec\char`\"{} , 1 \}, \{ \char`\"{}yac\char`\"{} , 2 \}, \{ \char`\"{}icd\char`\"{} , 1 \}, \{ \char`\"{}itu\char`\"{} , 18 \}, \{ \char`\"{}yfe\char`\"{} , 1 \}, \{ \char`\"{}rsy\char`\"{} , 1 \}, \{ \char`\"{}tex\char`\"{} , 15 \}, \{ \char`\"{}rdt\char`\"{} , 3 \}, \{ \char`\"{}epl\char`\"{} , 6 \}, \{ \char`\"{}bit\char`\"{} , 1 \}, \{ \char`\"{}dcr\char`\"{} , 1 \}, \{ \char`\"{}kyi\char`\"{} , 2 \}, \{ \char`\"{}sub\char`\"{} , 17 \}, \{ \char`\"{}cul\char`\"{} , 1 \}, \{ \char`\"{}ndu\char`\"{} , 2 \}, \{ \char`\"{}tip\char`\"{} , 2 \}, \{ \char`\"{}ykn\char`\"{} , 1 \}, \{ \char`\"{}vid\char`\"{} , 1 \}, \{ \char`\"{}ans\char`\"{} , 18 \}, \{ \char`\"{}bas\char`\"{} , 3 \}, \{ \char`\"{}rso\char`\"{} , 11 \}, \{ \char`\"{}app\char`\"{} , 1 \}, \{ \char`\"{}two\char`\"{} , 4 \}, \{ \char`\"{}cod\char`\"{} , 11 \}, \{ \char`\"{}ket\char`\"{} , 5 \}, \{ \char`\"{}llr\char`\"{} , 1 \}, \{ \char`\"{}eof\char`\"{} , 11 \}, \{ \char`\"{}zln\char`\"{} , 1 \}, \{ \char`\"{}nde\char`\"{} , 5 \}, \{ \char`\"{}thm\char`\"{} , 1 \}, \{ \char`\"{}enu\char`\"{} , 3 \}, \{ \char`\"{}hsy\char`\"{} , 2 \}, \{ \char`\"{}scy\char`\"{} , 1 \}, \{ \char`\"{}sul\char`\"{} , 1 \}, \{ \char`\"{}fpo\char`\"{} , 1 \}, \{ \char`\"{}has\char`\"{} , 10 \}, \{ \char`\"{}ami\char`\"{} , 1 \}, \{ \char`\"{}ade\char`\"{} , 1 \}, \{ \char`\"{}dle\char`\"{} , 1 \}, \{ \char`\"{}lci\char`\"{} , 15 \}, \{ \char`\"{}inu\char`\"{} , 1 \}, \{ \char`\"{}key\char`\"{} , 15 \}, \{ \char`\"{}rba\char`\"{} , 2 \}, \{ \char`\"{}sev\char`\"{} , 2 \}, \{ \char`\"{}nte\char`\"{} , 8 \}, \{ \char`\"{}ula\char`\"{} , 1 \}, \{ \char`\"{}por\char`\"{} , 1 \}, \{ \char`\"{}dof\char`\"{} , 6 \}, \{ \char`\"{}hes\char`\"{} , 17 \}, \{ \char`\"{}efe\char`\"{} , 2 \}, \{ \char`\"{}olu\char`\"{} , 7 \}, \{ \char`\"{}iac\char`\"{} , 2 \}, \{ \char`\"{}cra\char`\"{} , 3 \}, \{ \char`\"{}hen\char`\"{} , 14 \}, \{ \char`\"{}nvo\char`\"{} , 4 \}, \{ \char`\"{}sor\char`\"{} , 8 \}, \{ \char`\"{}hco\char`\"{} , 1 \}, \{ \char`\"{}ods\char`\"{} , 2 \}, \{ \char`\"{}nes\char`\"{} , 5 \}, \{ \char`\"{}eys\char`\"{} , 3 \}, \{ \char`\"{}nwi\char`\"{} , 2 \}, \{ \char`\"{}lgo\char`\"{} , 1 \}, \{ \char`\"{}emb\char`\"{} , 1 \}, \{ \char`\"{}spe\char`\"{} , 3 \}, \{ \char`\"{}enr\char`\"{} , 1 \}, \{ \char`\"{}ord\char`\"{} , 23 \}, \{ \char`\"{}icl\char`\"{} , 2 \}, \{ \char`\"{}lds\char`\"{} , 1 \}, \{ \char`\"{}dey\char`\"{} , 1 \}, \{ \char`\"{}ror\char`\"{} , 3 \}, \{ \char`\"{}mou\char`\"{} , 1 \}, \{ \char`\"{}cet\char`\"{} , 2 \}, \{ \char`\"{}aco\char`\"{} , 1 \}, \{ \char`\"{}ing\char`\"{} , 28 \}, \{ \char`\"{}ten\char`\"{} , 6 \}, \{ \char`\"{}pli\char`\"{} , 1 \}, \{ \char`\"{}aty\char`\"{} , 2 \}, \{ \char`\"{}fyt\char`\"{} , 1 \}, \{ \char`\"{}ern\char`\"{} , 9 \}, \{ \char`\"{}err\char`\"{} , 1 \}, \{ \char`\"{}ouf\char`\"{} , 1 \}, \{ \char`\"{}ore\char`\"{} , 21 \}, \{ \char`\"{}urd\char`\"{} , 1 \}, \{ \char`\"{}ns\char`\"{} , 1 \}, \{ \char`\"{}tio\char`\"{} , 33 \}, \{ \char`\"{}ght\char`\"{} , 3 \}, \{ \char`\"{}asm\char`\"{} , 1 \}, \{ \char`\"{}cyt\char`\"{} , 1 \}, \{ \char`\"{}ibl\char`\"{} , 4 \}, \{ \char`\"{}all\char`\"{} , 13 \}, \{ \char`\"{}upe\char`\"{} , 1 \}, \{ \char`\"{}rch\char`\"{} , 1 \}, \{ \char`\"{}dju\char`\"{} , 1 \}, \{ \char`\"{}ine\char`\"{} , 12 \}, \{ \char`\"{}iti\char`\"{} , 13 \}, \{ \char`\"{}yss\char`\"{} , 1 \}, \{ \char`\"{}isr\char`\"{} , 2 \}, \{ \char`\"{}she\char`\"{} , 5 \}, \{ \char`\"{}lan\char`\"{} , 2 \}, \{ \char`\"{}the\char`\"{} , 134 \}, \{ \char`\"{}syt\char`\"{} , 2 \}, \{ \char`\"{}ral\char`\"{} , 19 \}, \{ \char`\"{}mad\char`\"{} , 1 \}, \{ \char`\"{}ywe\char`\"{} , 1 \}, \{ \char`\"{}wnp\char`\"{} , 1 \}, \{ \char`\"{}irm\char`\"{} , 1 \}, \{ \char`\"{}sef\char`\"{} , 2 \}, \{ \char`\"{}nea\char`\"{} , 3 \}, \{ \char`\"{}ryw\char`\"{} , 1 \}, \{ \char`\"{}eom\char`\"{} , 1 \}, \{ \char`\"{}tcf\char`\"{} , 2 \}, \{ \char`\"{}lyq\char`\"{} , 1 \}, \{ \char`\"{}ngc\char`\"{} , 1 \}, \{ \char`\"{}lab\char`\"{} , 2 \}, \{ \char`\"{}sfa\char`\"{} , 1 \}, \{ \char`\"{}ard\char`\"{} , 2 \}, \{ \char`\"{}rin\char`\"{} , 2 \}, \{ \char`\"{}ryl\char`\"{} , 1 \}, \{ \char`\"{}yth\char`\"{} , 7 \}, \{ \char`\"{}eup\char`\"{} , 1 \}, \{ \char`\"{}amb\char`\"{} , 2 \}, \{ \char`\"{}hsi\char`\"{} , 1 \}, \{ \char`\"{}rmo\char`\"{} , 4 \}, \{ \char`\"{}fig\char`\"{} , 1 \}, \{ \char`\"{}usu\char`\"{} , 1 \}, \{ \char`\"{}ero\char`\"{} , 7 \}, \{ \char`\"{}ago\char`\"{} , 1 \}, \{ \char`\"{}yin\char`\"{} , 3 \}, \{ \char`\"{}rri\char`\"{} , 1 \}, \{ \char`\"{}lex\char`\"{} , 2 \}, \{ \char`\"{}ofp\char`\"{} , 2 \}, \{ \char`\"{}gew\char`\"{} , 3 \}, \{ \char`\"{}wan\char`\"{} , 1 \}, \{ \char`\"{}new\char`\"{} , 2 \}, \{ \char`\"{}lme\char`\"{} , 1 \}, \{ \char`\"{}hef\char`\"{} , 5 \}, \{ \char`\"{}mes\char`\"{} , 29 \}, \{ \char`\"{}set\char`\"{} , 6 \}, \{ \char`\"{}not\char`\"{} , 7 \}, \{ \char`\"{}ted\char`\"{} , 8 \}, \{ \char`\"{}olv\char`\"{} , 4 \}, \{ \char`\"{}vet\char`\"{} , 2 \}, \{ \char`\"{}ais\char`\"{} , 2 \}, \{ \char`\"{}ndt\char`\"{} , 12 \}, \{ \char`\"{}sce\char`\"{} , 3 \}, \{ \char`\"{}eus\char`\"{} , 10 \}, \{ \char`\"{}ewh\char`\"{} , 4 \}, \{ \char`\"{}gld\char`\"{} , 1 \}, \{ \char`\"{}jup\char`\"{} , 1 \}, \{ \char`\"{}toa\char`\"{} , 4 \}, \{ \char`\"{}eyw\char`\"{} , 9 \}, \{ \char`\"{}cta\char`\"{} , 2 \}, \{ \char`\"{}gur\char`\"{} , 1 \}, \{ \char`\"{}bya\char`\"{} , 1 \}, \{ \char`\"{}aes\char`\"{} , 6 \}, \{ \char`\"{}sib\char`\"{} , 1 \}, \{ \char`\"{}nus\char`\"{} , 1 \}, \{ \char`\"{}lcl\char`\"{} , 1 \}, \{ \char`\"{}rsn\char`\"{} , 1 \}, \{ \char`\"{}ano\char`\"{} , 4 \}, \{ \char`\"{}inn\char`\"{} , 2 \}, \{ \char`\"{}ybe\char`\"{} , 1 \}, \{ \char`\"{}rek\char`\"{} , 1 \}, \{ \char`\"{}mam\char`\"{} , 1 \}, \{ \char`\"{}ffi\char`\"{} , 2 \}, \{ \char`\"{}rcr\char`\"{} , 1 \}, \{ \char`\"{}tdi\char`\"{} , 1 \}, \{ \char`\"{}shi\char`\"{} , 2 \}, \{ \char`\"{}asl\char`\"{} , 1 \}, \{ \char`\"{}lsc\char`\"{} , 2 \}, \{ \char`\"{}ngu\char`\"{} , 1 \}, \{ \char`\"{}rel\char`\"{} , 5 \}, \{ \char`\"{}msc\char`\"{} , 1 \}, \{ \char`\"{}stb\char`\"{} , 2 \}, \{ \char`\"{}edb\char`\"{} , 9 \}, \{ \char`\"{}ndb\char`\"{} , 1 \}, \{ \char`\"{}ynu\char`\"{} , 1 \}, \{ \char`\"{}pig\char`\"{} , 1 \}, \{ \char`\"{}lov\char`\"{} , 1 \}, \{ \char`\"{}rge\char`\"{} , 1 \}, \{ \char`\"{}dal\char`\"{} , 2 \}, \{ \char`\"{}rsw\char`\"{} , 5 \}, \{ \char`\"{}sht\char`\"{} , 1 \}, \{ \char`\"{}nsp\char`\"{} , 16 \}, \{ \char`\"{}urn\char`\"{} , 1 \}, \{ \char`\"{}sbe\char`\"{} , 3 \}, \{ \char`\"{}usi\char`\"{} , 5 \}, \{ \char`\"{}dhe\char`\"{} , 2 \}, \{ \char`\"{}ivi\char`\"{} , 1 \}, \{ \char`\"{}dsi\char`\"{} , 2 \}, \{ \char`\"{}mmo\char`\"{} , 1 \}, \{ \char`\"{}xya\char`\"{} , 1 \}, \{ \char`\"{}tot\char`\"{} , 4 \}, \{ \char`\"{}bfo\char`\"{} , 1 \}, \{ \char`\"{}ldb\char`\"{} , 3 \}, \{ \char`\"{}rra\char`\"{} , 4 \}, \{ \char`\"{}akm\char`\"{} , 1 \}, \{ \char`\"{}hea\char`\"{} , 6 \}, \{ \char`\"{}stp\char`\"{} , 1 \}, \{ \char`\"{}nal\char`\"{} , 11 \}, \{ \char`\"{}duc\char`\"{} , 2 \}, \{ \char`\"{}din\char`\"{} , 10 \}, \{ \char`\"{}ext\char`\"{} , 18 \}, \{ \char`\"{}rnu\char`\"{} , 1 \}, \{ \char`\"{}orp\char`\"{} , 1 \}, \{ \char`\"{}rsu\char`\"{} , 1 \}, \{ \char`\"{}til\char`\"{} , 2 \}, \{ \char`\"{}abl\char`\"{} , 6 \}, \{ \char`\"{}ger\char`\"{} , 3 \}, \{ \char`\"{}ces\char`\"{} , 5 \}, \{ \char`\"{}ach\char`\"{} , 8 \}, \{ \char`\"{}ram\char`\"{} , 2 \}, \{ \char`\"{}dfo\char`\"{} , 6 \}, \{ \char`\"{}soa\char`\"{} , 1 \}, \{ \char`\"{}esm\char`\"{} , 1 \}, \{ \char`\"{}nse\char`\"{} , 1 \}, \{ \char`\"{}ndi\char`\"{} , 3 \}, \{ \char`\"{}obo\char`\"{} , 1 \}, \{ \char`\"{}pti\char`\"{} , 5 \}, \{ \char`\"{}ngm\char`\"{} , 4 \}, \{ \char`\"{}tin\char`\"{} , 9 \}, \{ \char`\"{}ssy\char`\"{} , 1 \}, \{ \char`\"{}bea\char`\"{} , 2 \}, \{ \char`\"{}eab\char`\"{} , 1 \}, \{ \char`\"{}ycl\char`\"{} , 2 \}, \{ \char`\"{}sig\char`\"{} , 4 \}, \{ \char`\"{}wna\char`\"{} , 1 \}, \{ \char`\"{}nfo\char`\"{} , 1 \}, \{ \char`\"{}suc\char`\"{} , 7 \}, \{ \char`\"{}erf\char`\"{} , 1 \}, \{ \char`\"{}cau\char`\"{} , 3 \}, \{ \char`\"{}eev\char`\"{} , 1 \}, \{ \char`\"{}gle\char`\"{} , 3 \}, \{ \char`\"{}mel\char`\"{} , 1 \}, \{ \char`\"{}owr\char`\"{} , 1 \}, \{ \char`\"{}ssi\char`\"{} , 17 \}, \{ \char`\"{}sta\char`\"{} , 7 \}, \{ \char`\"{}aid\char`\"{} , 1 \}, \{ \char`\"{}oen\char`\"{} , 5 \}, \{ \char`\"{}asf\char`\"{} , 2 \}, \{ \char`\"{}fin\char`\"{} , 4 \}, \{ \char`\"{}ock\char`\"{} , 1 \}, \{ \char`\"{}rfr\char`\"{} , 1 \}, \{ \char`\"{}gec\char`\"{} , 1 \}, \{ \char`\"{}sid\char`\"{} , 1 \}, \{ \char`\"{}dop\char`\"{} , 1 \}, \{ \char`\"{}awi\char`\"{} , 1 \}, \{ \char`\"{}nsi\char`\"{} , 2 \}, \{ \char`\"{}har\char`\"{} , 1 \}, \{ \char`\"{}beb\char`\"{} , 2 \}, \{ \char`\"{}gwh\char`\"{} , 2 \}, \{ \char`\"{}odo\char`\"{} , 2 \}, \{ \char`\"{}ctr\char`\"{} , 1 \}, \{ \char`\"{}get\char`\"{} , 3 \}, \{ \char`\"{}eso\char`\"{} , 7 \}, \{ \char`\"{}wss\char`\"{} , 1 \}, \{ \char`\"{}tss\char`\"{} , 1 \}, \{ \char`\"{}evi\char`\"{} , 5 \}, \{ \char`\"{}att\char`\"{} , 11 \}, \{ \char`\"{}udi\char`\"{} , 1 \}, \{ \char`\"{}egt\char`\"{} , 1 \}, \{ \char`\"{}shs\char`\"{} , 1 \}, \{ \char`\"{}sew\char`\"{} , 1 \}, \{ \char`\"{}oex\char`\"{} , 1 \}, \{ \char`\"{}hod\char`\"{} , 5 \}, \{ \char`\"{}lph\char`\"{} , 27 \}, \{ \char`\"{}omp\char`\"{} , 2 \}, \{ \char`\"{}uwi\char`\"{} , 1 \}, \{ \char`\"{}iso\char`\"{} , 2 \}, \{ \char`\"{}gam\char`\"{} , 1 \}, \{ \char`\"{}rna\char`\"{} , 2 \}, \{ \char`\"{}ift\char`\"{} , 5 \}, \{ \char`\"{}atc\char`\"{} , 3 \}, \{ \char`\"{}ptu\char`\"{} , 1 \}, \{ \char`\"{}hez\char`\"{} , 1 \}, \{ \char`\"{}cia\char`\"{} , 1 \}, \{ \char`\"{}nly\char`\"{} , 5 \}, \{ \char`\"{}ses\char`\"{} , 5 \}, \{ \char`\"{}ase\char`\"{} , 4 \}, \{ \char`\"{}red\char`\"{} , 5 \}, \{ \char`\"{}gth\char`\"{} , 7 \}, \{ \char`\"{}tec\char`\"{} , 4 \}, \{ \char`\"{}bab\char`\"{} , 1 \}, \{ \char`\"{}spl\char`\"{} , 1 \}, \{ \char`\"{}als\char`\"{} , 7 \}, \{ \char`\"{}any\char`\"{} , 8 \}, \{ \char`\"{}tor\char`\"{} , 7 \}, \{ \char`\"{}eor\char`\"{} , 4 \}, \{ \char`\"{}ofi\char`\"{} , 3 \}, \{ \char`\"{}lyu\char`\"{} , 1 \}, \{ \char`\"{}rta\char`\"{} , 1 \}, \{ \char`\"{}ill\char`\"{} , 1 \}, \{ \char`\"{}oci\char`\"{} , 1 \}, \{ \char`\"{}nit\char`\"{} , 1 \}, \{ \char`\"{}upc\char`\"{} , 1 \}, \{ \char`\"{}ply\char`\"{} , 1 \}, \{ \char`\"{}esd\char`\"{} , 1 \}, \{ \char`\"{}sus\char`\"{} , 10 \}, \{ \char`\"{}eyb\char`\"{} , 1 \}, \{ \char`\"{}ons\char`\"{} , 7 \}, \{ \char`\"{}akt\char`\"{} , 1 \}, \{ \char`\"{}san\char`\"{} , 15 \}, \{ \char`\"{}cyc\char`\"{} , 1 \}, \{ \char`\"{}ixi\char`\"{} , 1 \}, \{ \char`\"{}hyt\char`\"{} , 1 \}, \{ \char`\"{}ndc\char`\"{} , 4 \}, \{ \char`\"{}ipl\char`\"{} , 2 \}, \{ \char`\"{}ded\char`\"{} , 3 \}, \{ \char`\"{}rot\char`\"{} , 4 \}, \{ \char`\"{}sbu\char`\"{} , 2 \}, \{ \char`\"{}gef\char`\"{} , 1 \}, \{ \char`\"{}tba\char`\"{} , 1 \}, \{ \char`\"{}kas\char`\"{} , 1 \}, \{ \char`\"{}yso\char`\"{} , 1 \}, \{ \char`\"{}lst\char`\"{} , 1 \}, \{ \char`\"{}ori\char`\"{} , 6 \}, \{ \char`\"{}adt\char`\"{} , 1 \}, \{ \char`\"{}byd\char`\"{} , 1 \}, \{ \char`\"{}yec\char`\"{} , 1 \}, \{ \char`\"{}sbf\char`\"{} , 1 \}, \{ \char`\"{}tto\char`\"{} , 5 \}, \{ \char`\"{}asc\char`\"{} , 2 \}, \{ \char`\"{}ypt\char`\"{} , 9 \}, \{ \char`\"{}gho\char`\"{} , 1 \}, \{ \char`\"{}byi\char`\"{} , 1 \}, \{ \char`\"{}nda\char`\"{} , 1 \}, \{ \char`\"{}rod\char`\"{} , 2 \}, \{ \char`\"{}lre\char`\"{} , 1 \}, \{ \char`\"{}led\char`\"{} , 2 \}, \{ \char`\"{}swi\char`\"{} , 1 \}, \{ \char`\"{}aas\char`\"{} , 1 \}, \{ \char`\"{}sei\char`\"{} , 3 \}, \{ \char`\"{}pso\char`\"{} , 2 \}, \{ \char`\"{}owe\char`\"{} , 1 \}, \{ \char`\"{}oea\char`\"{} , 1 \}, \{ \char`\"{}rwh\char`\"{} , 2 \}, \{ \char`\"{}dmo\char`\"{} , 3 \}, \{ \char`\"{}isz\char`\"{} , 1 \}, \{ \char`\"{}edk\char`\"{} , 1 \}, \{ \char`\"{}asi\char`\"{} , 4 \}, \{ \char`\"{}rli\char`\"{} , 1 \}, \{ \char`\"{}loo\char`\"{} , 3 \}, \{ \char`\"{}gai\char`\"{} , 2 \}, \{ \char`\"{}rem\char`\"{} , 4 \}, \{ \char`\"{}aca\char`\"{} , 1 \}, \{ \char`\"{}thr\char`\"{} , 4 \}, \{ \char`\"{}mbe\char`\"{} , 9 \}, \{ \char`\"{}nno\char`\"{} , 1 \}, \{ \char`\"{}ldd\char`\"{} , 1 \}, \{ \char`\"{}mor\char`\"{} , 8 \}, \{ \char`\"{}iaa\char`\"{} , 1 \}, \{ \char`\"{}tas\char`\"{} , 2 \}, \{ \char`\"{}rom\char`\"{} , 5 \}, \{ \char`\"{}eee\char`\"{} , 1 \}, \{ \char`\"{}cin\char`\"{} , 1 \}, \{ \char`\"{}das\char`\"{} , 3 \}, \{ \char`\"{}ial\char`\"{} , 2 \}, \{ \char`\"{}tow\char`\"{} , 2 \}, \{ \char`\"{}ama\char`\"{} , 2 \}, \{ \char`\"{}isd\char`\"{} , 1 \}, \{ \char`\"{}twa\char`\"{} , 1 \}, \{ \char`\"{}kma\char`\"{} , 1 \}, \{ \char`\"{}gya\char`\"{} , 1 \}, \{ \char`\"{}bee\char`\"{} , 2 \}, \{ \char`\"{}eex\char`\"{} , 2 \}, \{ \char`\"{}rph\char`\"{} , 1 \}, \{ \char`\"{}ban\char`\"{} , 2 \}, \{ \char`\"{}oup\char`\"{} , 3 \}, \{ \char`\"{}ndw\char`\"{} , 1 \}, \{ \char`\"{}ion\char`\"{} , 33 \}, \{ \char`\"{}ups\char`\"{} , 2 \}, \{ \char`\"{}tog\char`\"{} , 3 \}, \{ \char`\"{}iss\char`\"{} , 2 \}, \{ \char`\"{}ims\char`\"{} , 1 \}, \{ \char`\"{}gre\char`\"{} , 2 \}, \{ \char`\"{}fal\char`\"{} , 1 \}, \{ \char`\"{}dca\char`\"{} , 2 \}, \{ \char`\"{}uci\char`\"{} , 1 \}, \{ \char`\"{}ved\char`\"{} , 1 \}, \{ \char`\"{}sla\char`\"{} , 1 \}, \{ \char`\"{}sbl\char`\"{} , 2 \}, \{ \char`\"{}ayt\char`\"{} , 1 \}, \{ \char`\"{}nre\char`\"{} , 1 \}, \{ \char`\"{}tri\char`\"{} , 1 \}, \{ \char`\"{}anb\char`\"{} , 3 \}, \{ \char`\"{}uts\char`\"{} , 1 \}, \{ \char`\"{}som\char`\"{} , 6 \}, \{ \char`\"{}far\char`\"{} , 1 \}, \{ \char`\"{}ect\char`\"{} , 6 \}, \{ \char`\"{}hms\char`\"{} , 1 \}, \{ \char`\"{}rat\char`\"{} , 4 \}, \{ \char`\"{}rsc\char`\"{} , 6 \}, \{ \char`\"{}ome\char`\"{} , 9 \}, \{ \char`\"{}fpl\char`\"{} , 1 \}, \{ \char`\"{}clu\char`\"{} , 3 \}, \{ \char`\"{}ant\char`\"{} , 1 \}, \{ \char`\"{}mal\char`\"{} , 1 \}, \{ \char`\"{}tol\char`\"{} , 1 \}, \{ \char`\"{}ofo\char`\"{} , 1 \}, \{ \char`\"{}tci\char`\"{} , 5 \}, \{ \char`\"{}ofc\char`\"{} , 7 \}, \{ \char`\"{}orm\char`\"{} , 3 \}, \{ \char`\"{}esp\char`\"{} , 7 \}, \{ \char`\"{}rok\char`\"{} , 2 \}, \{ \char`\"{}eac\char`\"{} , 6 \}, \{ \char`\"{}ers\char`\"{} , 68 \}, \{ \char`\"{}rmi\char`\"{} , 2 \}, \{ \char`\"{}ute\char`\"{} , 3 \}, \{ \char`\"{}bye\char`\"{} , 1 \}, \{ \char`\"{}laa\char`\"{} , 1 \}, \{ \char`\"{}ldc\char`\"{} , 1 \}, \{ \char`\"{}sfo\char`\"{} , 7 \}, \{ \char`\"{}eep\char`\"{} , 1 \}, \{ \char`\"{}kip\char`\"{} , 2 \}, \{ \char`\"{}lls\char`\"{} , 1 \}, \{ \char`\"{}ins\char`\"{} , 4 \}, \{ \char`\"{}ili\char`\"{} , 2 \}, \{ \char`\"{}iki\char`\"{} , 2 \}, \{ \char`\"{}pta\char`\"{} , 4 \}, \{ \char`\"{}ksl\char`\"{} , 1 \}, \{ \char`\"{}mni\char`\"{} , 1 \}, \{ \char`\"{}ise\char`\"{} , 2 \}, \{ \char`\"{}rou\char`\"{} , 5 \}, \{ \char`\"{}rei\char`\"{} , 2 \}, \{ \char`\"{}unc\char`\"{} , 2 \}, \{ \char`\"{}mea\char`\"{} , 1 \}, \{ \char`\"{}ein\char`\"{} , 5 \}, \{ \char`\"{}wev\char`\"{} , 1 \}, \{ \char`\"{}bec\char`\"{} , 5 \}, \{ \char`\"{}bby\char`\"{} , 1 \}, \{ \char`\"{}dmu\char`\"{} , 1 \}, \{ \char`\"{}uld\char`\"{} , 16 \}, \{ \char`\"{}org\char`\"{} , 2 \}, \{ \char`\"{}upt\char`\"{} , 1 \}, \{ \char`\"{}eat\char`\"{} , 9 \}, \{ \char`\"{}sno\char`\"{} , 2 \}, \{ \char`\"{}dso\char`\"{} , 1 \}, \{ \char`\"{}top\char`\"{} , 1 \}, \{ \char`\"{}stl\char`\"{} , 3 \}, \{ \char`\"{}tar\char`\"{} , 5 \}, \{ \char`\"{}rec\char`\"{} , 7 \}, \{ \char`\"{}hee\char`\"{} , 4 \}, \{ \char`\"{}num\char`\"{} , 9 \}, \{ \char`\"{}loc\char`\"{} , 1 \}, \{ \char`\"{}sua\char`\"{} , 1 \}, \{ \char`\"{}aly\char`\"{} , 5 \}, \{ \char`\"{}erl\char`\"{} , 3 \}, \{ \char`\"{}ldj\char`\"{} , 1 \}, \{ \char`\"{}zan\char`\"{} , 1 \}, \{ \char`\"{}ndh\char`\"{} , 2 \}, \{ \char`\"{}ftr\char`\"{} , 1 \}, \{ \char`\"{}ndn\char`\"{} , 1 \}, \{ \char`\"{}oft\char`\"{} , 20 \}, \{ \char`\"{}jul\char`\"{} , 1 \}, \{ \char`\"{}taw\char`\"{} , 1 \}, \{ \char`\"{}eis\char`\"{} , 9 \}, \{ \char`\"{}oma\char`\"{} , 1 \}, \{ \char`\"{}cri\char`\"{} , 1 \}, \{ \char`\"{}okl\char`\"{} , 2 \}, \{ \char`\"{}dis\char`\"{} , 3 \}, \{ \char`\"{}sba\char`\"{} , 1 \}, \{ \char`\"{}yle\char`\"{} , 2 \}, \{ \char`\"{}use\char`\"{} , 26 \}, \{ \char`\"{}owt\char`\"{} , 1 \}, \{ \char`\"{}ict\char`\"{} , 1 \}, \{ \char`\"{}cep\char`\"{} , 3 \}, \{ \char`\"{}yqu\char`\"{} , 1 \}, \{ \char`\"{}ras\char`\"{} , 1 \}, \{ \char`\"{}rcd\char`\"{} , 1 \}, \{ \char`\"{}ith\char`\"{} , 13 \}, \{ \char`\"{}etr\char`\"{} , 3 \}, \{ \char`\"{}cte\char`\"{} , 1 \}, \{ \char`\"{}ndm\char`\"{} , 2 \}, \{ \char`\"{}edh\char`\"{} , 1 \}, \{ \char`\"{}npo\char`\"{} , 1 \}, \{ \char`\"{}omn\char`\"{} , 1 \}, \{ \char`\"{}man\char`\"{} , 7 \}, \{ \char`\"{}usa\char`\"{} , 1 \}, \{ \char`\"{}oag\char`\"{} , 1 \}, \{ \char`\"{}but\char`\"{} , 6 \}, \{ \char`\"{}bly\char`\"{} , 1 \}, \{ \char`\"{}oal\char`\"{} , 1 \}, \{ \char`\"{}cti\char`\"{} , 1 \}, \{ \char`\"{}dge\char`\"{} , 1 \}, \{ \char`\"{}eap\char`\"{} , 1 \}, \{ \char`\"{}sie\char`\"{} , 1 \}, \{ \char`\"{}nya\char`\"{} , 1 \}, \{ \char`\"{}elo\char`\"{} , 2 \}, \{ \char`\"{}row\char`\"{} , 3 \}, \{ \char`\"{}eng\char`\"{} , 1 \}, \{ \char`\"{}szl\char`\"{} , 1 \}, \{ \char`\"{}obe\char`\"{} , 3 \}, \{ \char`\"{}tie\char`\"{} , 1 \}, \{ \char`\"{}ybu\char`\"{} , 1 \}, \{ \char`\"{}adv\char`\"{} , 2 \}, \{ \char`\"{}eta\char`\"{} , 1 \}, \{ \char`\"{}tse\char`\"{} , 1 \}, \{ \char`\"{}han\char`\"{} , 7 \}, \{ \char`\"{}ist\char`\"{} , 9 \}, \{ \char`\"{}gro\char`\"{} , 3 \}, \{ \char`\"{}opt\char`\"{} , 2 \}, \{ \char`\"{}byu\char`\"{} , 1 \}, \{ \char`\"{}ngs\char`\"{} , 2 \}, \{ \char`\"{}est\char`\"{} , 9 \}, \{ \char`\"{}lef\char`\"{} , 5 \}, \{ \char`\"{}hid\char`\"{} , 1 \}, \{ \char`\"{}sme\char`\"{} , 1 \}, \{ \char`\"{}ado\char`\"{} , 2 \}, \{ \char`\"{}sel\char`\"{} , 4 \}, \{ \char`\"{}hel\char`\"{} , 12 \}, \{ \char`\"{}apo\char`\"{} , 3 \}, \{ \char`\"{}ton\char`\"{} , 5 \}, \{ \char`\"{}dma\char`\"{} , 1 \}, \{ \char`\"{}dog\char`\"{} , 1 \}, \{ \char`\"{}icc\char`\"{} , 1 \}, \{ \char`\"{}rsb\char`\"{} , 1 \}, \{ \char`\"{}rob\char`\"{} , 1 \}, \{ \char`\"{}tam\char`\"{} , 2 \}, \{ \char`\"{}wou\char`\"{} , 13 \}, \{ \char`\"{}gto\char`\"{} , 4 \}, \{ \char`\"{}vig\char`\"{} , 5 \}, \{ \char`\"{}lys\char`\"{} , 6 \}, \{ \char`\"{}gne\char`\"{} , 1 \}, \{ \char`\"{}pea\char`\"{} , 4 \}, \{ \char`\"{}ntn\char`\"{} , 1 \}, \{ \char`\"{}rte\char`\"{} , 10 \}, \{ \char`\"{}oss\char`\"{} , 1 \}, \{ \char`\"{}sgr\char`\"{} , 1 \}, \{ \char`\"{}aan\char`\"{} , 2 \}, \{ \char`\"{}nyc\char`\"{} , 2 \}, \{ \char`\"{}abr\char`\"{} , 1 \}, \{ \char`\"{}mer\char`\"{} , 1 \}, \{ \char`\"{}acc\char`\"{} , 2 \}, \{ \char`\"{}can\char`\"{} , 6 \}, \{ \char`\"{}esg\char`\"{} , 1 \}, \{ \char`\"{}dsw\char`\"{} , 1 \}, \{ \char`\"{}dow\char`\"{} , 1 \}, \{ \char`\"{}otr\char`\"{} , 2 \}, \{ \char`\"{}erh\char`\"{} , 2 \}, \{ \char`\"{}asz\char`\"{} , 1 \}, \{ \char`\"{}ken\char`\"{} , 4 \}, \{ \char`\"{}eru\char`\"{} , 1 \}, \{ \char`\"{}mne\char`\"{} , 1 \}, \{ \char`\"{}jus\char`\"{} , 3 \}, \{ \char`\"{}dor\char`\"{} , 3 \}, \{ \char`\"{}nts\char`\"{} , 2 \}, \{ \char`\"{}uit\char`\"{} , 1 \}, \{ \char`\"{}hra\char`\"{} , 1 \}, \{ \char`\"{}erm\char`\"{} , 9 \}, \{ \char`\"{}ars\char`\"{} , 1 \}, \{ \char`\"{}pot\char`\"{} , 1 \}, \{ \char`\"{}nar\char`\"{} , 2 \}, \{ \char`\"{}chl\char`\"{} , 2 \}, \{ \char`\"{}pts\char`\"{} , 1 \}, \{ \char`\"{}isu\char`\"{} , 3 \}, \{ \char`\"{}gei\char`\"{} , 4 \}, \{ \char`\"{}goo\char`\"{} , 1 \}, \{ \char`\"{}isc\char`\"{} , 4 \}, \{ \char`\"{}isf\char`\"{} , 1 \}, \{ \char`\"{}edu\char`\"{} , 1 \}, \{ \char`\"{}eft\char`\"{} , 2 \}, \{ \char`\"{}uns\char`\"{} , 1 \}, \{ \char`\"{}pla\char`\"{} , 11 \}, \{ \char`\"{}ree\char`\"{} , 3 \}, \{ \char`\"{}nch\char`\"{} , 1 \}, \{ \char`\"{}nol\char`\"{} , 3 \}, \{ \char`\"{}yev\char`\"{} , 1 \}, \{ \char`\"{}utk\char`\"{} , 1 \}, \{ \char`\"{}ber\char`\"{} , 9 \}, \{ \char`\"{}iph\char`\"{} , 83 \}, \{ \char`\"{}vec\char`\"{} , 1 \}, \{ \char`\"{}owl\char`\"{} , 1 \}, \{ \char`\"{}cfi\char`\"{} , 1 \}, \{ \char`\"{}rio\char`\"{} , 2 \}, \{ \char`\"{}dhi\char`\"{} , 1 \}, \{ \char`\"{}sam\char`\"{} , 5 \}, \{ \char`\"{}dbu\char`\"{} , 1 \}, \{ \char`\"{}mpu\char`\"{} , 1 \}, \{ \char`\"{}mpr\char`\"{} , 1 \}, \{ \char`\"{}ope\char`\"{} , 4 \}, \{ \char`\"{}sfr\char`\"{} , 1 \}, \{ \char`\"{}tla\char`\"{} , 2 \}, \{ \char`\"{}ify\char`\"{} , 1 \}, \{ \char`\"{}gyw\char`\"{} , 1 \}, \{ \char`\"{}spa\char`\"{} , 3 \}, \{ \char`\"{}icu\char`\"{} , 1 \}, \{ \char`\"{}too\char`\"{} , 4 \}, \{ \char`\"{}ksu\char`\"{} , 1 \}, \{ \char`\"{}keu\char`\"{} , 1 \}, \{ \char`\"{}mus\char`\"{} , 1 \}, \{ \char`\"{}rci\char`\"{} , 5 \}, \{ \char`\"{}orb\char`\"{} , 2 \}, \{ \char`\"{}dwi\char`\"{} , 3 \}, \{ \char`\"{}enf\char`\"{} , 2 \}, \{ \char`\"{}cci\char`\"{} , 1 \}, \{ \char`\"{}rns\char`\"{} , 2 \}, \{ \char`\"{}ouw\char`\"{} , 6 \}, \{ \char`\"{}hno\char`\"{} , 2 \}, \{ \char`\"{}raa\char`\"{} , 1 \}, \{ \char`\"{}gri\char`\"{} , 1 \}, \{ \char`\"{}clo\char`\"{} , 1 \}, \{ \char`\"{}ngw\char`\"{} , 2 \}, \{ \char`\"{}nds\char`\"{} , 4 \}, \{ \char`\"{}rde\char`\"{} , 6 \}, \{ \char`\"{}eed\char`\"{} , 1 \}, \{ \char`\"{}sca\char`\"{} , 7 \}, \{ \char`\"{}ino\char`\"{} , 2 \}, \{ \char`\"{}ile\char`\"{} , 1 \}, \{ \char`\"{}s\char`\"{} , 1 \}, \{ \char`\"{}ufi\char`\"{} , 1 \}, \{ \char`\"{}edw\char`\"{} , 3 \}, \{ \char`\"{}ebe\char`\"{} , 1 \}, \{ \char`\"{}nyt\char`\"{} , 2 \}, \{ \char`\"{}cwo\char`\"{} , 1 \}, \{ \char`\"{}esb\char`\"{} , 1 \}, \{ \char`\"{}dme\char`\"{} , 1 \}, \{ \char`\"{}vea\char`\"{} , 4 \}, \{ \char`\"{}eif\char`\"{} , 4 \}, \{ \char`\"{}isn\char`\"{} , 2 \}, \{ \char`\"{}ere\char`\"{} , 33 \}, \{ \char`\"{}ool\char`\"{} , 1 \}, \{ \char`\"{}ecl\char`\"{} , 3 \}, \{ \char`\"{}rds\char`\"{} , 1 \}, \{ \char`\"{}asd\char`\"{} , 2 \}, \{ \char`\"{}rsi\char`\"{} , 11 \}, \{ \char`\"{}itf\char`\"{} , 1 \}, \{ \char`\"{}dev\char`\"{} , 3 \}, \{ \char`\"{}rro\char`\"{} , 1 \}, \{ \char`\"{}het\char`\"{} , 1 \}, \{ \char`\"{}rpl\char`\"{} , 1 \}, \{ \char`\"{}xts\char`\"{} , 1 \}, \{ \char`\"{}nin\char`\"{} , 4 \}, \{ \char`\"{}spo\char`\"{} , 20 \}, \{ \char`\"{}sle\char`\"{} , 2 \}, \{ \char`\"{}hat\char`\"{} , 14 \}, \{ \char`\"{}ksa\char`\"{} , 4 \}, \{ \char`\"{}fcl\char`\"{} , 5 \}, \{ \char`\"{}xta\char`\"{} , 7 \}, \{ \char`\"{}rre\char`\"{} , 4 \}, \{ \char`\"{}ntr\char`\"{} , 2 \}, \{ \char`\"{}nso\char`\"{} , 2 \}, \{ \char`\"{}ryp\char`\"{} , 9 \}, \{ \char`\"{}log\char`\"{} , 2 \}, \{ \char`\"{}ole\char`\"{} , 2 \}, \{ \char`\"{}rdc\char`\"{} , 1 \}, \{ \char`\"{}dus\char`\"{} , 3 \}, \{ \char`\"{}ala\char`\"{} , 3 \}, \{ \char`\"{}rle\char`\"{} , 4 \}, \{ \char`\"{}mos\char`\"{} , 2 \}, \{ \char`\"{}rsl\char`\"{} , 1 \}, \{ \char`\"{}syl\char`\"{} , 2 \}, \{ \char`\"{}gin\char`\"{} , 5 \}, \{ \char`\"{}odm\char`\"{} , 1 \}, \{ \char`\"{}rsm\char`\"{} , 1 \}, \{ \char`\"{}rdf\char`\"{} , 1 \}, \{ \char`\"{}nha\char`\"{} , 1 \}, \{ \char`\"{}atr\char`\"{} , 1 \}, \{ \char`\"{}anf\char`\"{} , 1 \}, \{ \char`\"{}are\char`\"{} , 29 \}, \{ \char`\"{}let\char`\"{} , 45 \}, \{ \char`\"{}rof\char`\"{} , 5 \}, \{ \char`\"{}imp\char`\"{} , 6 \}, \{ \char`\"{}gra\char`\"{} , 3 \}, \{ \char`\"{}suf\char`\"{} , 1 \}, \{ \char`\"{}dbe\char`\"{} , 3 \}, \{ \char`\"{}oke\char`\"{} , 2 \}, \{ \char`\"{}ueh\char`\"{} , 1 \}, \{ \char`\"{}ite\char`\"{} , 6 \}, \{ \char`\"{}elv\char`\"{} , 1 \}, \{ \char`\"{}wte\char`\"{} , 1 \}, \{ \char`\"{}alt\char`\"{} , 2 \}, \{ \char`\"{}toe\char`\"{} , 7 \}, \{ \char`\"{}tht\char`\"{} , 4 \}, \{ \char`\"{}emn\char`\"{} , 1 \}, \{ \char`\"{}lle\char`\"{} , 4 \}, \{ \char`\"{}eya\char`\"{} , 2 \}, \{ \char`\"{}nga\char`\"{} , 1 \}, \{ \char`\"{}cie\char`\"{} , 1 \}, \{ \char`\"{}itl\char`\"{} , 1 \}, \{ \char`\"{}vic\char`\"{} , 1 \}, \{ \char`\"{}yha\char`\"{} , 1 \}, \{ \char`\"{}ksf\char`\"{} , 1 \}, \{ \char`\"{}mec\char`\"{} , 4 \}, \{ \char`\"{}amp\char`\"{} , 17 \}, \{ \char`\"{}tag\char`\"{} , 1 \}, \{ \char`\"{}nci\char`\"{} , 26 \}, \{ \char`\"{}nsc\char`\"{} , 1 \}, \{ \char`\"{}ysp\char`\"{} , 2 \}, \{ \char`\"{}unt\char`\"{} , 2 \}, \{ \char`\"{}lyk\char`\"{} , 1 \}, \{ \char`\"{}geu\char`\"{} , 1 \}, \{ \char`\"{}ics\char`\"{} , 3 \}, \{ \char`\"{}lon\char`\"{} , 1 \}, \{ \char`\"{}seg\char`\"{} , 1 \}, \{ \char`\"{}ara\char`\"{} , 2 \}, \{ \char`\"{}fas\char`\"{} , 1 \}, \{ \char`\"{}ofl\char`\"{} , 4 \}, \{ \char`\"{}yam\char`\"{} , 1 \}, \{ \char`\"{}lop\char`\"{} , 2 \}, \{ \char`\"{}mon\char`\"{} , 3 \}, \{ \char`\"{}ofm\char`\"{} , 3 \}, \{ \char`\"{}nti\char`\"{} , 2 \}, \{ \char`\"{}tun\char`\"{} , 2 \}, \{ \char`\"{}yab\char`\"{} , 1 \}, \{ \char`\"{}odu\char`\"{} , 2 \}, \{ \char`\"{}onb\char`\"{} , 1 \}, \{ \char`\"{}wer\char`\"{} , 6 \}, \{ \char`\"{}blu\char`\"{} , 2 \}, \{ \char`\"{}tdo\char`\"{} , 1 \}, \{ \char`\"{}esk\char`\"{} , 2 \}, \{ \char`\"{}non\char`\"{} , 1 \}, \{ \char`\"{}ige\char`\"{} , 4 \}, \{ \char`\"{}ora\char`\"{} , 3 \}, \{ \char`\"{}ecr\char`\"{} , 2 \}, \{ \char`\"{}deb\char`\"{} , 2 \}, \{ \char`\"{}nor\char`\"{} , 2 \}, \{ \char`\"{}ftd\char`\"{} , 1 \}, \{ \char`\"{}pac\char`\"{} , 3 \}, \{ \char`\"{}rbu\char`\"{} , 1 \}, \{ \char`\"{}eop\char`\"{} , 2 \}, \{ \char`\"{}str\char`\"{} , 5 \}, \{ \char`\"{}nat\char`\"{} , 4 \}, \{ \char`\"{}fco\char`\"{} , 1 \}, \{ \char`\"{}isk\char`\"{} , 1 \}, \{ \char`\"{}yre\char`\"{} , 2 \}, \{ \char`\"{}lyi\char`\"{} , 1 \}, \{ \char`\"{}imi\char`\"{} , 1 \}, \{ \char`\"{}lik\char`\"{} , 3 \}, \{ \char`\"{}inl\char`\"{} , 1 \}, \{ \char`\"{}dif\char`\"{} , 4 \}, \{ \char`\"{}chw\char`\"{} , 1 \}, \{ \char`\"{}ici\char`\"{} , 1 \}, \{ \char`\"{}ond\char`\"{} , 4 \}, \{ \char`\"{}ytr\char`\"{} , 3 \}, \{ \char`\"{}ure\char`\"{} , 2 \}, \{ \char`\"{}hre\char`\"{} , 2 \}, \{ \char`\"{}oes\char`\"{} , 1 \}, \{ \char`\"{}hed\char`\"{} , 2 \}, \{ \char`\"{}ell\char`\"{} , 5 \}, \{ \char`\"{}det\char`\"{} , 6 \}, \{ \char`\"{}muc\char`\"{} , 4 \}, \{ \char`\"{}llo\char`\"{} , 1 \}, \{ \char`\"{}ywo\char`\"{} , 10 \}, \{ \char`\"{}sju\char`\"{} , 2 \}, \{ \char`\"{}ast\char`\"{} , 6 \}, \{ \char`\"{}umn\char`\"{} , 7 \}, \{ \char`\"{}pit\char`\"{} , 1 \}, \{ \char`\"{}esw\char`\"{} , 1 \}, \{ \char`\"{}jum\char`\"{} , 1 \}, \{ \char`\"{}sdo\char`\"{} , 2 \}, \{ \char`\"{}vol\char`\"{} , 4 \}, \{ \char`\"{}uta\char`\"{} , 5 \}, \{ \char`\"{}zar\char`\"{} , 1 \}, \{ \char`\"{}lti\char`\"{} , 2 \}, \{ \char`\"{}ogy\char`\"{} , 2 \}, \{ \char`\"{}bis\char`\"{} , 1 \}, \{ \char`\"{}tch\char`\"{} , 1 \}, \{ \char`\"{}sky\char`\"{} , 2 \}, \{ \char`\"{}kin\char`\"{} , 1 \}, \{ \char`\"{}lyb\char`\"{} , 1 \}, \{ \char`\"{}npl\char`\"{} , 2 \}, \{ \char`\"{}pul\char`\"{} , 1 \}, \{ \char`\"{}lke\char`\"{} , 2 \}, \{ \char`\"{}ini\char`\"{} , 1 \}, \{ \char`\"{}arc\char`\"{} , 5 \}, \{ \char`\"{}afr\char`\"{} , 1 \}, \{ \char`\"{}ova\char`\"{} , 1 \}, \{ \char`\"{}ldn\char`\"{} , 2 \}, \{ \char`\"{}fer\char`\"{} , 5 \}, \{ \char`\"{}van\char`\"{} , 2 \}, \{ \char`\"{}emi\char`\"{} , 3 \}, \{ \char`\"{}ncr\char`\"{} , 7 \}, \{ \char`\"{}sto\char`\"{} , 9 \}, \{ \char`\"{}gmu\char`\"{} , 1 \}, \{ \char`\"{}erb\char`\"{} , 2 \}, \{ \char`\"{}yof\char`\"{} , 1 \}, \{ \char`\"{}egr\char`\"{} , 1 \}, \{ \char`\"{}eno\char`\"{} , 1 \}, \{ \char`\"{}lud\char`\"{} , 3 \}, \{ \char`\"{}chh\char`\"{} , 1 \}, \{ \char`\"{}ysi\char`\"{} , 6 \}, \{ \char`\"{}res\char`\"{} , 19 \}, \{ \char`\"{}kno\char`\"{} , 5 \}, \{ \char`\"{}ced\char`\"{} , 6 \}, \{ \char`\"{}owy\char`\"{} , 2 \}, \{ \char`\"{}esq\char`\"{} , 4 \}, \{ \char`\"{}fci\char`\"{} , 2 \}, \{ \char`\"{}esr\char`\"{} , 2 \}, \{ \char`\"{}ien\char`\"{} , 1 \}, \{ \char`\"{}irs\char`\"{} , 7 \}, \{ \char`\"{}ari\char`\"{} , 1 \}, \{ \char`\"{}tha\char`\"{} , 13 \}, \{ \char`\"{}tfo\char`\"{} , 3 \}, \{ \char`\"{}byt\char`\"{} , 5 \}, \{ \char`\"{}ren\char`\"{} , 7 \}, \{ \char`\"{}ote\char`\"{} , 1 \}, \{ \char`\"{}nyo\char`\"{} , 1 \}, \{ \char`\"{}kli\char`\"{} , 2 \}, \{ \char`\"{}arg\char`\"{} , 1 \}, \{ \char`\"{}sli\char`\"{} , 2 \}, \{ \char`\"{}eai\char`\"{} , 2 \}, \{ \char`\"{}tiv\char`\"{} , 2 \}, \{ \char`\"{}nic\char`\"{} , 3 \}, \{ \char`\"{}vee\char`\"{} , 1 \}, \{ \char`\"{}tho\char`\"{} , 7 \}, \{ \char`\"{}ism\char`\"{} , 3 \}, \{ \char`\"{}ens\char`\"{} , 3 \}, \{ \char`\"{}his\char`\"{} , 13 \}, \{ \char`\"{}uff\char`\"{} , 1 \}, \{ \char`\"{}ste\char`\"{} , 6 \}, \{ \char`\"{}yme\char`\"{} , 1 \}, \{ \char`\"{}def\char`\"{} , 1 \}, \{ \char`\"{}var\char`\"{} , 1 \}, \{ \char`\"{}sna\char`\"{} , 1 \}, \{ \char`\"{}mpl\char`\"{} , 23 \}, \{ \char`\"{}dup\char`\"{} , 1 \}, \{ \char`\"{}yal\char`\"{} , 3 \}, \{ \char`\"{}esy\char`\"{} , 3 \}, \{ \char`\"{}rov\char`\"{} , 1 \}, \{ \char`\"{}rha\char`\"{} , 2 \}, \{ \char`\"{}ati\char`\"{} , 17 \}, \{ \char`\"{}air\char`\"{} , 2 \}, \{ \char`\"{}thc\char`\"{} , 2 \}, \{ \char`\"{}dre\char`\"{} , 2 \}, \{ \char`\"{}ani\char`\"{} , 4 \}, \{ \char`\"{}try\char`\"{} , 1 \}, \{ \char`\"{}dco\char`\"{} , 1 \}, \{ \char`\"{}hma\char`\"{} , 1 \}, \{ \char`\"{}oks\char`\"{} , 1 \}, \{ \char`\"{}ake\char`\"{} , 11 \}, \{ \char`\"{}hwe\char`\"{} , 1 \}, \{ \char`\"{}ume\char`\"{} , 1 \}, \{ \char`\"{}lal\char`\"{} , 1 \}, \{ \char`\"{}alp\char`\"{} , 28 \}, \{ \char`\"{}iex\char`\"{} , 1 \}, \{ \char`\"{}oly\char`\"{} , 3 \}, \{ \char`\"{}tib\char`\"{} , 3 \}, \{ \char`\"{}irp\char`\"{} , 1 \}, \{ \char`\"{}acl\char`\"{} , 1 \}, \{ \char`\"{}sas\char`\"{} , 4 \}, \{ \char`\"{}oml\char`\"{} , 1 \}, \{ \char`\"{}nsl\char`\"{} , 1 \}, \{ \char`\"{}cew\char`\"{} , 1 \}, \{ \char`\"{}che\char`\"{} , 3 \}, \{ \char`\"{}ipe\char`\"{} , 2 \}, \{ \char`\"{}ngi\char`\"{} , 2 \}, \{ \char`\"{}out\char`\"{} , 8 \}, \{ \char`\"{}anc\char`\"{} , 3 \}, \{ \char`\"{}adi\char`\"{} , 1 \}, \{ \char`\"{}eve\char`\"{} , 12 \}, \{ \char`\"{}nyn\char`\"{} , 1 \}, \{ \char`\"{}lte\char`\"{} , 2 \}, \{ \char`\"{}fwo\char`\"{} , 1 \}, \{ \char`\"{}ter\char`\"{} , 47 \}, \{ \char`\"{}ges\char`\"{} , 2 \}, \{ \char`\"{}tsl\char`\"{} , 1 \}, \{ \char`\"{}sym\char`\"{} , 4 \}, \{ \char`\"{}sal\char`\"{} , 4 \}, \{ \char`\"{}pha\char`\"{} , 27 \}, \{ \char`\"{}ius\char`\"{} , 1 \}, \{ \char`\"{}tom\char`\"{} , 1 \}, \{ \char`\"{}iro\char`\"{} , 4 \}, \{ \char`\"{}ocr\char`\"{} , 2 \}, \{ \char`\"{}ese\char`\"{} , 11 \}, \{ \char`\"{}hin\char`\"{} , 6 \}, \{ \char`\"{}ind\char`\"{} , 1 \}, \{ \char`\"{}ech\char`\"{} , 10 \}, \{ \char`\"{}lsf\char`\"{} , 2 \}, \{ \char`\"{}igh\char`\"{} , 3 \}, \{ \char`\"{}oul\char`\"{} , 16 \}, \{ \char`\"{}aza\char`\"{} , 1 \}, \{ \char`\"{}sde\char`\"{} , 3 \}, \{ \char`\"{}dth\char`\"{} , 15 \}, \{ \char`\"{}ldw\char`\"{} , 1 \}, \{ \char`\"{}mak\char`\"{} , 2 \}, \{ \char`\"{}eby\char`\"{} , 1 \}, \{ \char`\"{}dwe\char`\"{} , 1 \}, \{ \char`\"{}omw\char`\"{} , 1 \}, \{ \char`\"{}tod\char`\"{} , 4 \}, \{ \char`\"{}dwr\char`\"{} , 1 \}, \{ \char`\"{}tre\char`\"{} , 2 \}, \{ \char`\"{}uso\char`\"{} , 1 \}, \{ \char`\"{}ofw\char`\"{} , 1 \}, \{ \char`\"{}fre\char`\"{} , 8 \}, \{ \char`\"{}ept\char`\"{} , 4 \}, \{ \char`\"{}reo\char`\"{} , 4 \}, \{ \char`\"{}asw\char`\"{} , 1 \}, \{ \char`\"{}lso\char`\"{} , 6 \}, \{ \char`\"{}hks\char`\"{} , 1 \}, \{ \char`\"{}tsi\char`\"{} , 1 \}, \{ \char`\"{}atw\char`\"{} , 1 \}, \{ \char`\"{}oug\char`\"{} , 2 \}, \{ \char`\"{}hif\char`\"{} , 1 \}, \{ \char`\"{}lty\char`\"{} , 1 \}, \{ \char`\"{}ria\char`\"{} , 1 \}, \{ \char`\"{}cwe\char`\"{} , 1 \}, \{ \char`\"{}llb\char`\"{} , 1 \}, \{ \char`\"{}end\char`\"{} , 2 \}, \{ \char`\"{}tev\char`\"{} , 1 \}, \{ \char`\"{}chm\char`\"{} , 2 \}, \{ \char`\"{}ono\char`\"{} , 3 \}, \{ \char`\"{}xty\char`\"{} , 1 \}, \{ \char`\"{}ela\char`\"{} , 2 \}, \{ \char`\"{}ple\char`\"{} , 27 \}, \{ \char`\"{}oth\char`\"{} , 13 \}, \{ \char`\"{}rss\char`\"{} , 7 \}, \{ \char`\"{}sea\char`\"{} , 2 \}, \{ \char`\"{}cei\char`\"{} , 1 \}, \{ \char`\"{}eit\char`\"{} , 1 \}, \{ \char`\"{}wth\char`\"{} , 1 \}, \{ \char`\"{}edo\char`\"{} , 7 \}, \{ \char`\"{}eni\char`\"{} , 5 \}, \{ \char`\"{}eou\char`\"{} , 1 \}, \{ \char`\"{}tte\char`\"{} , 38 \}, \{ \char`\"{}nen\char`\"{} , 1 \}, \{ \char`\"{}ouh\char`\"{} , 1 \}, \{ \char`\"{}dba\char`\"{} , 1 \}, \{ \char`\"{}cfo\char`\"{} , 2 \}, \{ \char`\"{}rmu\char`\"{} , 1 \}, \{ \char`\"{}emu\char`\"{} , 3 \}, \{ \char`\"{}uth\char`\"{} , 1 \}, \{ \char`\"{}how\char`\"{} , 3 \}, \{ \char`\"{}wid\char`\"{} , 1 \}, \{ \char`\"{}igm\char`\"{} , 1 \}, \{ \char`\"{}owh\char`\"{} , 1 \}, \{ \char`\"{}whe\char`\"{} , 5 \}, \{ \char`\"{}mbo\char`\"{} , 4 \}, \{ \char`\"{}ald\char`\"{} , 1 \}, \{ \char`\"{}woe\char`\"{} , 1 \}, \{ \char`\"{}ndd\char`\"{} , 3 \}, \{ \char`\"{}arl\char`\"{} , 1 \}, \{ \char`\"{}div\char`\"{} , 1 \}, \{ \char`\"{}tby\char`\"{} , 1 \}, \{ \char`\"{}rce\char`\"{} , 2 \}, \{ \char`\"{}enw\char`\"{} , 3 \}, \{ \char`\"{}ows\char`\"{} , 3 \}, \{ \char`\"{}oge\char`\"{} , 1 \}, \{ \char`\"{}eva\char`\"{} , 1 \}, \{ \char`\"{}ead\char`\"{} , 5 \}, \{ \char`\"{}que\char`\"{} , 7 \}, \{ \char`\"{}rti\char`\"{} , 6 \}, \{ \char`\"{}gem\char`\"{} , 2 \}, \{ \char`\"{}mbl\char`\"{} , 2 \}, \{ \char`\"{}ymb\char`\"{} , 4 \}, \{ \char`\"{}ceb\char`\"{} , 1 \}, \{ \char`\"{}iat\char`\"{} , 1 \}, \{ \char`\"{}eri\char`\"{} , 9 \}, \{ \char`\"{}mse\char`\"{} , 2 \}, \{ \char`\"{}yna\char`\"{} , 1 \}, \{ \char`\"{}der\char`\"{} , 17 \}, \{ \char`\"{}eot\char`\"{} , 1 \}, \{ \char`\"{}elf\char`\"{} , 2 \}, \{ \char`\"{}hos\char`\"{} , 3 \}, \{ \char`\"{}lel\char`\"{} , 1 \}, \{ \char`\"{}nwh\char`\"{} , 1 \}, \{ \char`\"{}dte\char`\"{} , 1 \}, \{ \char`\"{}eun\char`\"{} , 1 \}, \{ \char`\"{}isj\char`\"{} , 1 \}, \{ \char`\"{}oba\char`\"{} , 1 \}, \{ \char`\"{}ota\char`\"{} , 1 \}, \{ \char`\"{}lli\char`\"{} , 1 \}, \{ \char`\"{}lda\char`\"{} , 2 \}, \{ \char`\"{}hym\char`\"{} , 1 \}, \{ \char`\"{}lic\char`\"{} , 2 \}, \{ \char`\"{}hep\char`\"{} , 3 \}, \{ \char`\"{}ewi\char`\"{} , 2 \}, \{ \char`\"{}tsu\char`\"{} , 1 \}, \{ \char`\"{}nfr\char`\"{} , 1 \}, \{ \char`\"{}oro\char`\"{} , 4 \}, \{ \char`\"{}cis\char`\"{} , 2 \}, \{ \char`\"{}hth\char`\"{} , 6 \}, \{ \char`\"{}wne\char`\"{} , 1 \}, \{ \char`\"{}dlo\char`\"{} , 2 \}, \{ \char`\"{}nof\char`\"{} , 1 \}, \{ \char`\"{}cel\char`\"{} , 1 \}, \{ \char`\"{}mns\char`\"{} , 2 \}, \{ \char`\"{}ged\char`\"{} , 2 \}, \{ \char`\"{}dfr\char`\"{} , 1 \}, \{ \char`\"{}eca\char`\"{} , 6 \}, \{ \char`\"{}eel\char`\"{} , 1 \}, \{ \char`\"{}ous\char`\"{} , 4 \}, \{ \char`\"{}sec\char`\"{} , 10 \}, \{ \char`\"{}ner\char`\"{} , 5 \}, \{ \char`\"{}lit\char`\"{} , 2 \}, \{ \char`\"{}sob\char`\"{} , 2 \}, \{ \char`\"{}mri\char`\"{} , 1 \}, \{ \char`\"{}eak\char`\"{} , 5 \}, \{ \char`\"{}dbb\char`\"{} , 1 \}, \{ \char`\"{}was\char`\"{} , 3 \}, \{ \char`\"{}hmo\char`\"{} , 1 \}, \{ \char`\"{}pol\char`\"{} , 4 \}, \{ \char`\"{}fyo\char`\"{} , 1 \}, \{ \char`\"{}mno\char`\"{} , 1 \}, \{ \char`\"{}isi\char`\"{} , 6 \}, \{ \char`\"{}xte\char`\"{} , 2 \}, \{ \char`\"{}put\char`\"{} , 1 \}, \{ \char`\"{}len\char`\"{} , 2 \}, \{ \char`\"{}esa\char`\"{} , 18 \}, \{ \char`\"{}orl\char`\"{} , 2 \}, \{ \char`\"{}ett\char`\"{} , 41 \}, \{ \char`\"{}lde\char`\"{} , 2 \}, \{ \char`\"{}efr\char`\"{} , 4 \}, \{ \char`\"{}sci\char`\"{} , 2 \}, \{ \char`\"{}hro\char`\"{} , 2 \}, \{ \char`\"{}maw\char`\"{} , 1 \}, \{ \char`\"{}hle\char`\"{} , 2 \}, \{ \char`\"{}toh\char`\"{} , 1 \}, \{ \char`\"{}awe\char`\"{} , 1 \}, \{ \char`\"{}eke\char`\"{} , 8 \}, \{ \char`\"{}dac\char`\"{} , 1 \}, \{ \char`\"{}met\char`\"{} , 9 \}, \{ \char`\"{}stt\char`\"{} , 1 \}, \{ \char`\"{}shg\char`\"{} , 1 \}, \{ \char`\"{}ths\char`\"{} , 3 \}, \{ \char`\"{}sap\char`\"{} , 1 \}, \{ \char`\"{}eju\char`\"{} , 1 \}, \{ \char`\"{}teo\char`\"{} , 2 \}, \{ \char`\"{}pre\char`\"{} , 5 \}, \{ \char`\"{}yci\char`\"{} , 1 \}, \{ \char`\"{}uar\char`\"{} , 4 \}, \{ \char`\"{}sbi\char`\"{} , 1 \}, \{ \char`\"{}uha\char`\"{} , 1 \}, \{ \char`\"{}thi\char`\"{} , 13 \}, \{ \char`\"{}rth\char`\"{} , 12 \}, \{ \char`\"{}rgr\char`\"{} , 2 \}, \{ \char`\"{}bei\char`\"{} , 2 \}, \{ \char`\"{}tma\char`\"{} , 1 \}, \{ \char`\"{}men\char`\"{} , 2 \}, \{ \char`\"{}tle\char`\"{} , 6 \}, \{ \char`\"{}eag\char`\"{} , 2 \}, \{ \char`\"{}ris\char`\"{} , 4 \}, \{ \char`\"{}tan\char`\"{} , 12 \}, \{ \char`\"{}ort\char`\"{} , 6 \}, \{ \char`\"{}hse\char`\"{} , 1 \}, \{ \char`\"{}fap\char`\"{} , 1 \}, \{ \char`\"{}ywa\char`\"{} , 1 \}, \{ \char`\"{}kci\char`\"{} , 1 \}, \{ \char`\"{}dst\char`\"{} , 1 \}, \{ \char`\"{}leo\char`\"{} , 7 \}, \{ \char`\"{}lfc\char`\"{} , 1 \}, \{ \char`\"{}wik\char`\"{} , 2 \}, \{ \char`\"{}uch\char`\"{} , 11 \}, \{ \char`\"{}wci\char`\"{} , 1 \}, \{ \char`\"{}oha\char`\"{} , 1 \}, \{ \char`\"{}hic\char`\"{} , 5 \}, \{ \char`\"{}lin\char`\"{} , 5 \}, \{ \char`\"{}lbe\char`\"{} , 1 \}, \{ \char`\"{}tkn\char`\"{} , 1 \}, \{ \char`\"{}eth\char`\"{} , 32 \}, \{ \char`\"{}saz\char`\"{} , 1 \}, \{ \char`\"{}nwo\char`\"{} , 2 \}, \{ \char`\"{}xam\char`\"{} , 18 \}, \{ \char`\"{}dei\char`\"{} , 2 \}, \{ \char`\"{}edm\char`\"{} , 3 \}, \{ \char`\"{}beu\char`\"{} , 3 \}, \{ \char`\"{}rop\char`\"{} , 1 \}, \{ \char`\"{}oac\char`\"{} , 1 \}, \{ \char`\"{}xal\char`\"{} , 1 \}, \{ \char`\"{}eda\char`\"{} , 1 \}, \{ \char`\"{}hei\char`\"{} , 5 \}, \{ \char`\"{}avi\char`\"{} , 3 \}, \{ \char`\"{}hta\char`\"{} , 1 \}, \{ \char`\"{}ofa\char`\"{} , 2 \}, \{ \char`\"{}ike\char`\"{} , 3 \}, \{ \char`\"{}par\char`\"{} , 2 \}, \{ \char`\"{}opo\char`\"{} , 1 \}, \{ \char`\"{}lkn\char`\"{} , 1 \}, \{ \char`\"{}con\char`\"{} , 2 \}, \{ \char`\"{}eew\char`\"{} , 1 \}, \{ \char`\"{}utn\char`\"{} , 1 \}, \{ \char`\"{}tnu\char`\"{} , 1 \}, \{ \char`\"{}ack\char`\"{} , 14 \}, \{ \char`\"{}ric\char`\"{} , 3 \}, \{ \char`\"{}vio\char`\"{} , 1 \}, \{ \char`\"{}mem\char`\"{} , 2 \}, \{ \char`\"{}pen\char`\"{} , 1 \}, \{ \char`\"{}edr\char`\"{} , 1 \}, \{ \char`\"{}tes\char`\"{} , 1 \}, \{ \char`\"{}rig\char`\"{} , 6 \}, \{ \char`\"{}dsy\char`\"{} , 1 \}, \{ \char`\"{}dia\char`\"{} , 5 \}, \{ \char`\"{}fus\char`\"{} , 1 \}, \{ \char`\"{}mat\char`\"{} , 2 \}, \{ \char`\"{}yxy\char`\"{} , 1 \}, \{ \char`\"{}dsu\char`\"{} , 1 \}, \{ \char`\"{}edl\char`\"{} , 1 \}, \{ \char`\"{}odf\char`\"{} , 3 \}, \{ \char`\"{}sco\char`\"{} , 1 \}, \{ \char`\"{}dch\char`\"{} , 1 \}, \{ \char`\"{}opl\char`\"{} , 2 \}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Основной файл 
+
+
+
+\subsection{Функции}
+\mbox{\Hypertarget{choph_8cpp_a65b82dfcf5d0f2ad7dd89dba6073638b}\label{choph_8cpp_a65b82dfcf5d0f2ad7dd89dba6073638b}} 
+\index{choph.\+cpp@{choph.\+cpp}!alphabetcorrelation@{alphabetcorrelation}}
+\index{alphabetcorrelation@{alphabetcorrelation}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{alphabetcorrelation()}{alphabetcorrelation()}}
+{\footnotesize\ttfamily double alphabetcorrelation (\begin{DoxyParamCaption}\item[{map$<$ char, double $>$}]{msg\+\_\+frequency }\end{DoxyParamCaption})}
+
+Корреляция алфавита 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg\+\_\+frequency} & сообщение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в breakcaesar().
+
+\mbox{\Hypertarget{choph_8cpp_a7a2e470bc9542fcb1ff14b14455c9515}\label{choph_8cpp_a7a2e470bc9542fcb1ff14b14455c9515}} 
+\index{choph.\+cpp@{choph.\+cpp}!breakcaesar@{breakcaesar}}
+\index{breakcaesar@{breakcaesar}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{breakcaesar()}{breakcaesar()}}
+{\footnotesize\ttfamily char breakcaesar (\begin{DoxyParamCaption}\item[{string}]{chiphertext }\end{DoxyParamCaption})}
+
+Взлом цезаря 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em chiphertext} & зашифрованное сообщение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в recovervigenerekey().
+
+\mbox{\Hypertarget{choph_8cpp_ab62035af87109c24dd1ad405fa110a22}\label{choph_8cpp_ab62035af87109c24dd1ad405fa110a22}} 
+\index{choph.\+cpp@{choph.\+cpp}!caesar\+\_\+decrypt@{caesar\+\_\+decrypt}}
+\index{caesar\+\_\+decrypt@{caesar\+\_\+decrypt}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{caesar\+\_\+decrypt()}{caesar\_decrypt()}}
+{\footnotesize\ttfamily string caesar\+\_\+decrypt (\begin{DoxyParamCaption}\item[{string}]{chiphertext,  }\item[{uint}]{step }\end{DoxyParamCaption})}
+
+Расшифровка цезаря 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em chiphertext} & зашифрованное сообщение \\
+\hline
+\mbox{\tt in}  & {\em step} & шаг \\
+\hline
+\end{DoxyParams}
+
+
+Используется в breakcaesar().
+
+\mbox{\Hypertarget{choph_8cpp_aa9366e01e655f794dc68ca1a288d0e7e}\label{choph_8cpp_aa9366e01e655f794dc68ca1a288d0e7e}} 
+\index{choph.\+cpp@{choph.\+cpp}!columnrepresentation@{columnrepresentation}}
+\index{columnrepresentation@{columnrepresentation}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{columnrepresentation()}{columnrepresentation()}}
+{\footnotesize\ttfamily string columnrepresentation (\begin{DoxyParamCaption}\item[{string}]{msg,  }\item[{uint}]{step,  }\item[{uint}]{start }\end{DoxyParamCaption})}
+
+Представление в виде столбцов 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg} & сообщение \\
+\hline
+\mbox{\tt in}  & {\em step} & шаг \\
+\hline
+\mbox{\tt in}  & {\em start} & старт \\
+\hline
+\end{DoxyParams}
+
+
+Используется в recovervigenerekey().
+
+\mbox{\Hypertarget{choph_8cpp_ae50a28be55a088be549b7a16a671c1f7}\label{choph_8cpp_ae50a28be55a088be549b7a16a671c1f7}} 
+\index{choph.\+cpp@{choph.\+cpp}!decode\+\_\+rev@{decode\+\_\+rev}}
+\index{decode\+\_\+rev@{decode\+\_\+rev}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{decode\+\_\+rev()}{decode\_rev()}}
+{\footnotesize\ttfamily void decode\+\_\+rev (\begin{DoxyParamCaption}\item[{ulong $\ast$}]{output,  }\item[{unsigned char $\ast$}]{input,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+декодирование char в ulong в обратном порядке бит 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt out}  & {\em output} & результат \\
+\hline
+\mbox{\tt in}  & {\em input} & исходный ulong \\
+\hline
+\mbox{\tt in}  & {\em len} & размер \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+break(), des\+\_\+decrypt\+\_\+ecb() и des\+\_\+encrypt\+\_\+ecb().
+
+\mbox{\Hypertarget{choph_8cpp_a5be68b9cf00d63e2d6f392b4d98ec8d2}\label{choph_8cpp_a5be68b9cf00d63e2d6f392b4d98ec8d2}} 
+\index{choph.\+cpp@{choph.\+cpp}!des\+\_\+break@{des\+\_\+break}}
+\index{des\+\_\+break@{des\+\_\+break}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{des\+\_\+break()}{des\_break()}}
+{\footnotesize\ttfamily ulong des\+\_\+break (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{src,  }\item[{ulong}]{srclen,  }\item[{uchar $\ast$}]{dst }\end{DoxyParamCaption})}
+
+Взлом des 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em src} & входные данные \\
+\hline
+\mbox{\tt in}  & {\em srclen} & длина входных данных \\
+\hline
+\mbox{\tt out}  & {\em dst} & назначение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_a8ab508dc9c6552a6bab041b90c9efc3f}\label{choph_8cpp_a8ab508dc9c6552a6bab041b90c9efc3f}} 
+\index{choph.\+cpp@{choph.\+cpp}!des\+\_\+create\+\_\+keys@{des\+\_\+create\+\_\+keys}}
+\index{des\+\_\+create\+\_\+keys@{des\+\_\+create\+\_\+keys}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{des\+\_\+create\+\_\+keys()}{des\_create\_keys()}}
+{\footnotesize\ttfamily void des\+\_\+create\+\_\+keys (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{src,  }\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+Основное (раундовое) преобразование 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em src} & пароль \\
+\hline
+\mbox{\tt out}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+decrypt\+\_\+ecb() и des\+\_\+encrypt\+\_\+ecb().
+
+\mbox{\Hypertarget{choph_8cpp_a35d2ed8fc7946e569676ed266b86fa61}\label{choph_8cpp_a35d2ed8fc7946e569676ed266b86fa61}} 
+\index{choph.\+cpp@{choph.\+cpp}!des\+\_\+decrypt\+\_\+block@{des\+\_\+decrypt\+\_\+block}}
+\index{des\+\_\+decrypt\+\_\+block@{des\+\_\+decrypt\+\_\+block}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{des\+\_\+decrypt\+\_\+block()}{des\_decrypt\_block()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} des\+\_\+decrypt\+\_\+block (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{src,  }\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+Дешифрование 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em src} & входные данные \\
+\hline
+\mbox{\tt in}  & {\em keys} & ключи \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+decrypt\+\_\+ecb().
+
+\mbox{\Hypertarget{choph_8cpp_ac4870045cbac50ea2ccf790d4285f9a5}\label{choph_8cpp_ac4870045cbac50ea2ccf790d4285f9a5}} 
+\index{choph.\+cpp@{choph.\+cpp}!des\+\_\+decrypt\+\_\+ecb@{des\+\_\+decrypt\+\_\+ecb}}
+\index{des\+\_\+decrypt\+\_\+ecb@{des\+\_\+decrypt\+\_\+ecb}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{des\+\_\+decrypt\+\_\+ecb()}{des\_decrypt\_ecb()}}
+{\footnotesize\ttfamily ulong des\+\_\+decrypt\+\_\+ecb (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{src,  }\item[{ulong}]{srclen,  }\item[{uchar $\ast$}]{dst,  }\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{key }\end{DoxyParamCaption})}
+
+Дешифрование по протоколу ecb 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em src} & входные данные \\
+\hline
+\mbox{\tt in}  & {\em srclen} & длина входных данных \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\mbox{\tt out}  & {\em dst} & назначение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{choph_8cpp_ad5b5a6e675b0e4513057ec56b57f6918}\label{choph_8cpp_ad5b5a6e675b0e4513057ec56b57f6918}} 
+\index{choph.\+cpp@{choph.\+cpp}!des\+\_\+encrypt\+\_\+block@{des\+\_\+encrypt\+\_\+block}}
+\index{des\+\_\+encrypt\+\_\+block@{des\+\_\+encrypt\+\_\+block}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{des\+\_\+encrypt\+\_\+block()}{des\_encrypt\_block()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} des\+\_\+encrypt\+\_\+block (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{src,  }\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} $\ast$}]{keys }\end{DoxyParamCaption})}
+
+Шифрование 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em src} & входные данные \\
+\hline
+\mbox{\tt in}  & {\em keys} & ключи \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+encrypt\+\_\+ecb().
+
+\mbox{\Hypertarget{choph_8cpp_ae321186e7d851b6a95b0061df1104300}\label{choph_8cpp_ae321186e7d851b6a95b0061df1104300}} 
+\index{choph.\+cpp@{choph.\+cpp}!des\+\_\+encrypt\+\_\+ecb@{des\+\_\+encrypt\+\_\+ecb}}
+\index{des\+\_\+encrypt\+\_\+ecb@{des\+\_\+encrypt\+\_\+ecb}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{des\+\_\+encrypt\+\_\+ecb()}{des\_encrypt\_ecb()}}
+{\footnotesize\ttfamily ulong des\+\_\+encrypt\+\_\+ecb (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{src,  }\item[{ulong}]{srclen,  }\item[{uchar $\ast$}]{dst,  }\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{key }\end{DoxyParamCaption})}
+
+Шифрование по протоколу ecb 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em src} & входные данные \\
+\hline
+\mbox{\tt in}  & {\em srclen} & длина входных данных \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\mbox{\tt out}  & {\em dst} & назначение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_a3ca4d0af16188b041e1af649c460b98a}\label{choph_8cpp_a3ca4d0af16188b041e1af649c460b98a}} 
+\index{choph.\+cpp@{choph.\+cpp}!encode@{encode}}
+\index{encode@{encode}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily void encode (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{output,  }\item[{ulong $\ast$}]{input,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+coding ulong in char 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt out}  & {\em output} & result \\
+\hline
+\mbox{\tt in}  & {\em input} & source ulong \\
+\hline
+\mbox{\tt in}  & {\em len} & size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{choph_8cpp_a61d315464ffdb36f599f2b0f8067e000}\label{choph_8cpp_a61d315464ffdb36f599f2b0f8067e000}} 
+\index{choph.\+cpp@{choph.\+cpp}!encode\+\_\+rev@{encode\+\_\+rev}}
+\index{encode\+\_\+rev@{encode\+\_\+rev}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{encode\+\_\+rev()}{encode\_rev()}}
+{\footnotesize\ttfamily void encode\+\_\+rev (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{output,  }\item[{ulong $\ast$}]{input,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+кодирование ulong в char с обратным порядком бит 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt out}  & {\em output} & результат \\
+\hline
+\mbox{\tt in}  & {\em input} & исходный ulong \\
+\hline
+\mbox{\tt in}  & {\em len} & размер \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+decrypt\+\_\+ecb() и des\+\_\+encrypt\+\_\+ecb().
+
+\mbox{\Hypertarget{choph_8cpp_aa51a81bbb99f03b6e97c134f89fde1e2}\label{choph_8cpp_aa51a81bbb99f03b6e97c134f89fde1e2}} 
+\index{choph.\+cpp@{choph.\+cpp}!ep@{ep}}
+\index{ep@{ep}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{ep()}{ep()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} ep (\begin{DoxyParamCaption}\item[{ulong}]{v }\end{DoxyParamCaption})}
+
+
+
+Расширяющая перестановка 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\end{DoxyParams}
+
+
+Используется в fk().
+
+\mbox{\Hypertarget{choph_8cpp_ac5d7d9e2d516baabee4fc6305589715e}\label{choph_8cpp_ac5d7d9e2d516baabee4fc6305589715e}} 
+\index{choph.\+cpp@{choph.\+cpp}!findvigenerekeylength@{findvigenerekeylength}}
+\index{findvigenerekeylength@{findvigenerekeylength}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{findvigenerekeylength()}{findvigenerekeylength()}}
+{\footnotesize\ttfamily uint findvigenerekeylength (\begin{DoxyParamCaption}\item[{string}]{chiphertext,  }\item[{double}]{serchborder }\end{DoxyParamCaption})}
+
+Поиск длины ключа шифра Виженера 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em chiphertext} & зашифрованное сообщение \\
+\hline
+\mbox{\tt in}  & {\em step} & шаг \\
+\hline
+\mbox{\tt in}  & {\em start} & старт \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_ab24b3386abfd3e1188be96b23a7a52ee}\label{choph_8cpp_ab24b3386abfd3e1188be96b23a7a52ee}} 
+\index{choph.\+cpp@{choph.\+cpp}!fk@{fk}}
+\index{fk@{fk}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{fk()}{fk()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} fk (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{v,  }\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{key }\end{DoxyParamCaption})}
+
+
+
+Основное (раундовое) преобразование 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+decrypt\+\_\+block() и des\+\_\+encrypt\+\_\+block().
+
+\mbox{\Hypertarget{choph_8cpp_ad30c3f68889de7752a0e4bd40ffed47e}\label{choph_8cpp_ad30c3f68889de7752a0e4bd40ffed47e}} 
+\index{choph.\+cpp@{choph.\+cpp}!frequency@{frequency}}
+\index{frequency@{frequency}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{frequency()}{frequency()}}
+{\footnotesize\ttfamily map$<$char, double$>$ frequency (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})}
+
+Частота букв 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg} & сообщение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в breakcaesar().
+
+\mbox{\Hypertarget{choph_8cpp_a3047b71f458e416b39c120c9c1a9876f}\label{choph_8cpp_a3047b71f458e416b39c120c9c1a9876f}} 
+\index{choph.\+cpp@{choph.\+cpp}!indexcoincidence@{indexcoincidence}}
+\index{indexcoincidence@{indexcoincidence}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{indexcoincidence()}{indexcoincidence()}}
+{\footnotesize\ttfamily double indexcoincidence (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})}
+
+Подсчет indexcoincidence 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg} & сообщение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{choph_8cpp_a30d1f38597ba7a35c171026bf169e534}\label{choph_8cpp_a30d1f38597ba7a35c171026bf169e534}} 
+\index{choph.\+cpp@{choph.\+cpp}!ip@{ip}}
+\index{ip@{ip}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{ip()}{ip()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} ip (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{v }\end{DoxyParamCaption})}
+
+
+
+Начальная перестановка 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+decrypt\+\_\+block() и des\+\_\+encrypt\+\_\+block().
+
+\mbox{\Hypertarget{choph_8cpp_a114c1b88516cb2dfa3e4b187be27036b}\label{choph_8cpp_a114c1b88516cb2dfa3e4b187be27036b}} 
+\index{choph.\+cpp@{choph.\+cpp}!letterscount@{letterscount}}
+\index{letterscount@{letterscount}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{letterscount()}{letterscount()}}
+{\footnotesize\ttfamily map$<$char, uint$>$ letterscount (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})}
+
+Подсчет букв 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg} & сообщение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в frequency() и indexcoincidence().
+
+\mbox{\Hypertarget{choph_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}\label{choph_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+\index{choph.\+cpp@{choph.\+cpp}!main@{main}}
+\index{main@{main}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Функция \hyperlink{choph_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main()} − точка входа в программу. 
+
+Текст специального комментария. Этот текст попадет в документацию Doxygen. Кстати, символы оформления ’$\ast$’ в начале строк в документации отображаться не будут.
+
+Новый абзац. \mbox{\Hypertarget{choph_8cpp_a684ff62b705d2cee96d311e5d7f0edd7}\label{choph_8cpp_a684ff62b705d2cee96d311e5d7f0edd7}} 
+\index{choph.\+cpp@{choph.\+cpp}!p@{p}}
+\index{p@{p}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{p()}{p()}}
+{\footnotesize\ttfamily ulong p (\begin{DoxyParamCaption}\item[{ulong}]{v }\end{DoxyParamCaption})}
+
+
+
+Перестановка 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\end{DoxyParams}
+
+
+Используется в fk().
+
+\mbox{\Hypertarget{choph_8cpp_a4c5e58fd0158cbc22713a1a52d0ea38e}\label{choph_8cpp_a4c5e58fd0158cbc22713a1a52d0ea38e}} 
+\index{choph.\+cpp@{choph.\+cpp}!pc1@{pc1}}
+\index{pc1@{pc1}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{pc1()}{pc1()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} pc1 (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{v }\end{DoxyParamCaption})}
+
+Перестановка 1 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+блок, проведенный через перестановку 
+\end{DoxyReturn}
+
+
+Используется в des\+\_\+create\+\_\+keys().
+
+\mbox{\Hypertarget{choph_8cpp_a3a8662dee8b44b10f657fbf505eed4af}\label{choph_8cpp_a3a8662dee8b44b10f657fbf505eed4af}} 
+\index{choph.\+cpp@{choph.\+cpp}!pc2@{pc2}}
+\index{pc2@{pc2}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{pc2()}{pc2()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} pc2 (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{v }\end{DoxyParamCaption})}
+
+Перестановка 2 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+create\+\_\+keys().
+
+\mbox{\Hypertarget{choph_8cpp_a9816b1afec7350cd2a746cdf7324e901}\label{choph_8cpp_a9816b1afec7350cd2a746cdf7324e901}} 
+\index{choph.\+cpp@{choph.\+cpp}!polibiy\+\_\+break@{polibiy\+\_\+break}}
+\index{polibiy\+\_\+break@{polibiy\+\_\+break}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{polibiy\+\_\+break()}{polibiy\_break()}}
+{\footnotesize\ttfamily pair$<$string, string$>$ polibiy\+\_\+break (\begin{DoxyParamCaption}\item[{string}]{ch }\end{DoxyParamCaption})}
+
+Взлом Полибия 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em ch} & зашифрованное сообщение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_aed234856c1bd5b094a088ca3b552f80e}\label{choph_8cpp_aed234856c1bd5b094a088ca3b552f80e}} 
+\index{choph.\+cpp@{choph.\+cpp}!polibiy\+\_\+decrypt@{polibiy\+\_\+decrypt}}
+\index{polibiy\+\_\+decrypt@{polibiy\+\_\+decrypt}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{polibiy\+\_\+decrypt()}{polibiy\_decrypt()}}
+{\footnotesize\ttfamily string polibiy\+\_\+decrypt (\begin{DoxyParamCaption}\item[{string}]{ch,  }\item[{string}]{key }\end{DoxyParamCaption})}
+
+Дешифрование Полибия 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em ch} & зашифрованное сообщение \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{choph_8cpp_a7ea6838ef647048d812f8b5b567e48c7}\label{choph_8cpp_a7ea6838ef647048d812f8b5b567e48c7}} 
+\index{choph.\+cpp@{choph.\+cpp}!polibiy\+\_\+encrypt@{polibiy\+\_\+encrypt}}
+\index{polibiy\+\_\+encrypt@{polibiy\+\_\+encrypt}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{polibiy\+\_\+encrypt()}{polibiy\_encrypt()}}
+{\footnotesize\ttfamily string polibiy\+\_\+encrypt (\begin{DoxyParamCaption}\item[{string}]{pl,  }\item[{string}]{key }\end{DoxyParamCaption})}
+
+Шифрование Подстановки 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em pl} & сообщение \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_ada09d21882f492e26698430c55561f1f}\label{choph_8cpp_ada09d21882f492e26698430c55561f1f}} 
+\index{choph.\+cpp@{choph.\+cpp}!polibiy\+\_\+generate\+\_\+key@{polibiy\+\_\+generate\+\_\+key}}
+\index{polibiy\+\_\+generate\+\_\+key@{polibiy\+\_\+generate\+\_\+key}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{polibiy\+\_\+generate\+\_\+key()}{polibiy\_generate\_key()}}
+{\footnotesize\ttfamily string polibiy\+\_\+generate\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Генерация ключа шифра полибия 
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_af1c6b7a014d3a7ac4733b768901ae446}\label{choph_8cpp_af1c6b7a014d3a7ac4733b768901ae446}} 
+\index{choph.\+cpp@{choph.\+cpp}!recovervigenerekey@{recovervigenerekey}}
+\index{recovervigenerekey@{recovervigenerekey}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{recovervigenerekey()}{recovervigenerekey()}}
+{\footnotesize\ttfamily string recovervigenerekey (\begin{DoxyParamCaption}\item[{string}]{chiphertext,  }\item[{uint}]{keylength }\end{DoxyParamCaption})}
+
+Восстановление ключа шифра Виженера 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em chiphertext} & зашифрованное сообщение \\
+\hline
+\mbox{\tt in}  & {\em keylength} & длина ключа \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_a9ed46a7091b0ec3c8169cb8c0513692b}\label{choph_8cpp_a9ed46a7091b0ec3c8169cb8c0513692b}} 
+\index{choph.\+cpp@{choph.\+cpp}!rip@{rip}}
+\index{rip@{rip}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{rip()}{rip()}}
+{\footnotesize\ttfamily \hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64} rip (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{v }\end{DoxyParamCaption})}
+
+
+
+Обратная к начальной перестановка 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\end{DoxyParams}
+
+
+Используется в des\+\_\+decrypt\+\_\+block() и des\+\_\+encrypt\+\_\+block().
+
+\mbox{\Hypertarget{choph_8cpp_aa55f5557fa0e92b71bc73e28225f15d3}\label{choph_8cpp_aa55f5557fa0e92b71bc73e28225f15d3}} 
+\index{choph.\+cpp@{choph.\+cpp}!s\+\_\+matrix@{s\+\_\+matrix}}
+\index{s\+\_\+matrix@{s\+\_\+matrix}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{s\+\_\+matrix()}{s\_matrix()}}
+{\footnotesize\ttfamily ulong s\+\_\+matrix (\begin{DoxyParamCaption}\item[{\hyperlink{choph_8cpp_a1e2a6c46722a3c5b52b2fe6e7ff96680}{ulong64}}]{v }\end{DoxyParamCaption})}
+
+
+
+Матрица S. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in,out}  & {\em v} & блок \\
+\hline
+\end{DoxyParams}
+
+
+Используется в fk().
+
+\mbox{\Hypertarget{choph_8cpp_a427f14fb678ee255afc52fd7e0d6975e}\label{choph_8cpp_a427f14fb678ee255afc52fd7e0d6975e}} 
+\index{choph.\+cpp@{choph.\+cpp}!substitute\+\_\+break@{substitute\+\_\+break}}
+\index{substitute\+\_\+break@{substitute\+\_\+break}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{substitute\+\_\+break()}{substitute\_break()}}
+{\footnotesize\ttfamily pair$<$string,string$>$ substitute\+\_\+break (\begin{DoxyParamCaption}\item[{string}]{ch }\end{DoxyParamCaption})}
+
+Взлом Подстановки 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em ch} & зашифрованное сообщение \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_a9c53a049332fae6cdfad786bf4eeea11}\label{choph_8cpp_a9c53a049332fae6cdfad786bf4eeea11}} 
+\index{choph.\+cpp@{choph.\+cpp}!substitute\+\_\+decrypt@{substitute\+\_\+decrypt}}
+\index{substitute\+\_\+decrypt@{substitute\+\_\+decrypt}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{substitute\+\_\+decrypt()}{substitute\_decrypt()}}
+{\footnotesize\ttfamily string substitute\+\_\+decrypt (\begin{DoxyParamCaption}\item[{string}]{chiphertext,  }\item[{string}]{key }\end{DoxyParamCaption})}
+
+Дешифрование Подстановки 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em chiphertext} & зашифрованное сообщение \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_a3a6c1ce5c2f56412885a40fcd2bc8e86}\label{choph_8cpp_a3a6c1ce5c2f56412885a40fcd2bc8e86}} 
+\index{choph.\+cpp@{choph.\+cpp}!substitute\+\_\+encrypt@{substitute\+\_\+encrypt}}
+\index{substitute\+\_\+encrypt@{substitute\+\_\+encrypt}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{substitute\+\_\+encrypt()}{substitute\_encrypt()}}
+{\footnotesize\ttfamily string substitute\+\_\+encrypt (\begin{DoxyParamCaption}\item[{string}]{plaintext,  }\item[{string}]{key }\end{DoxyParamCaption})}
+
+Шифрование Подстановки 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em plaintext} & сообщение \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_acad9c4fabb6634dc5ef1416c7c834757}\label{choph_8cpp_acad9c4fabb6634dc5ef1416c7c834757}} 
+\index{choph.\+cpp@{choph.\+cpp}!substitute\+\_\+generate\+\_\+key@{substitute\+\_\+generate\+\_\+key}}
+\index{substitute\+\_\+generate\+\_\+key@{substitute\+\_\+generate\+\_\+key}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{substitute\+\_\+generate\+\_\+key()}{substitute\_generate\_key()}}
+{\footnotesize\ttfamily string substitute\+\_\+generate\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Генерация ключа шифра подстановки 
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_ab84334abaf3c4ee10870aab4a92031c9}\label{choph_8cpp_ab84334abaf3c4ee10870aab4a92031c9}} 
+\index{choph.\+cpp@{choph.\+cpp}!trigram\+\_\+count@{trigram\+\_\+count}}
+\index{trigram\+\_\+count@{trigram\+\_\+count}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{trigram\+\_\+count()}{trigram\_count()}}
+{\footnotesize\ttfamily int trigram\+\_\+count (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})}
+
+Подсчет количества триграм 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg} & сообщение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{choph_8cpp_aafef85ef482b36718e0e0f7de6681ab1}\label{choph_8cpp_aafef85ef482b36718e0e0f7de6681ab1}} 
+\index{choph.\+cpp@{choph.\+cpp}!trigram\+\_\+fit@{trigram\+\_\+fit}}
+\index{trigram\+\_\+fit@{trigram\+\_\+fit}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{trigram\+\_\+fit()}{trigram\_fit()}}
+{\footnotesize\ttfamily double trigram\+\_\+fit (\begin{DoxyParamCaption}\item[{string}]{msg }\end{DoxyParamCaption})}
+
+Подсчет совпадения триграмм 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg} & сообщение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{choph_8cpp_aa5cc96c7e3b1423aa78b9508c2c1a74c}\label{choph_8cpp_aa5cc96c7e3b1423aa78b9508c2c1a74c}} 
+\index{choph.\+cpp@{choph.\+cpp}!trigram\+\_\+freq@{trigram\+\_\+freq}}
+\index{trigram\+\_\+freq@{trigram\+\_\+freq}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{trigram\+\_\+freq()}{trigram\_freq()}}
+{\footnotesize\ttfamily double trigram\+\_\+freq (\begin{DoxyParamCaption}\item[{string}]{msg,  }\item[{string}]{trig }\end{DoxyParamCaption})}
+
+Подсчет частоты триграммы 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em msg} & сообщение \\
+\hline
+\mbox{\tt in}  & {\em trig} & триграмма \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{choph_8cpp_af37cb0f7ec33702d9c9b27eda1d5548c}\label{choph_8cpp_af37cb0f7ec33702d9c9b27eda1d5548c}} 
+\index{choph.\+cpp@{choph.\+cpp}!viziner\+\_\+decrypt@{viziner\+\_\+decrypt}}
+\index{viziner\+\_\+decrypt@{viziner\+\_\+decrypt}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{viziner\+\_\+decrypt()}{viziner\_decrypt()}}
+{\footnotesize\ttfamily string viziner\+\_\+decrypt (\begin{DoxyParamCaption}\item[{string}]{ch,  }\item[{string}]{key }\end{DoxyParamCaption})}
+
+Дешифрование Виженера 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em ch} & зашифрованное сообщение \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+\mbox{\Hypertarget{choph_8cpp_a6852ebfd23ab1670561bbe3b730be912}\label{choph_8cpp_a6852ebfd23ab1670561bbe3b730be912}} 
+\index{choph.\+cpp@{choph.\+cpp}!viziner\+\_\+encrypt@{viziner\+\_\+encrypt}}
+\index{viziner\+\_\+encrypt@{viziner\+\_\+encrypt}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{viziner\+\_\+encrypt()}{viziner\_encrypt()}}
+{\footnotesize\ttfamily string viziner\+\_\+encrypt (\begin{DoxyParamCaption}\item[{string}]{pl,  }\item[{string}]{key }\end{DoxyParamCaption})}
+
+Шифрование Виженера 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em pl} & сообщение \\
+\hline
+\mbox{\tt in}  & {\em key} & ключ \\
+\hline
+\end{DoxyParams}
+
+
+Используется в main().
+
+
+
+\subsection{Переменные}
+\mbox{\Hypertarget{choph_8cpp_aee6f420120b0fbc0fb096cb61655cec4}\label{choph_8cpp_aee6f420120b0fbc0fb096cb61655cec4}} 
+\index{choph.\+cpp@{choph.\+cpp}!P\+A\+D\+D\+I\+NG@{P\+A\+D\+D\+I\+NG}}
+\index{P\+A\+D\+D\+I\+NG@{P\+A\+D\+D\+I\+NG}!choph.\+cpp@{choph.\+cpp}}
+\subsubsection{\texorpdfstring{P\+A\+D\+D\+I\+NG}{PADDING}}
+{\footnotesize\ttfamily unsigned char P\+A\+D\+D\+I\+NG\mbox{[}64\mbox{]}}
+
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+\}
+\end{DoxyCode}

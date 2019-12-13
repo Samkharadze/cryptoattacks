@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wnarrowing    CMakeFiles/Chopch.cpp.dir/choph.cpp.o  -o Chopch.cpp 

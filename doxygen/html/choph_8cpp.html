@@ -1,0 +1,1598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Attacks: Файл choph.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Attacks
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Examples of attacks on criptographic algorithms</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл choph.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Основной файл  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для choph.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="choph_8cpp__incl.png" border="0" usemap="#choph_8cpp" alt=""/></div>
+<map name="choph_8cpp" id="choph_8cpp">
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ulong64.html">_ulong64</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура блока  <a href="struct__ulong64.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:a65f85814a8290f9797005d3b28e7e5fc"><td class="memItemLeft" align="right" valign="top"><a id="a65f85814a8290f9797005d3b28e7e5fc"></a>
+typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>uchar</b></td></tr>
+<tr class="separator:a65f85814a8290f9797005d3b28e7e5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95f123a6c9bcfee6a343170ef8c5f69"><td class="memItemLeft" align="right" valign="top"><a id="ab95f123a6c9bcfee6a343170ef8c5f69"></a>
+typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>ushort</b></td></tr>
+<tr class="separator:ab95f123a6c9bcfee6a343170ef8c5f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bb0e5480d1d957383df6b350794313"><td class="memItemLeft" align="right" valign="top"><a id="ab2bb0e5480d1d957383df6b350794313"></a>
+typedef long unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>ulong</b></td></tr>
+<tr class="separator:ab2bb0e5480d1d957383df6b350794313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2a6c46722a3c5b52b2fe6e7ff96680"><td class="memItemLeft" align="right" valign="top"><a id="a1e2a6c46722a3c5b52b2fe6e7ff96680"></a>
+typedef struct <a class="el" href="struct__ulong64.html">_ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a></td></tr>
+<tr class="memdesc:a1e2a6c46722a3c5b52b2fe6e7ff96680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура блока <br /></td></tr>
+<tr class="separator:a1e2a6c46722a3c5b52b2fe6e7ff96680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a3ca4d0af16188b041e1af649c460b98a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a3ca4d0af16188b041e1af649c460b98a">encode</a> (unsigned char *output, ulong *input, int len)</td></tr>
+<tr class="memdesc:a3ca4d0af16188b041e1af649c460b98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">coding ulong in char  <a href="#a3ca4d0af16188b041e1af649c460b98a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3ca4d0af16188b041e1af649c460b98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61d315464ffdb36f599f2b0f8067e000"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a61d315464ffdb36f599f2b0f8067e000">encode_rev</a> (unsigned char *output, ulong *input, int len)</td></tr>
+<tr class="memdesc:a61d315464ffdb36f599f2b0f8067e000"><td class="mdescLeft">&#160;</td><td class="mdescRight">кодирование ulong в char с обратным порядком бит  <a href="#a61d315464ffdb36f599f2b0f8067e000">Подробнее...</a><br /></td></tr>
+<tr class="separator:a61d315464ffdb36f599f2b0f8067e000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54cf0cedf9fcf85779ff296fdf28fb31"><td class="memItemLeft" align="right" valign="top"><a id="a54cf0cedf9fcf85779ff296fdf28fb31"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a54cf0cedf9fcf85779ff296fdf28fb31">decode</a> (ulong *output, unsigned char *input, int len)</td></tr>
+<tr class="memdesc:a54cf0cedf9fcf85779ff296fdf28fb31"><td class="mdescLeft">&#160;</td><td class="mdescRight">декодирование char в ulong. <br /></td></tr>
+<tr class="separator:a54cf0cedf9fcf85779ff296fdf28fb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae50a28be55a088be549b7a16a671c1f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ae50a28be55a088be549b7a16a671c1f7">decode_rev</a> (ulong *output, unsigned char *input, int len)</td></tr>
+<tr class="memdesc:ae50a28be55a088be549b7a16a671c1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">декодирование char в ulong в обратном порядке бит  <a href="#ae50a28be55a088be549b7a16a671c1f7">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae50a28be55a088be549b7a16a671c1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c5e58fd0158cbc22713a1a52d0ea38e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a4c5e58fd0158cbc22713a1a52d0ea38e">pc1</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> v)</td></tr>
+<tr class="separator:a4c5e58fd0158cbc22713a1a52d0ea38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8662dee8b44b10f657fbf505eed4af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a3a8662dee8b44b10f657fbf505eed4af">pc2</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> v)</td></tr>
+<tr class="separator:a3a8662dee8b44b10f657fbf505eed4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d1f38597ba7a35c171026bf169e534"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a30d1f38597ba7a35c171026bf169e534">ip</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> v)</td></tr>
+<tr class="memdesc:a30d1f38597ba7a35c171026bf169e534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начальная перестановка  <a href="#a30d1f38597ba7a35c171026bf169e534">Подробнее...</a><br /></td></tr>
+<tr class="separator:a30d1f38597ba7a35c171026bf169e534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed46a7091b0ec3c8169cb8c0513692b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a9ed46a7091b0ec3c8169cb8c0513692b">rip</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> v)</td></tr>
+<tr class="memdesc:a9ed46a7091b0ec3c8169cb8c0513692b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обратная к начальной перестановка  <a href="#a9ed46a7091b0ec3c8169cb8c0513692b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9ed46a7091b0ec3c8169cb8c0513692b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa51a81bbb99f03b6e97c134f89fde1e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#aa51a81bbb99f03b6e97c134f89fde1e2">ep</a> (ulong v)</td></tr>
+<tr class="memdesc:aa51a81bbb99f03b6e97c134f89fde1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расширяющая перестановка  <a href="#aa51a81bbb99f03b6e97c134f89fde1e2">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa51a81bbb99f03b6e97c134f89fde1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa55f5557fa0e92b71bc73e28225f15d3"><td class="memItemLeft" align="right" valign="top">ulong&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#aa55f5557fa0e92b71bc73e28225f15d3">s_matrix</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> v)</td></tr>
+<tr class="memdesc:aa55f5557fa0e92b71bc73e28225f15d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Матрица S.  <a href="#aa55f5557fa0e92b71bc73e28225f15d3">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa55f5557fa0e92b71bc73e28225f15d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684ff62b705d2cee96d311e5d7f0edd7"><td class="memItemLeft" align="right" valign="top">ulong&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a684ff62b705d2cee96d311e5d7f0edd7">p</a> (ulong v)</td></tr>
+<tr class="memdesc:a684ff62b705d2cee96d311e5d7f0edd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перестановка  <a href="#a684ff62b705d2cee96d311e5d7f0edd7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a684ff62b705d2cee96d311e5d7f0edd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24b3386abfd3e1188be96b23a7a52ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ab24b3386abfd3e1188be96b23a7a52ee">fk</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> v, <a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> key)</td></tr>
+<tr class="memdesc:ab24b3386abfd3e1188be96b23a7a52ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основное (раундовое) преобразование  <a href="#ab24b3386abfd3e1188be96b23a7a52ee">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab24b3386abfd3e1188be96b23a7a52ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40cdf551614393311a075223e2330168"><td class="memItemLeft" align="right" valign="top"><a id="a40cdf551614393311a075223e2330168"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>xor_2_7_13_24</b> (ulong v)</td></tr>
+<tr class="separator:a40cdf551614393311a075223e2330168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14d6dce4bd8aa56d6fc641a3dcdf4b99"><td class="memItemLeft" align="right" valign="top"><a id="a14d6dce4bd8aa56d6fc641a3dcdf4b99"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>fk_2_7_13_24</b> (ulong v, ulong key)</td></tr>
+<tr class="separator:a14d6dce4bd8aa56d6fc641a3dcdf4b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab508dc9c6552a6bab041b90c9efc3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a8ab508dc9c6552a6bab041b90c9efc3f">des_create_keys</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> src, <a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> *key)</td></tr>
+<tr class="memdesc:a8ab508dc9c6552a6bab041b90c9efc3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основное (раундовое) преобразование  <a href="#a8ab508dc9c6552a6bab041b90c9efc3f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8ab508dc9c6552a6bab041b90c9efc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b5a6e675b0e4513057ec56b57f6918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ad5b5a6e675b0e4513057ec56b57f6918">des_encrypt_block</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> src, <a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> *keys)</td></tr>
+<tr class="separator:ad5b5a6e675b0e4513057ec56b57f6918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d2ed8fc7946e569676ed266b86fa61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a35d2ed8fc7946e569676ed266b86fa61">des_decrypt_block</a> (<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> src, <a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> *keys)</td></tr>
+<tr class="separator:a35d2ed8fc7946e569676ed266b86fa61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae321186e7d851b6a95b0061df1104300"><td class="memItemLeft" align="right" valign="top">ulong&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ae321186e7d851b6a95b0061df1104300">des_encrypt_ecb</a> (uchar *src, ulong srclen, uchar *dst, <a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> key)</td></tr>
+<tr class="separator:ae321186e7d851b6a95b0061df1104300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4870045cbac50ea2ccf790d4285f9a5"><td class="memItemLeft" align="right" valign="top">ulong&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ac4870045cbac50ea2ccf790d4285f9a5">des_decrypt_ecb</a> (uchar *src, ulong srclen, uchar *dst, <a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> key)</td></tr>
+<tr class="separator:ac4870045cbac50ea2ccf790d4285f9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be68b9cf00d63e2d6f392b4d98ec8d2"><td class="memItemLeft" align="right" valign="top">ulong&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a5be68b9cf00d63e2d6f392b4d98ec8d2">des_break</a> (uchar *src, ulong srclen, uchar *dst)</td></tr>
+<tr class="separator:a5be68b9cf00d63e2d6f392b4d98ec8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35fef7ad27a9409a50f1890513293292"><td class="memItemLeft" align="right" valign="top"><a id="a35fef7ad27a9409a50f1890513293292"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>count</b> (string &amp;pat, string &amp;txt)</td></tr>
+<tr class="separator:a35fef7ad27a9409a50f1890513293292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84334abaf3c4ee10870aab4a92031c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ab84334abaf3c4ee10870aab4a92031c9">trigram_count</a> (string msg)</td></tr>
+<tr class="separator:ab84334abaf3c4ee10870aab4a92031c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5cc96c7e3b1423aa78b9508c2c1a74c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#aa5cc96c7e3b1423aa78b9508c2c1a74c">trigram_freq</a> (string msg, string trig)</td></tr>
+<tr class="separator:aa5cc96c7e3b1423aa78b9508c2c1a74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafef85ef482b36718e0e0f7de6681ab1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#aafef85ef482b36718e0e0f7de6681ab1">trigram_fit</a> (string msg)</td></tr>
+<tr class="separator:aafef85ef482b36718e0e0f7de6681ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114c1b88516cb2dfa3e4b187be27036b"><td class="memItemLeft" align="right" valign="top">map&lt; char, uint &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a114c1b88516cb2dfa3e4b187be27036b">letterscount</a> (string msg)</td></tr>
+<tr class="separator:a114c1b88516cb2dfa3e4b187be27036b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3047b71f458e416b39c120c9c1a9876f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a3047b71f458e416b39c120c9c1a9876f">indexcoincidence</a> (string msg)</td></tr>
+<tr class="separator:a3047b71f458e416b39c120c9c1a9876f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9366e01e655f794dc68ca1a288d0e7e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#aa9366e01e655f794dc68ca1a288d0e7e">columnrepresentation</a> (string msg, uint step, uint start)</td></tr>
+<tr class="separator:aa9366e01e655f794dc68ca1a288d0e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7493541e5d1d9946050c68f6bb02d74f"><td class="memItemLeft" align="right" valign="top"><a id="a7493541e5d1d9946050c68f6bb02d74f"></a>
+map&lt; uint, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shiftedindexcoincidence</b> (string msg)</td></tr>
+<tr class="separator:a7493541e5d1d9946050c68f6bb02d74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d7d9e2d516baabee4fc6305589715e"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ac5d7d9e2d516baabee4fc6305589715e">findvigenerekeylength</a> (string chiphertext, double serchborder)</td></tr>
+<tr class="separator:ac5d7d9e2d516baabee4fc6305589715e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62035af87109c24dd1ad405fa110a22"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ab62035af87109c24dd1ad405fa110a22">caesar_decrypt</a> (string chiphertext, uint step)</td></tr>
+<tr class="separator:ab62035af87109c24dd1ad405fa110a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30c3f68889de7752a0e4bd40ffed47e"><td class="memItemLeft" align="right" valign="top">map&lt; char, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ad30c3f68889de7752a0e4bd40ffed47e">frequency</a> (string msg)</td></tr>
+<tr class="separator:ad30c3f68889de7752a0e4bd40ffed47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b82dfcf5d0f2ad7dd89dba6073638b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a65b82dfcf5d0f2ad7dd89dba6073638b">alphabetcorrelation</a> (map&lt; char, double &gt; msg_frequency)</td></tr>
+<tr class="separator:a65b82dfcf5d0f2ad7dd89dba6073638b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2e470bc9542fcb1ff14b14455c9515"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a7a2e470bc9542fcb1ff14b14455c9515">breakcaesar</a> (string chiphertext)</td></tr>
+<tr class="separator:a7a2e470bc9542fcb1ff14b14455c9515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c6b7a014d3a7ac4733b768901ae446"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#af1c6b7a014d3a7ac4733b768901ae446">recovervigenerekey</a> (string chiphertext, uint keylength)</td></tr>
+<tr class="separator:af1c6b7a014d3a7ac4733b768901ae446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6852ebfd23ab1670561bbe3b730be912"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a6852ebfd23ab1670561bbe3b730be912">viziner_encrypt</a> (string pl, string key)</td></tr>
+<tr class="separator:a6852ebfd23ab1670561bbe3b730be912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37cb0f7ec33702d9c9b27eda1d5548c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#af37cb0f7ec33702d9c9b27eda1d5548c">viziner_decrypt</a> (string ch, string key)</td></tr>
+<tr class="separator:af37cb0f7ec33702d9c9b27eda1d5548c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad9c4fabb6634dc5ef1416c7c834757"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#acad9c4fabb6634dc5ef1416c7c834757">substitute_generate_key</a> ()</td></tr>
+<tr class="separator:acad9c4fabb6634dc5ef1416c7c834757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6c1ce5c2f56412885a40fcd2bc8e86"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a3a6c1ce5c2f56412885a40fcd2bc8e86">substitute_encrypt</a> (string plaintext, string key)</td></tr>
+<tr class="separator:a3a6c1ce5c2f56412885a40fcd2bc8e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c53a049332fae6cdfad786bf4eeea11"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a9c53a049332fae6cdfad786bf4eeea11">substitute_decrypt</a> (string chiphertext, string key)</td></tr>
+<tr class="separator:a9c53a049332fae6cdfad786bf4eeea11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a427f14fb678ee255afc52fd7e0d6975e"><td class="memItemLeft" align="right" valign="top">pair&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a427f14fb678ee255afc52fd7e0d6975e">substitute_break</a> (string ch)</td></tr>
+<tr class="separator:a427f14fb678ee255afc52fd7e0d6975e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada09d21882f492e26698430c55561f1f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#ada09d21882f492e26698430c55561f1f">polibiy_generate_key</a> ()</td></tr>
+<tr class="separator:ada09d21882f492e26698430c55561f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea6838ef647048d812f8b5b567e48c7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a7ea6838ef647048d812f8b5b567e48c7">polibiy_encrypt</a> (string pl, string key)</td></tr>
+<tr class="separator:a7ea6838ef647048d812f8b5b567e48c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed234856c1bd5b094a088ca3b552f80e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#aed234856c1bd5b094a088ca3b552f80e">polibiy_decrypt</a> (string ch, string key)</td></tr>
+<tr class="separator:aed234856c1bd5b094a088ca3b552f80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9816b1afec7350cd2a746cdf7324e901"><td class="memItemLeft" align="right" valign="top">pair&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#a9816b1afec7350cd2a746cdf7324e901">polibiy_break</a> (string ch)</td></tr>
+<tr class="separator:a9816b1afec7350cd2a746cdf7324e901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main</a> (int argc, char const *argv[])</td></tr>
+<tr class="memdesc:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="Функция main() − точка входа в программу. ">main()</a> − точка входа в программу.  <a href="#abf9e6b7e6f15df4b525a2e7705ba3089">Подробнее...</a><br /></td></tr>
+<tr class="separator:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:aee6f420120b0fbc0fb096cb61655cec4"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>PADDING</b> [64]</td></tr>
+<tr class="separator:aee6f420120b0fbc0fb096cb61655cec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcd6f441a1b591e4dd845658ec9a9edc"><td class="memItemLeft" align="right" valign="top"><a id="afcd6f441a1b591e4dd845658ec9a9edc"></a>
+<a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>key0</b></td></tr>
+<tr class="separator:afcd6f441a1b591e4dd845658ec9a9edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7229df0557d27b7221cf944066faa323"><td class="memItemLeft" align="right" valign="top"><a id="a7229df0557d27b7221cf944066faa323"></a>
+map&lt; string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ENGLISH_TRIGRAMS</b> = {{ &quot;ezo&quot; , 1 }, { &quot;apr&quot; , 1 }, { &quot;ref&quot; , 2 }, { &quot;nav&quot; , 1 }, { &quot;lyr&quot; , 1 }, { &quot;wle&quot; , 1 }, { &quot;pos&quot; , 16 }, { &quot;pto&quot; , 4 }, { &quot;tef&quot; , 1 }, { &quot;lla&quot; , 3 }, { &quot;hem&quot; , 22 }, { &quot;omr&quot; , 1 }, { &quot;sse&quot; , 1 }, { &quot;tth&quot; , 9 }, { &quot;dna&quot; , 1 }, { &quot;asu&quot; , 3 }, { &quot;rsd&quot; , 1 }, { &quot;opu&quot; , 1 }, { &quot;eds&quot; , 1 }, { &quot;tno&quot; , 1 }, { &quot;ndz&quot; , 1 }, { &quot;eha&quot; , 1 }, { &quot;ssa&quot; , 22 }, { &quot;ich&quot; , 5 }, { &quot;kss&quot; , 1 }, { &quot;tic&quot; , 9 }, { &quot;sth&quot; , 23 }, { &quot;fou&quot; , 1 }, { &quot;uli&quot; , 1 }, { &quot;ogr&quot; , 3 }, { &quot;osi&quot; , 12 }, { &quot;ker&quot; , 3 }, { &quot;aen&quot; , 1 }, { &quot;equ&quot; , 5 }, { &quot;kie&quot; , 1 }, { &quot;anh&quot; , 1 }, { &quot;igp&quot; , 1 }, { &quot;xto&quot; , 4 }, { &quot;uag&quot; , 1 }, { &quot;iae&quot; , 1 }, { &quot;yto&quot; , 3 }, { &quot;des&quot; , 4 }, { &quot;eol&quot; , 1 }, { &quot;iab&quot; , 1 }, { &quot;ewe&quot; , 1 }, { &quot;chi&quot; , 6 }, { &quot;phy&quot; , 2 }, { &quot;kth&quot; , 2 }, { &quot;ret&quot; , 5 }, { &quot;igu&quot; , 1 }, { &quot;rda&quot; , 4 }, { &quot;ndr&quot; , 1 }, { &quot;sso&quot; , 3 }, { &quot;tal&quot; , 3 }, { &quot;dha&quot; , 1 }, { &quot;mai&quot; , 1 }, { &quot;dva&quot; , 2 }, { &quot;bli&quot; , 1 }, { &quot;pes&quot; , 3 }, { &quot;ana&quot; , 8 }, { &quot;lvi&quot; , 1 }, { &quot;ust&quot; , 4 }, { &quot;liu&quot; , 1 }, { &quot;anu&quot; , 1 }, { &quot;rus&quot; , 1 }, { &quot;gci&quot; , 1 }, { &quot;hni&quot; , 2 }, { &quot;sen&quot; , 5 }, { &quot;ema&quot; , 5 }, { &quot;gfo&quot; , 1 }, { &quot;obr&quot; , 2 }, { &quot;fth&quot; , 20 }, { &quot;ngl&quot; , 3 }, { &quot;cry&quot; , 9 }, { &quot;etb&quot; , 2 }, { &quot;ran&quot; , 23 }, { &quot;raj&quot; , 1 }, { &quot;mit&quot; , 1 }, { &quot;sof&quot; , 16 }, { &quot;ame&quot; , 8 }, { &quot;ckc&quot; , 1 }, { &quot;had&quot; , 1 }, { &quot;hab&quot; , 28 }, { &quot;kwa&quot; , 1 }, { &quot;wha&quot; , 5 }, { &quot;git&quot; , 1 }, { &quot;otb&quot; , 1 }, { &quot;fte&quot; , 4 }, { &quot;hya&quot; , 1 }, { &quot;net&quot; , 3 }, { &quot;bys&quot; , 1 }, { &quot;ehy&quot; , 1 }, { &quot;sat&quot; , 3 }, { &quot;kso&quot; , 1 }, { &quot;oni&quot; , 1 }, { &quot;esh&quot; , 2 }, { &quot;mov&quot; , 1 }, { &quot;ubl&quot; , 1 }, { &quot;sch&quot; , 5 }, { &quot;dsa&quot; , 1 }, { &quot;ewc&quot; , 1 }, { &quot;ebr&quot; , 3 }, { &quot;asj&quot; , 1 }, { &quot;gou&quot; , 1 }, { &quot;blo&quot; , 1 }, { &quot;yta&quot; , 1 }, { &quot;kep&quot; , 1 }, { &quot;sar&quot; , 22 }, { &quot;pro&quot; , 3 }, { &quot;byf&quot; , 1 }, { &quot;col&quot; , 7 }, { &quot;sma&quot; , 4 }, { &quot;rsf&quot; , 1 }, { &quot;beo&quot; , 1 }, { &quot;ldl&quot; , 2 }, { &quot;ewr&quot; , 1 }, { &quot;ksb&quot; , 1 }, { &quot;hec&quot; , 18 }, { &quot;cit&quot; , 2 }, { &quot;edi&quot; , 8 }, { &quot;rse&quot; , 3 }, { &quot;lum&quot; , 7 }, { &quot;ryi&quot; , 1 }, { &quot;hoc&quot; , 1 }, { &quot;hou&quot; , 4 }, { &quot;bef&quot; , 1 }, { &quot;dto&quot; , 11 }, { &quot;fle&quot; , 4 }, { &quot;orw&quot; , 2 }, { &quot;lss&quot; , 1 }, { &quot;its&quot; , 3 }, { &quot;fmo&quot; , 1 }, { &quot;ena&quot; , 1 }, { &quot;rma&quot; , 2 }, { &quot;now&quot; , 7 }, { &quot;iga&quot; , 1 }, { &quot;isb&quot; , 8 }, { &quot;rpa&quot; , 2 }, { &quot;hha&quot; , 1 }, { &quot;per&quot; , 2 }, { &quot;mac&quot; , 3 }, { &quot;tis&quot; , 11 }, { &quot;nan&quot; , 6 }, { &quot;gat&quot; , 1 }, { &quot;ned&quot; , 3 }, { &quot;ndo&quot; , 4 }, { &quot;esf&quot; , 1 }, { &quot;fet&quot; , 1 }, { &quot;sty&quot; , 1 }, { &quot;agr&quot; , 1 }, { &quot;lec&quot; , 3 }, { &quot;hto&quot; , 1 }, { &quot;nge&quot; , 9 }, { &quot;veu&quot; , 1 }, { &quot;cur&quot; , 1 }, { &quot;tim&quot; , 3 }, { &quot;swe&quot; , 4 }, { &quot;sil&quot; , 2 }, { &quot;owb&quot; , 1 }, { &quot;rdo&quot; , 3 }, { &quot;ign&quot; , 4 }, { &quot;nak&quot; , 2 }, { &quot;fnu&quot; , 1 }, { &quot;cat&quot; , 2 }, { &quot;ngf&quot; , 1 }, { &quot;reu&quot; , 6 }, { &quot;tco&quot; , 1 }, { &quot;and&quot; , 36 }, { &quot;ert&quot; , 24 }, { &quot;ong&quot; , 4 }, { &quot;nov&quot; , 2 }, { &quot;ofr&quot; , 3 }, { &quot;iou&quot; , 3 }, { &quot;dit&quot; , 1 }, { &quot;uct&quot; , 1 }, { &quot;nbe&quot; , 3 }, { &quot;pec&quot; , 3 }, { &quot;ype&quot; , 4 }, { &quot;cor&quot; , 6 }, { &quot;rac&quot; , 2 }, { &quot;nam&quot; , 2 }, { &quot;onw&quot; , 2 }, { &quot;mle&quot; , 1 }, { &quot;lat&quot; , 3 }, { &quot;fir&quot; , 6 }, { &quot;tst&quot; , 2 }, { &quot;ckt&quot; , 1 }, { &quot;fro&quot; , 4 }, { &quot;lnl&quot; , 1 }, { &quot;tab&quot; , 1 }, { &quot;bym&quot; , 1 }, { &quot;ess&quot; , 25 }, { &quot;ubs&quot; , 17 }, { &quot;ekn&quot; , 1 }, { &quot;ltt&quot; , 1 }, { &quot;yte&quot; , 1 }, { &quot;szo&quot; , 1 }, { &quot;ott&quot; , 1 }, { &quot;esc&quot; , 1 }, { &quot;fic&quot; , 2 }, { &quot;inc&quot; , 4 }, { &quot;xin&quot; , 1 }, { &quot;rme&quot; , 6 }, { &quot;fsu&quot; , 2 }, { &quot;ctp&quot; , 1 }, { &quot;ecu&quot; , 1 }, { &quot;cla&quot; , 15 }, { &quot;cco&quot; , 2 }, { &quot;gsu&quot; , 1 }, { &quot;lsh&quot; , 1 }, { &quot;dsf&quot; , 1 }, { &quot;bre&quot; , 3 }, { &quot;ngk&quot; , 1 }, { &quot;ude&quot; , 2 }, { &quot;nsu&quot; , 2 }, { &quot;erc&quot; , 3 }, { &quot;edp&quot; , 1 }, { &quot;epi&quot; , 1 }, { &quot;smu&quot; , 1 }, { &quot;dse&quot; , 1 }, { &quot;pon&quot; , 4 }, { &quot;isw&quot; , 2 }, { &quot;ssu&quot; , 10 }, { &quot;lfu&quot; , 1 }, { &quot;meh&quot; , 1 }, { &quot;arr&quot; , 5 }, { &quot;leh&quot; , 2 }, { &quot;sby&quot; , 2 }, { &quot;icw&quot; , 1 }, { &quot;ldh&quot; , 1 }, { &quot;twh&quot; , 1 }, { &quot;tur&quot; , 1 }, { &quot;bro&quot; , 2 }, { &quot;ede&quot; , 2 }, { &quot;rer&quot; , 2 }, { &quot;cre&quot; , 3 }, { &quot;yst&quot; , 4 }, { &quot;amo&quot; , 2 }, { &quot;lis&quot; , 2 }, { &quot;eon&quot; , 4 }, { &quot;nto&quot; , 4 }, { &quot;nli&quot; , 1 }, { &quot;byw&quot; , 1 }, { &quot;yis&quot; , 4 }, { &quot;rsh&quot; , 4 }, { &quot;stm&quot; , 1 }, { &quot;aju&quot; , 2 }, { &quot;whi&quot; , 5 }, { &quot;nbi&quot; , 1 }, { &quot;lue&quot; , 2 }, { &quot;ate&quot; , 10 }, { &quot;rid&quot; , 1 }, { &quot;bes&quot; , 1 }, { &quot;sti&quot; , 18 }, { &quot;iff&quot; , 4 }, { &quot;tia&quot; , 1 }, { &quot;uwa&quot; , 1 }, { &quot;pco&quot; , 1 }, { &quot;tav&quot; , 1 }, { &quot;ath&quot; , 2 }, { &quot;nex&quot; , 4 }, { &quot;own&quot; , 4 }, { &quot;ped&quot; , 5 }, { &quot;ewo&quot; , 2 }, { &quot;cae&quot; , 6 }, { &quot;las&quot; , 16 }, { &quot;dke&quot; , 1 }, { &quot;atu&quot; , 2 }, { &quot;yar&quot; , 2 }, { &quot;xtf&quot; , 1 }, { &quot;nsn&quot; , 1 }, { &quot;ork&quot; , 1 }, { &quot;tea&quot; , 3 }, { &quot;ilo&quot; , 1 }, { &quot;hci&quot; , 4 }, { &quot;onl&quot; , 5 }, { &quot;dby&quot; , 9 }, { &quot;ata&quot; , 4 }, { &quot;lew&quot; , 1 }, { &quot;nsf&quot; , 1 }, { &quot;ita&quot; , 4 }, { &quot;nco&quot; , 7 }, { &quot;omm&quot; , 1 }, { &quot;nac&quot; , 1 }, { &quot;fto&quot; , 1 }, { &quot;twi&quot; , 1 }, { &quot;mod&quot; , 4 }, { &quot;saw&quot; , 1 }, { &quot;ptt&quot; , 1 }, { &quot;ymi&quot; , 1 }, { &quot;rly&quot; , 1 }, { &quot;tyo&quot; , 4 }, { &quot;eti&quot; , 14 }, { &quot;ski&quot; , 1 }, { &quot;cdo&quot; , 1 }, { &quot;owi&quot; , 1 }, { &quot;nnu&quot; , 1 }, { &quot;lei&quot; , 6 }, { &quot;ves&quot; , 3 }, { &quot;afi&quot; , 1 }, { &quot;ewt&quot; , 1 }, { &quot;csu&quot; , 3 }, { &quot;llk&quot; , 3 }, { &quot;sfy&quot; , 1 }, { &quot;cwa&quot; , 1 }, { &quot;oun&quot; , 1 }, { &quot;tos&quot; , 3 }, { &quot;phr&quot; , 1 }, { &quot;tbo&quot; , 1 }, { &quot;uen&quot; , 5 }, { &quot;ldu&quot; , 1 }, { &quot;ugh&quot; , 2 }, { &quot;rea&quot; , 18 }, { &quot;rst&quot; , 11 }, { &quot;heo&quot; , 5 }, { &quot;ual&quot; , 1 }, { &quot;alc&quot; , 16 }, { &quot;fhe&quot; , 2 }, { &quot;gor&quot; , 2 }, { &quot;chn&quot; , 4 }, { &quot;yat&quot; , 3 }, { &quot;eco&quot; , 14 }, { &quot;ult&quot; , 4 }, { &quot;abe&quot; , 27 }, { &quot;ose&quot; , 9 }, { &quot;sre&quot; , 4 }, { &quot;sin&quot; , 23 }, { &quot;eyi&quot; , 2 }, { &quot;lom&quot; , 1 }, { &quot;tem&quot; , 4 }, { &quot;ldt&quot; , 1 }, { &quot;oos&quot; , 2 }, { &quot;lpa&quot; , 1 }, { &quot;tob&quot; , 4 }, { &quot;ckw&quot; , 1 }, { &quot;gma&quot; , 1 }, { &quot;wsa&quot; , 1 }, { &quot;ass&quot; , 16 }, { &quot;dew&quot; , 1 }, { &quot;ees&quot; , 1 }, { &quot;nls&quot; , 1 }, { &quot;cha&quot; , 11 }, { &quot;cle&quot; , 3 }, { &quot;ila&quot; , 2 }, { &quot;dda&quot; , 2 }, { &quot;rew&quot; , 1 }, { &quot;rev&quot; , 3 }, { &quot;olo&quot; , 3 }, { &quot;rto&quot; , 6 }, { &quot;dig&quot; , 1 }, { &quot;ang&quot; , 9 }, { &quot;cth&quot; , 1 }, { &quot;tsy&quot; , 1 }, { &quot;lly&quot; , 6 }, { &quot;gen&quot; , 7 }, { &quot;nev&quot; , 1 }, { &quot;myn&quot; , 1 }, { &quot;aus&quot; , 3 }, { &quot;xtl&quot; , 1 }, { &quot;cya&quot; , 3 }, { &quot;lar&quot; , 3 }, { &quot;und&quot; , 4 }, { &quot;cde&quot; , 1 }, { &quot;nks&quot; , 1 }, { &quot;ble&quot; , 11 }, { &quot;asy&quot; , 3 }, { &quot;ncy&quot; , 4 }, { &quot;ecb&quot; , 1 }, { &quot;niq&quot; , 2 }, { &quot;com&quot; , 4 }, { &quot;lve&quot; , 4 }, { &quot;rnb&quot; , 1 }, { &quot;wri&quot; , 3 }, { &quot;cho&quot; , 5 }, { &quot;mul&quot; , 2 }, { &quot;hgl&quot; , 1 }, { &quot;req&quot; , 5 }, { &quot;rne&quot; , 2 }, { &quot;rtr&quot; , 2 }, { &quot;cks&quot; , 9 }, { &quot;gua&quot; , 1 }, { &quot;sex&quot; , 1 }, { &quot;dno&quot; , 2 }, { &quot;age&quot; , 25 }, { &quot;odi&quot; , 4 }, { &quot;ide&quot; , 4 }, { &quot;nbl&quot; , 1 }, { &quot;tta&quot; , 11 }, { &quot;eme&quot; , 19 }, { &quot;efo&quot; , 5 }, { &quot;fme&quot; , 2 }, { &quot;dou&quot; , 1 }, { &quot;ryr&quot; , 1 }, { &quot;sop&quot; , 2 }, { &quot;nif&quot; , 3 }, { &quot;erd&quot; , 1 }, { &quot;ntl&quot; , 3 }, { &quot;ngn&quot; , 1 }, { &quot;ina&quot; , 10 }, { &quot;toc&quot; , 2 }, { &quot;gpe&quot; , 2 }, { &quot;vin&quot; , 2 }, { &quot;kes&quot; , 1 }, { &quot;les&quot; , 9 }, { &quot;dot&quot; , 4 }, { &quot;stf&quot; , 1 }, { &quot;tee&quot; , 2 }, { &quot;ghs&quot; , 1 }, { &quot;tbe&quot; , 3 }, { &quot;oas&quot; , 1 }, { &quot;dcf&quot; , 1 }, { &quot;hcl&quot; , 1 }, { &quot;aft&quot; , 1 }, { &quot;rdi&quot; , 7 }, { &quot;eal&quot; , 11 }, { &quot;cal&quot; , 23 }, { &quot;ngr&quot; , 1 }, { &quot;acw&quot; , 1 }, { &quot;mew&quot; , 1 }, { &quot;tac&quot; , 11 }, { &quot;orc&quot; , 4 }, { &quot;min&quot; , 4 }, { &quot;ftt&quot; , 1 }, { &quot;mwi&quot; , 1 }, { &quot;cht&quot; , 2 }, { &quot;ifh&quot; , 2 }, { &quot;nec&quot; , 3 }, { &quot;rap&quot; , 2 }, { &quot;ehe&quot; , 1 }, { &quot;ntt&quot; , 2 }, { &quot;ood&quot; , 4 }, { &quot;lia&quot; , 1 }, { &quot;edt&quot; , 13 }, { &quot;eim&quot; , 2 }, { &quot;ems&quot; , 1 }, { &quot;ncl&quot; , 4 }, { &quot;lsp&quot; , 1 }, { &quot;eea&quot; , 2 }, { &quot;ane&quot; , 1 }, { &quot;tsp&quot; , 1 }, { &quot;efi&quot; , 5 }, { &quot;ove&quot; , 4 }, { &quot;ydb&quot; , 1 }, { &quot;nyl&quot; , 1 }, { &quot;lem&quot; , 2 }, { &quot;ngo&quot; , 2 }, { &quot;war&quot; , 1 }, { &quot;yaf&quot; , 1 }, { &quot;cty&quot; , 1 }, { &quot;dwa&quot; , 1 }, { &quot;ona&quot; , 6 }, { &quot;exa&quot; , 19 }, { &quot;rsa&quot; , 14 }, { &quot;tra&quot; , 15 }, { &quot;awo&quot; , 1 }, { &quot;snt&quot; , 1 }, { &quot;ean&quot; , 3 }, { &quot;ook&quot; , 3 }, { &quot;ngp&quot; , 1 }, { &quot;you&quot; , 13 }, { &quot;emo&quot; , 5 }, { &quot;nee&quot; , 3 }, { &quot;ffe&quot; , 3 }, { &quot;tat&quot; , 6 }, { &quot;ebu&quot; , 1 }, { &quot;peo&quot; , 3 }, { &quot;aga&quot; , 2 }, { &quot;aci&quot; , 3 }, { &quot;woo&quot; , 1 }, { &quot;iea&quot; , 1 }, { &quot;qua&quot; , 4 }, { &quot;eir&quot; , 5 }, { &quot;tro&quot; , 5 }, { &quot;rit&quot; , 5 }, { &quot;med&quot; , 2 }, { &quot;ale&quot; , 2 }, { &quot;sem&quot; , 1 }, { &quot;eyo&quot; , 6 }, { &quot;gey&quot; , 5 }, { &quot;chs&quot; , 2 }, { &quot;nig&quot; , 1 }, { &quot;bst&quot; , 17 }, { &quot;pop&quot; , 1 }, { &quot;chc&quot; , 4 }, { &quot;tof&quot; , 9 }, { &quot;eka&quot; , 1 }, { &quot;yus&quot; , 2 }, { &quot;eas&quot; , 4 }, { &quot;ave&quot; , 5 }, { &quot;hoo&quot; , 2 }, { &quot;ump&quot; , 1 }, { &quot;wel&quot; , 4 }, { &quot;ptw&quot; , 1 }, { &quot;xth&quot; , 1 }, { &quot;nap&quot; , 2 }, { &quot;odw&quot; , 1 }, { &quot;utb&quot; , 1 }, { &quot;him&quot; , 1 }, { &quot;zod&quot; , 2 }, { &quot;bet&quot; , 29 }, { &quot;ctc&quot; , 1 }, { &quot;heg&quot; , 1 }, { &quot;byh&quot; , 1 }, { &quot;rej&quot; , 1 }, { &quot;tet&quot; , 2 }, { &quot;dtr&quot; , 3 }, { &quot;oll&quot; , 1 }, { &quot;sed&quot; , 17 }, { &quot;gse&quot; , 1 }, { &quot;ain&quot; , 8 }, { &quot;yll&quot; , 2 }, { &quot;ent&quot; , 16 }, { &quot;ali&quot; , 3 }, { &quot;kst&quot; , 1 }, { &quot;stc&quot; , 1 }, { &quot;ntc&quot; , 2 }, { &quot;ode&quot; , 17 }, { &quot;ely&quot; , 1 }, { &quot;urm&quot; , 2 }, { &quot;rpr&quot; , 1 }, { &quot;one&quot; , 5 }, { &quot;gna&quot; , 2 }, { &quot;ime&quot; , 3 }, { &quot;nst&quot; , 8 }, { &quot;oor&quot; , 1 }, { &quot;mna&quot; , 1 }, { &quot;lac&quot; , 7 }, { &quot;eye&quot; , 1 }, { &quot;way&quot; , 1 }, { &quot;hey&quot; , 2 }, { &quot;hek&quot; , 8 }, { &quot;lya&quot; , 8 }, { &quot;wso&quot; , 1 }, { &quot;etw&quot; , 4 }, { &quot;dpe&quot; , 1 }, { &quot;wnc&quot; , 1 }, { &quot;era&quot; , 25 }, { &quot;sim&quot; , 5 }, { &quot;wit&quot; , 12 }, { &quot;rep&quot; , 13 }, { &quot;etc&quot; , 3 }, { &quot;tai&quot; , 1 }, { &quot;enp&quot; , 2 }, { &quot;igi&quot; , 4 }, { &quot;aph&quot; , 2 }, { &quot;ven&quot; , 5 }, { &quot;tus&quot; , 2 }, { &quot;ppl&quot; , 1 }, { &quot;dza&quot; , 1 }, { &quot;ary&quot; , 1 }, { &quot;gnu&quot; , 1 }, { &quot;mil&quot; , 2 }, { &quot;sha&quot; , 2 }, { &quot;uwo&quot; , 4 }, { &quot;eli&quot; , 1 }, { &quot;rwi&quot; , 3 }, { &quot;isa&quot; , 9 }, { &quot;bru&quot; , 1 }, { &quot;tcw&quot; , 1 }, { &quot;etm&quot; , 1 }, { &quot;nsa&quot; , 1 }, { &quot;sis&quot; , 11 }, { &quot;tit&quot; , 19 }, { &quot;itt&quot; , 1 }, { &quot;utu&quot; , 1 }, { &quot;cke&quot; , 3 }, { &quot;bot&quot; , 2 }, { &quot;sag&quot; , 24 }, { &quot;tpa&quot; , 1 }, { &quot;nca&quot; , 1 }, { &quot;rya&quot; , 1 }, { &quot;iqu&quot; , 2 }, { &quot;nun&quot; , 4 }, { &quot;oso&quot; , 2 }, { &quot;uet&quot; , 1 }, { &quot;vat&quot; , 1 }, { &quot;nta&quot; , 2 }, { &quot;tsa&quot; , 7 }, { &quot;ets&quot; , 4 }, { &quot;sic&quot; , 16 }, { &quot;ery&quot; , 3 }, { &quot;asa&quot; , 2 }, { &quot;gea&quot; , 3 }, { &quot;mei&quot; , 1 }, { &quot;don&quot; , 6 }, { &quot;ost&quot; , 2 }, { &quot;rex&quot; , 11 }, { &quot;int&quot; , 22 }, { &quot;asb&quot; , 1 }, { &quot;erp&quot; , 3 }, { &quot;epo&quot; , 1 }, { &quot;dan&quot; , 2 }, { &quot;rut&quot; , 1 }, { &quot;raf&quot; , 1 }, { &quot;for&quot; , 26 }, { &quot;eci&quot; , 21 }, { &quot;alg&quot; , 1 }, { &quot;tve&quot; , 1 }, { &quot;enc&quot; , 24 }, { &quot;rnc&quot; , 2 }, { &quot;ksi&quot; , 2 }, { &quot;iaj&quot; , 1 }, { &quot;cil&quot; , 1 }, { &quot;urc&quot; , 1 }, { &quot;rbe&quot; , 2 }, { &quot;usc&quot; , 4 }, { &quot;ntd&quot; , 1 }, { &quot;nas&quot; , 3 }, { &quot;wis&quot; , 1 }, { &quot;lea&quot; , 3 }, { &quot;wor&quot; , 15 }, { &quot;phe&quot; , 83 }, { &quot;ols&quot; , 5 }, { &quot;lyt&quot; , 2 }, { &quot;erw&quot; , 8 }, { &quot;cou&quot; , 2 }, { &quot;tsh&quot; , 1 }, { &quot;lld&quot; , 1 }, { &quot;sho&quot; , 4 }, { &quot;ors&quot; , 4 }, { &quot;ive&quot; , 2 }, { &quot;otv&quot; , 1 }, { &quot;gek&quot; , 1 }, { &quot;eto&quot; , 11 }, { &quot;esi&quot; , 7 }, { &quot;ete&quot; , 2 }, { &quot;our&quot; , 4 }, { &quot;vem&quot; , 1 }, { &quot;upi&quot; , 1 }, { &quot;omy&quot; , 1 }, { &quot;nfa&quot; , 1 }, { &quot;esu&quot; , 10 }, { &quot;see&quot; , 2 }, { &quot;orr&quot; , 4 }, { &quot;nsh&quot; , 1 }, { &quot;tpl&quot; , 1 }, { &quot;typ&quot; , 4 }, { &quot;scl&quot; , 2 }, { &quot;arb&quot; , 1 }, { &quot;rct&quot; , 1 }, { &quot;ots&quot; , 5 }, { &quot;ids&quot; , 2 }, { &quot;utr&quot; , 1 }, { &quot;ron&quot; , 3 }, { &quot;aki&quot; , 1 }, { &quot;bac&quot; , 1 }, { &quot;sst&quot; , 1 }, { &quot;leb&quot; , 1 }, { &quot;ica&quot; , 23 }, { &quot;dar&quot; , 2 }, { &quot;gmo&quot; , 2 }, { &quot;mpt&quot; , 1 }, { &quot;bol&quot; , 4 }, { &quot;wbe&quot; , 1 }, { &quot;edf&quot; , 3 }, { &quot;qui&quot; , 1 }, { &quot;hst&quot; , 3 }, { &quot;rwo&quot; , 5 }, { &quot;geo&quot; , 3 }, { &quot;rco&quot; , 2 }, { &quot;lee&quot; , 1 }, { &quot;ofn&quot; , 1 }, { &quot;ser&quot; , 1 }, { &quot;edg&quot; , 1 }, { &quot;onc&quot; , 23 }, { &quot;sot&quot; , 2 }, { &quot;pai&quot; , 2 }, { &quot;dos&quot; , 1 }, { &quot;rks&quot; , 1 }, { &quot;lyx&quot; , 1 }, { &quot;cea&quot; , 5 }, { &quot;vel&quot; , 2 }, { &quot;een&quot; , 8 }, { &quot;gkn&quot; , 1 }, { &quot;ssc&quot; , 1 }, { &quot;ele&quot; , 17 }, { &quot;utt&quot; , 2 }, { &quot;rdb&quot; , 1 }, { &quot;scr&quot; , 3 }, { &quot;inv&quot; , 4 }, { &quot;dec&quot; , 3 }, { &quot;ley&quot; , 1 }, { &quot;squ&quot; , 4 }, { &quot;art&quot; , 7 }, { &quot;wyo&quot; , 2 }, { &quot;oaf&quot; , 1 }, { &quot;tak&quot; , 5 }, { &quot;nce&quot; , 9 }, { &quot;osc&quot; , 1 }, { &quot;swh&quot; , 5 }, { &quot;tut&quot; , 17 }, { &quot;who&quot; , 1 }, { &quot;ish&quot; , 4 }, { &quot;ont&quot; , 3 }, { &quot;her&quot; , 104 }, { &quot;gme&quot; , 1 }, { &quot;ues&quot; , 2 }, { &quot;alm&quot; , 1 }, { &quot;ehk&quot; , 1 }, { &quot;oan&quot; , 1 }, { &quot;epe&quot; , 4 }, { &quot;son&quot; , 2 }, { &quot;ice&quot; , 2 }, { &quot;ofs&quot; , 2 }, { &quot;hev&quot; , 5 }, { &quot;sun&quot; , 1 }, { &quot;sut&quot; , 1 }, { &quot;umb&quot; , 8 }, { &quot;lor&quot; , 2 }, { &quot;ngt&quot; , 10 }, { &quot;ink&quot; , 1 }, { &quot;sit&quot; , 12 }, { &quot;htw&quot; , 1 }, { &quot;alo&quot; , 2 }, { &quot;tou&quot; , 1 }, { &quot;oub&quot; , 1 }, { &quot;uti&quot; , 17 }, { &quot;sou&quot; , 1 }, { &quot;ety&quot; , 2 }, { &quot;ene&quot; , 10 }, { &quot;ear&quot; , 9 }, { &quot;noa&quot; , 1 }, { &quot;epr&quot; , 5 }, { &quot;ace&quot; , 9 }, { &quot;ddo&quot; , 2 }, { &quot;ver&quot; , 7 }, { &quot;tme&quot; , 1 }, { &quot;mix&quot; , 1 }, { &quot;mnu&quot; , 3 }, { &quot;sys&quot; , 4 }, { &quot;gns&quot; , 1 }, { &quot;aba&quot; , 1 }, { &quot;lai&quot; , 5 }, { &quot;ash&quot; , 3 }, { &quot;cip&quot; , 83 }, { &quot;htt&quot; , 1 }, { &quot;cby&quot; , 1 }, { &quot;hav&quot; , 6 }, { &quot;yan&quot; , 6 }, { &quot;dsc&quot; , 1 }, { &quot;nth&quot; , 16 }, { &quot;iec&quot; , 1 }, { &quot;yac&quot; , 2 }, { &quot;icd&quot; , 1 }, { &quot;itu&quot; , 18 }, { &quot;yfe&quot; , 1 }, { &quot;rsy&quot; , 1 }, { &quot;tex&quot; , 15 }, { &quot;rdt&quot; , 3 }, { &quot;epl&quot; , 6 }, { &quot;bit&quot; , 1 }, { &quot;dcr&quot; , 1 }, { &quot;kyi&quot; , 2 }, { &quot;sub&quot; , 17 }, { &quot;cul&quot; , 1 }, { &quot;ndu&quot; , 2 }, { &quot;tip&quot; , 2 }, { &quot;ykn&quot; , 1 }, { &quot;vid&quot; , 1 }, { &quot;ans&quot; , 18 }, { &quot;bas&quot; , 3 }, { &quot;rso&quot; , 11 }, { &quot;app&quot; , 1 }, { &quot;two&quot; , 4 }, { &quot;cod&quot; , 11 }, { &quot;ket&quot; , 5 }, { &quot;llr&quot; , 1 }, { &quot;eof&quot; , 11 }, { &quot;zln&quot; , 1 }, { &quot;nde&quot; , 5 }, { &quot;thm&quot; , 1 }, { &quot;enu&quot; , 3 }, { &quot;hsy&quot; , 2 }, { &quot;scy&quot; , 1 }, { &quot;sul&quot; , 1 }, { &quot;fpo&quot; , 1 }, { &quot;has&quot; , 10 }, { &quot;ami&quot; , 1 }, { &quot;ade&quot; , 1 }, { &quot;dle&quot; , 1 }, { &quot;lci&quot; , 15 }, { &quot;inu&quot; , 1 }, { &quot;key&quot; , 15 }, { &quot;rba&quot; , 2 }, { &quot;sev&quot; , 2 }, { &quot;nte&quot; , 8 }, { &quot;ula&quot; , 1 }, { &quot;por&quot; , 1 }, { &quot;dof&quot; , 6 }, { &quot;hes&quot; , 17 }, { &quot;efe&quot; , 2 }, { &quot;olu&quot; , 7 }, { &quot;iac&quot; , 2 }, { &quot;cra&quot; , 3 }, { &quot;hen&quot; , 14 }, { &quot;nvo&quot; , 4 }, { &quot;sor&quot; , 8 }, { &quot;hco&quot; , 1 }, { &quot;ods&quot; , 2 }, { &quot;nes&quot; , 5 }, { &quot;eys&quot; , 3 }, { &quot;nwi&quot; , 2 }, { &quot;lgo&quot; , 1 }, { &quot;emb&quot; , 1 }, { &quot;spe&quot; , 3 }, { &quot;enr&quot; , 1 }, { &quot;ord&quot; , 23 }, { &quot;icl&quot; , 2 }, { &quot;lds&quot; , 1 }, { &quot;dey&quot; , 1 }, { &quot;ror&quot; , 3 }, { &quot;mou&quot; , 1 }, { &quot;cet&quot; , 2 }, { &quot;aco&quot; , 1 }, { &quot;ing&quot; , 28 }, { &quot;ten&quot; , 6 }, { &quot;pli&quot; , 1 }, { &quot;aty&quot; , 2 }, { &quot;fyt&quot; , 1 }, { &quot;ern&quot; , 9 }, { &quot;err&quot; , 1 }, { &quot;ouf&quot; , 1 }, { &quot;ore&quot; , 21 }, { &quot;urd&quot; , 1 }, { &quot;ns&quot; , 1 }, { &quot;tio&quot; , 33 }, { &quot;ght&quot; , 3 }, { &quot;asm&quot; , 1 }, { &quot;cyt&quot; , 1 }, { &quot;ibl&quot; , 4 }, { &quot;all&quot; , 13 }, { &quot;upe&quot; , 1 }, { &quot;rch&quot; , 1 }, { &quot;dju&quot; , 1 }, { &quot;ine&quot; , 12 }, { &quot;iti&quot; , 13 }, { &quot;yss&quot; , 1 }, { &quot;isr&quot; , 2 }, { &quot;she&quot; , 5 }, { &quot;lan&quot; , 2 }, { &quot;the&quot; , 134 }, { &quot;syt&quot; , 2 }, { &quot;ral&quot; , 19 }, { &quot;mad&quot; , 1 }, { &quot;ywe&quot; , 1 }, { &quot;wnp&quot; , 1 }, { &quot;irm&quot; , 1 }, { &quot;sef&quot; , 2 }, { &quot;nea&quot; , 3 }, { &quot;ryw&quot; , 1 }, { &quot;eom&quot; , 1 }, { &quot;tcf&quot; , 2 }, { &quot;lyq&quot; , 1 }, { &quot;ngc&quot; , 1 }, { &quot;lab&quot; , 2 }, { &quot;sfa&quot; , 1 }, { &quot;ard&quot; , 2 }, { &quot;rin&quot; , 2 }, { &quot;ryl&quot; , 1 }, { &quot;yth&quot; , 7 }, { &quot;eup&quot; , 1 }, { &quot;amb&quot; , 2 }, { &quot;hsi&quot; , 1 }, { &quot;rmo&quot; , 4 }, { &quot;fig&quot; , 1 }, { &quot;usu&quot; , 1 }, { &quot;ero&quot; , 7 }, { &quot;ago&quot; , 1 }, { &quot;yin&quot; , 3 }, { &quot;rri&quot; , 1 }, { &quot;lex&quot; , 2 }, { &quot;ofp&quot; , 2 }, { &quot;gew&quot; , 3 }, { &quot;wan&quot; , 1 }, { &quot;new&quot; , 2 }, { &quot;lme&quot; , 1 }, { &quot;hef&quot; , 5 }, { &quot;mes&quot; , 29 }, { &quot;set&quot; , 6 }, { &quot;not&quot; , 7 }, { &quot;ted&quot; , 8 }, { &quot;olv&quot; , 4 }, { &quot;vet&quot; , 2 }, { &quot;ais&quot; , 2 }, { &quot;ndt&quot; , 12 }, { &quot;sce&quot; , 3 }, { &quot;eus&quot; , 10 }, { &quot;ewh&quot; , 4 }, { &quot;gld&quot; , 1 }, { &quot;jup&quot; , 1 }, { &quot;toa&quot; , 4 }, { &quot;eyw&quot; , 9 }, { &quot;cta&quot; , 2 }, { &quot;gur&quot; , 1 }, { &quot;bya&quot; , 1 }, { &quot;aes&quot; , 6 }, { &quot;sib&quot; , 1 }, { &quot;nus&quot; , 1 }, { &quot;lcl&quot; , 1 }, { &quot;rsn&quot; , 1 }, { &quot;ano&quot; , 4 }, { &quot;inn&quot; , 2 }, { &quot;ybe&quot; , 1 }, { &quot;rek&quot; , 1 }, { &quot;mam&quot; , 1 }, { &quot;ffi&quot; , 2 }, { &quot;rcr&quot; , 1 }, { &quot;tdi&quot; , 1 }, { &quot;shi&quot; , 2 }, { &quot;asl&quot; , 1 }, { &quot;lsc&quot; , 2 }, { &quot;ngu&quot; , 1 }, { &quot;rel&quot; , 5 }, { &quot;msc&quot; , 1 }, { &quot;stb&quot; , 2 }, { &quot;edb&quot; , 9 }, { &quot;ndb&quot; , 1 }, { &quot;ynu&quot; , 1 }, { &quot;pig&quot; , 1 }, { &quot;lov&quot; , 1 }, { &quot;rge&quot; , 1 }, { &quot;dal&quot; , 2 }, { &quot;rsw&quot; , 5 }, { &quot;sht&quot; , 1 }, { &quot;nsp&quot; , 16 }, { &quot;urn&quot; , 1 }, { &quot;sbe&quot; , 3 }, { &quot;usi&quot; , 5 }, { &quot;dhe&quot; , 2 }, { &quot;ivi&quot; , 1 }, { &quot;dsi&quot; , 2 }, { &quot;mmo&quot; , 1 }, { &quot;xya&quot; , 1 }, { &quot;tot&quot; , 4 }, { &quot;bfo&quot; , 1 }, { &quot;ldb&quot; , 3 }, { &quot;rra&quot; , 4 }, { &quot;akm&quot; , 1 }, { &quot;hea&quot; , 6 }, { &quot;stp&quot; , 1 }, { &quot;nal&quot; , 11 }, { &quot;duc&quot; , 2 }, { &quot;din&quot; , 10 }, { &quot;ext&quot; , 18 }, { &quot;rnu&quot; , 1 }, { &quot;orp&quot; , 1 }, { &quot;rsu&quot; , 1 }, { &quot;til&quot; , 2 }, { &quot;abl&quot; , 6 }, { &quot;ger&quot; , 3 }, { &quot;ces&quot; , 5 }, { &quot;ach&quot; , 8 }, { &quot;ram&quot; , 2 }, { &quot;dfo&quot; , 6 }, { &quot;soa&quot; , 1 }, { &quot;esm&quot; , 1 }, { &quot;nse&quot; , 1 }, { &quot;ndi&quot; , 3 }, { &quot;obo&quot; , 1 }, { &quot;pti&quot; , 5 }, { &quot;ngm&quot; , 4 }, { &quot;tin&quot; , 9 }, { &quot;ssy&quot; , 1 }, { &quot;bea&quot; , 2 }, { &quot;eab&quot; , 1 }, { &quot;ycl&quot; , 2 }, { &quot;sig&quot; , 4 }, { &quot;wna&quot; , 1 }, { &quot;nfo&quot; , 1 }, { &quot;suc&quot; , 7 }, { &quot;erf&quot; , 1 }, { &quot;cau&quot; , 3 }, { &quot;eev&quot; , 1 }, { &quot;gle&quot; , 3 }, { &quot;mel&quot; , 1 }, { &quot;owr&quot; , 1 }, { &quot;ssi&quot; , 17 }, { &quot;sta&quot; , 7 }, { &quot;aid&quot; , 1 }, { &quot;oen&quot; , 5 }, { &quot;asf&quot; , 2 }, { &quot;fin&quot; , 4 }, { &quot;ock&quot; , 1 }, { &quot;rfr&quot; , 1 }, { &quot;gec&quot; , 1 }, { &quot;sid&quot; , 1 }, { &quot;dop&quot; , 1 }, { &quot;awi&quot; , 1 }, { &quot;nsi&quot; , 2 }, { &quot;har&quot; , 1 }, { &quot;beb&quot; , 2 }, { &quot;gwh&quot; , 2 }, { &quot;odo&quot; , 2 }, { &quot;ctr&quot; , 1 }, { &quot;get&quot; , 3 }, { &quot;eso&quot; , 7 }, { &quot;wss&quot; , 1 }, { &quot;tss&quot; , 1 }, { &quot;evi&quot; , 5 }, { &quot;att&quot; , 11 }, { &quot;udi&quot; , 1 }, { &quot;egt&quot; , 1 }, { &quot;shs&quot; , 1 }, { &quot;sew&quot; , 1 }, { &quot;oex&quot; , 1 }, { &quot;hod&quot; , 5 }, { &quot;lph&quot; , 27 }, { &quot;omp&quot; , 2 }, { &quot;uwi&quot; , 1 }, { &quot;iso&quot; , 2 }, { &quot;gam&quot; , 1 }, { &quot;rna&quot; , 2 }, { &quot;ift&quot; , 5 }, { &quot;atc&quot; , 3 }, { &quot;ptu&quot; , 1 }, { &quot;hez&quot; , 1 }, { &quot;cia&quot; , 1 }, { &quot;nly&quot; , 5 }, { &quot;ses&quot; , 5 }, { &quot;ase&quot; , 4 }, { &quot;red&quot; , 5 }, { &quot;gth&quot; , 7 }, { &quot;tec&quot; , 4 }, { &quot;bab&quot; , 1 }, { &quot;spl&quot; , 1 }, { &quot;als&quot; , 7 }, { &quot;any&quot; , 8 }, { &quot;tor&quot; , 7 }, { &quot;eor&quot; , 4 }, { &quot;ofi&quot; , 3 }, { &quot;lyu&quot; , 1 }, { &quot;rta&quot; , 1 }, { &quot;ill&quot; , 1 }, { &quot;oci&quot; , 1 }, { &quot;nit&quot; , 1 }, { &quot;upc&quot; , 1 }, { &quot;ply&quot; , 1 }, { &quot;esd&quot; , 1 }, { &quot;sus&quot; , 10 }, { &quot;eyb&quot; , 1 }, { &quot;ons&quot; , 7 }, { &quot;akt&quot; , 1 }, { &quot;san&quot; , 15 }, { &quot;cyc&quot; , 1 }, { &quot;ixi&quot; , 1 }, { &quot;hyt&quot; , 1 }, { &quot;ndc&quot; , 4 }, { &quot;ipl&quot; , 2 }, { &quot;ded&quot; , 3 }, { &quot;rot&quot; , 4 }, { &quot;sbu&quot; , 2 }, { &quot;gef&quot; , 1 }, { &quot;tba&quot; , 1 }, { &quot;kas&quot; , 1 }, { &quot;yso&quot; , 1 }, { &quot;lst&quot; , 1 }, { &quot;ori&quot; , 6 }, { &quot;adt&quot; , 1 }, { &quot;byd&quot; , 1 }, { &quot;yec&quot; , 1 }, { &quot;sbf&quot; , 1 }, { &quot;tto&quot; , 5 }, { &quot;asc&quot; , 2 }, { &quot;ypt&quot; , 9 }, { &quot;gho&quot; , 1 }, { &quot;byi&quot; , 1 }, { &quot;nda&quot; , 1 }, { &quot;rod&quot; , 2 }, { &quot;lre&quot; , 1 }, { &quot;led&quot; , 2 }, { &quot;swi&quot; , 1 }, { &quot;aas&quot; , 1 }, { &quot;sei&quot; , 3 }, { &quot;pso&quot; , 2 }, { &quot;owe&quot; , 1 }, { &quot;oea&quot; , 1 }, { &quot;rwh&quot; , 2 }, { &quot;dmo&quot; , 3 }, { &quot;isz&quot; , 1 }, { &quot;edk&quot; , 1 }, { &quot;asi&quot; , 4 }, { &quot;rli&quot; , 1 }, { &quot;loo&quot; , 3 }, { &quot;gai&quot; , 2 }, { &quot;rem&quot; , 4 }, { &quot;aca&quot; , 1 }, { &quot;thr&quot; , 4 }, { &quot;mbe&quot; , 9 }, { &quot;nno&quot; , 1 }, { &quot;ldd&quot; , 1 }, { &quot;mor&quot; , 8 }, { &quot;iaa&quot; , 1 }, { &quot;tas&quot; , 2 }, { &quot;rom&quot; , 5 }, { &quot;eee&quot; , 1 }, { &quot;cin&quot; , 1 }, { &quot;das&quot; , 3 }, { &quot;ial&quot; , 2 }, { &quot;tow&quot; , 2 }, { &quot;ama&quot; , 2 }, { &quot;isd&quot; , 1 }, { &quot;twa&quot; , 1 }, { &quot;kma&quot; , 1 }, { &quot;gya&quot; , 1 }, { &quot;bee&quot; , 2 }, { &quot;eex&quot; , 2 }, { &quot;rph&quot; , 1 }, { &quot;ban&quot; , 2 }, { &quot;oup&quot; , 3 }, { &quot;ndw&quot; , 1 }, { &quot;ion&quot; , 33 }, { &quot;ups&quot; , 2 }, { &quot;tog&quot; , 3 }, { &quot;iss&quot; , 2 }, { &quot;ims&quot; , 1 }, { &quot;gre&quot; , 2 }, { &quot;fal&quot; , 1 }, { &quot;dca&quot; , 2 }, { &quot;uci&quot; , 1 }, { &quot;ved&quot; , 1 }, { &quot;sla&quot; , 1 }, { &quot;sbl&quot; , 2 }, { &quot;ayt&quot; , 1 }, { &quot;nre&quot; , 1 }, { &quot;tri&quot; , 1 }, { &quot;anb&quot; , 3 }, { &quot;uts&quot; , 1 }, { &quot;som&quot; , 6 }, { &quot;far&quot; , 1 }, { &quot;ect&quot; , 6 }, { &quot;hms&quot; , 1 }, { &quot;rat&quot; , 4 }, { &quot;rsc&quot; , 6 }, { &quot;ome&quot; , 9 }, { &quot;fpl&quot; , 1 }, { &quot;clu&quot; , 3 }, { &quot;ant&quot; , 1 }, { &quot;mal&quot; , 1 }, { &quot;tol&quot; , 1 }, { &quot;ofo&quot; , 1 }, { &quot;tci&quot; , 5 }, { &quot;ofc&quot; , 7 }, { &quot;orm&quot; , 3 }, { &quot;esp&quot; , 7 }, { &quot;rok&quot; , 2 }, { &quot;eac&quot; , 6 }, { &quot;ers&quot; , 68 }, { &quot;rmi&quot; , 2 }, { &quot;ute&quot; , 3 }, { &quot;bye&quot; , 1 }, { &quot;laa&quot; , 1 }, { &quot;ldc&quot; , 1 }, { &quot;sfo&quot; , 7 }, { &quot;eep&quot; , 1 }, { &quot;kip&quot; , 2 }, { &quot;lls&quot; , 1 }, { &quot;ins&quot; , 4 }, { &quot;ili&quot; , 2 }, { &quot;iki&quot; , 2 }, { &quot;pta&quot; , 4 }, { &quot;ksl&quot; , 1 }, { &quot;mni&quot; , 1 }, { &quot;ise&quot; , 2 }, { &quot;rou&quot; , 5 }, { &quot;rei&quot; , 2 }, { &quot;unc&quot; , 2 }, { &quot;mea&quot; , 1 }, { &quot;ein&quot; , 5 }, { &quot;wev&quot; , 1 }, { &quot;bec&quot; , 5 }, { &quot;bby&quot; , 1 }, { &quot;dmu&quot; , 1 }, { &quot;uld&quot; , 16 }, { &quot;org&quot; , 2 }, { &quot;upt&quot; , 1 }, { &quot;eat&quot; , 9 }, { &quot;sno&quot; , 2 }, { &quot;dso&quot; , 1 }, { &quot;top&quot; , 1 }, { &quot;stl&quot; , 3 }, { &quot;tar&quot; , 5 }, { &quot;rec&quot; , 7 }, { &quot;hee&quot; , 4 }, { &quot;num&quot; , 9 }, { &quot;loc&quot; , 1 }, { &quot;sua&quot; , 1 }, { &quot;aly&quot; , 5 }, { &quot;erl&quot; , 3 }, { &quot;ldj&quot; , 1 }, { &quot;zan&quot; , 1 }, { &quot;ndh&quot; , 2 }, { &quot;ftr&quot; , 1 }, { &quot;ndn&quot; , 1 }, { &quot;oft&quot; , 20 }, { &quot;jul&quot; , 1 }, { &quot;taw&quot; , 1 }, { &quot;eis&quot; , 9 }, { &quot;oma&quot; , 1 }, { &quot;cri&quot; , 1 }, { &quot;okl&quot; , 2 }, { &quot;dis&quot; , 3 }, { &quot;sba&quot; , 1 }, { &quot;yle&quot; , 2 }, { &quot;use&quot; , 26 }, { &quot;owt&quot; , 1 }, { &quot;ict&quot; , 1 }, { &quot;cep&quot; , 3 }, { &quot;yqu&quot; , 1 }, { &quot;ras&quot; , 1 }, { &quot;rcd&quot; , 1 }, { &quot;ith&quot; , 13 }, { &quot;etr&quot; , 3 }, { &quot;cte&quot; , 1 }, { &quot;ndm&quot; , 2 }, { &quot;edh&quot; , 1 }, { &quot;npo&quot; , 1 }, { &quot;omn&quot; , 1 }, { &quot;man&quot; , 7 }, { &quot;usa&quot; , 1 }, { &quot;oag&quot; , 1 }, { &quot;but&quot; , 6 }, { &quot;bly&quot; , 1 }, { &quot;oal&quot; , 1 }, { &quot;cti&quot; , 1 }, { &quot;dge&quot; , 1 }, { &quot;eap&quot; , 1 }, { &quot;sie&quot; , 1 }, { &quot;nya&quot; , 1 }, { &quot;elo&quot; , 2 }, { &quot;row&quot; , 3 }, { &quot;eng&quot; , 1 }, { &quot;szl&quot; , 1 }, { &quot;obe&quot; , 3 }, { &quot;tie&quot; , 1 }, { &quot;ybu&quot; , 1 }, { &quot;adv&quot; , 2 }, { &quot;eta&quot; , 1 }, { &quot;tse&quot; , 1 }, { &quot;han&quot; , 7 }, { &quot;ist&quot; , 9 }, { &quot;gro&quot; , 3 }, { &quot;opt&quot; , 2 }, { &quot;byu&quot; , 1 }, { &quot;ngs&quot; , 2 }, { &quot;est&quot; , 9 }, { &quot;lef&quot; , 5 }, { &quot;hid&quot; , 1 }, { &quot;sme&quot; , 1 }, { &quot;ado&quot; , 2 }, { &quot;sel&quot; , 4 }, { &quot;hel&quot; , 12 }, { &quot;apo&quot; , 3 }, { &quot;ton&quot; , 5 }, { &quot;dma&quot; , 1 }, { &quot;dog&quot; , 1 }, { &quot;icc&quot; , 1 }, { &quot;rsb&quot; , 1 }, { &quot;rob&quot; , 1 }, { &quot;tam&quot; , 2 }, { &quot;wou&quot; , 13 }, { &quot;gto&quot; , 4 }, { &quot;vig&quot; , 5 }, { &quot;lys&quot; , 6 }, { &quot;gne&quot; , 1 }, { &quot;pea&quot; , 4 }, { &quot;ntn&quot; , 1 }, { &quot;rte&quot; , 10 }, { &quot;oss&quot; , 1 }, { &quot;sgr&quot; , 1 }, { &quot;aan&quot; , 2 }, { &quot;nyc&quot; , 2 }, { &quot;abr&quot; , 1 }, { &quot;mer&quot; , 1 }, { &quot;acc&quot; , 2 }, { &quot;can&quot; , 6 }, { &quot;esg&quot; , 1 }, { &quot;dsw&quot; , 1 }, { &quot;dow&quot; , 1 }, { &quot;otr&quot; , 2 }, { &quot;erh&quot; , 2 }, { &quot;asz&quot; , 1 }, { &quot;ken&quot; , 4 }, { &quot;eru&quot; , 1 }, { &quot;mne&quot; , 1 }, { &quot;jus&quot; , 3 }, { &quot;dor&quot; , 3 }, { &quot;nts&quot; , 2 }, { &quot;uit&quot; , 1 }, { &quot;hra&quot; , 1 }, { &quot;erm&quot; , 9 }, { &quot;ars&quot; , 1 }, { &quot;pot&quot; , 1 }, { &quot;nar&quot; , 2 }, { &quot;chl&quot; , 2 }, { &quot;pts&quot; , 1 }, { &quot;isu&quot; , 3 }, { &quot;gei&quot; , 4 }, { &quot;goo&quot; , 1 }, { &quot;isc&quot; , 4 }, { &quot;isf&quot; , 1 }, { &quot;edu&quot; , 1 }, { &quot;eft&quot; , 2 }, { &quot;uns&quot; , 1 }, { &quot;pla&quot; , 11 }, { &quot;ree&quot; , 3 }, { &quot;nch&quot; , 1 }, { &quot;nol&quot; , 3 }, { &quot;yev&quot; , 1 }, { &quot;utk&quot; , 1 }, { &quot;ber&quot; , 9 }, { &quot;iph&quot; , 83 }, { &quot;vec&quot; , 1 }, { &quot;owl&quot; , 1 }, { &quot;cfi&quot; , 1 }, { &quot;rio&quot; , 2 }, { &quot;dhi&quot; , 1 }, { &quot;sam&quot; , 5 }, { &quot;dbu&quot; , 1 }, { &quot;mpu&quot; , 1 }, { &quot;mpr&quot; , 1 }, { &quot;ope&quot; , 4 }, { &quot;sfr&quot; , 1 }, { &quot;tla&quot; , 2 }, { &quot;ify&quot; , 1 }, { &quot;gyw&quot; , 1 }, { &quot;spa&quot; , 3 }, { &quot;icu&quot; , 1 }, { &quot;too&quot; , 4 }, { &quot;ksu&quot; , 1 }, { &quot;keu&quot; , 1 }, { &quot;mus&quot; , 1 }, { &quot;rci&quot; , 5 }, { &quot;orb&quot; , 2 }, { &quot;dwi&quot; , 3 }, { &quot;enf&quot; , 2 }, { &quot;cci&quot; , 1 }, { &quot;rns&quot; , 2 }, { &quot;ouw&quot; , 6 }, { &quot;hno&quot; , 2 }, { &quot;raa&quot; , 1 }, { &quot;gri&quot; , 1 }, { &quot;clo&quot; , 1 }, { &quot;ngw&quot; , 2 }, { &quot;nds&quot; , 4 }, { &quot;rde&quot; , 6 }, { &quot;eed&quot; , 1 }, { &quot;sca&quot; , 7 }, { &quot;ino&quot; , 2 }, { &quot;ile&quot; , 1 }, { &quot;s&quot; , 1 }, { &quot;ufi&quot; , 1 }, { &quot;edw&quot; , 3 }, { &quot;ebe&quot; , 1 }, { &quot;nyt&quot; , 2 }, { &quot;cwo&quot; , 1 }, { &quot;esb&quot; , 1 }, { &quot;dme&quot; , 1 }, { &quot;vea&quot; , 4 }, { &quot;eif&quot; , 4 }, { &quot;isn&quot; , 2 }, { &quot;ere&quot; , 33 }, { &quot;ool&quot; , 1 }, { &quot;ecl&quot; , 3 }, { &quot;rds&quot; , 1 }, { &quot;asd&quot; , 2 }, { &quot;rsi&quot; , 11 }, { &quot;itf&quot; , 1 }, { &quot;dev&quot; , 3 }, { &quot;rro&quot; , 1 }, { &quot;het&quot; , 1 }, { &quot;rpl&quot; , 1 }, { &quot;xts&quot; , 1 }, { &quot;nin&quot; , 4 }, { &quot;spo&quot; , 20 }, { &quot;sle&quot; , 2 }, { &quot;hat&quot; , 14 }, { &quot;ksa&quot; , 4 }, { &quot;fcl&quot; , 5 }, { &quot;xta&quot; , 7 }, { &quot;rre&quot; , 4 }, { &quot;ntr&quot; , 2 }, { &quot;nso&quot; , 2 }, { &quot;ryp&quot; , 9 }, { &quot;log&quot; , 2 }, { &quot;ole&quot; , 2 }, { &quot;rdc&quot; , 1 }, { &quot;dus&quot; , 3 }, { &quot;ala&quot; , 3 }, { &quot;rle&quot; , 4 }, { &quot;mos&quot; , 2 }, { &quot;rsl&quot; , 1 }, { &quot;syl&quot; , 2 }, { &quot;gin&quot; , 5 }, { &quot;odm&quot; , 1 }, { &quot;rsm&quot; , 1 }, { &quot;rdf&quot; , 1 }, { &quot;nha&quot; , 1 }, { &quot;atr&quot; , 1 }, { &quot;anf&quot; , 1 }, { &quot;are&quot; , 29 }, { &quot;let&quot; , 45 }, { &quot;rof&quot; , 5 }, { &quot;imp&quot; , 6 }, { &quot;gra&quot; , 3 }, { &quot;suf&quot; , 1 }, { &quot;dbe&quot; , 3 }, { &quot;oke&quot; , 2 }, { &quot;ueh&quot; , 1 }, { &quot;ite&quot; , 6 }, { &quot;elv&quot; , 1 }, { &quot;wte&quot; , 1 }, { &quot;alt&quot; , 2 }, { &quot;toe&quot; , 7 }, { &quot;tht&quot; , 4 }, { &quot;emn&quot; , 1 }, { &quot;lle&quot; , 4 }, { &quot;eya&quot; , 2 }, { &quot;nga&quot; , 1 }, { &quot;cie&quot; , 1 }, { &quot;itl&quot; , 1 }, { &quot;vic&quot; , 1 }, { &quot;yha&quot; , 1 }, { &quot;ksf&quot; , 1 }, { &quot;mec&quot; , 4 }, { &quot;amp&quot; , 17 }, { &quot;tag&quot; , 1 }, { &quot;nci&quot; , 26 }, { &quot;nsc&quot; , 1 }, { &quot;ysp&quot; , 2 }, { &quot;unt&quot; , 2 }, { &quot;lyk&quot; , 1 }, { &quot;geu&quot; , 1 }, { &quot;ics&quot; , 3 }, { &quot;lon&quot; , 1 }, { &quot;seg&quot; , 1 }, { &quot;ara&quot; , 2 }, { &quot;fas&quot; , 1 }, { &quot;ofl&quot; , 4 }, { &quot;yam&quot; , 1 }, { &quot;lop&quot; , 2 }, { &quot;mon&quot; , 3 }, { &quot;ofm&quot; , 3 }, { &quot;nti&quot; , 2 }, { &quot;tun&quot; , 2 }, { &quot;yab&quot; , 1 }, { &quot;odu&quot; , 2 }, { &quot;onb&quot; , 1 }, { &quot;wer&quot; , 6 }, { &quot;blu&quot; , 2 }, { &quot;tdo&quot; , 1 }, { &quot;esk&quot; , 2 }, { &quot;non&quot; , 1 }, { &quot;ige&quot; , 4 }, { &quot;ora&quot; , 3 }, { &quot;ecr&quot; , 2 }, { &quot;deb&quot; , 2 }, { &quot;nor&quot; , 2 }, { &quot;ftd&quot; , 1 }, { &quot;pac&quot; , 3 }, { &quot;rbu&quot; , 1 }, { &quot;eop&quot; , 2 }, { &quot;str&quot; , 5 }, { &quot;nat&quot; , 4 }, { &quot;fco&quot; , 1 }, { &quot;isk&quot; , 1 }, { &quot;yre&quot; , 2 }, { &quot;lyi&quot; , 1 }, { &quot;imi&quot; , 1 }, { &quot;lik&quot; , 3 }, { &quot;inl&quot; , 1 }, { &quot;dif&quot; , 4 }, { &quot;chw&quot; , 1 }, { &quot;ici&quot; , 1 }, { &quot;ond&quot; , 4 }, { &quot;ytr&quot; , 3 }, { &quot;ure&quot; , 2 }, { &quot;hre&quot; , 2 }, { &quot;oes&quot; , 1 }, { &quot;hed&quot; , 2 }, { &quot;ell&quot; , 5 }, { &quot;det&quot; , 6 }, { &quot;muc&quot; , 4 }, { &quot;llo&quot; , 1 }, { &quot;ywo&quot; , 10 }, { &quot;sju&quot; , 2 }, { &quot;ast&quot; , 6 }, { &quot;umn&quot; , 7 }, { &quot;pit&quot; , 1 }, { &quot;esw&quot; , 1 }, { &quot;jum&quot; , 1 }, { &quot;sdo&quot; , 2 }, { &quot;vol&quot; , 4 }, { &quot;uta&quot; , 5 }, { &quot;zar&quot; , 1 }, { &quot;lti&quot; , 2 }, { &quot;ogy&quot; , 2 }, { &quot;bis&quot; , 1 }, { &quot;tch&quot; , 1 }, { &quot;sky&quot; , 2 }, { &quot;kin&quot; , 1 }, { &quot;lyb&quot; , 1 }, { &quot;npl&quot; , 2 }, { &quot;pul&quot; , 1 }, { &quot;lke&quot; , 2 }, { &quot;ini&quot; , 1 }, { &quot;arc&quot; , 5 }, { &quot;afr&quot; , 1 }, { &quot;ova&quot; , 1 }, { &quot;ldn&quot; , 2 }, { &quot;fer&quot; , 5 }, { &quot;van&quot; , 2 }, { &quot;emi&quot; , 3 }, { &quot;ncr&quot; , 7 }, { &quot;sto&quot; , 9 }, { &quot;gmu&quot; , 1 }, { &quot;erb&quot; , 2 }, { &quot;yof&quot; , 1 }, { &quot;egr&quot; , 1 }, { &quot;eno&quot; , 1 }, { &quot;lud&quot; , 3 }, { &quot;chh&quot; , 1 }, { &quot;ysi&quot; , 6 }, { &quot;res&quot; , 19 }, { &quot;kno&quot; , 5 }, { &quot;ced&quot; , 6 }, { &quot;owy&quot; , 2 }, { &quot;esq&quot; , 4 }, { &quot;fci&quot; , 2 }, { &quot;esr&quot; , 2 }, { &quot;ien&quot; , 1 }, { &quot;irs&quot; , 7 }, { &quot;ari&quot; , 1 }, { &quot;tha&quot; , 13 }, { &quot;tfo&quot; , 3 }, { &quot;byt&quot; , 5 }, { &quot;ren&quot; , 7 }, { &quot;ote&quot; , 1 }, { &quot;nyo&quot; , 1 }, { &quot;kli&quot; , 2 }, { &quot;arg&quot; , 1 }, { &quot;sli&quot; , 2 }, { &quot;eai&quot; , 2 }, { &quot;tiv&quot; , 2 }, { &quot;nic&quot; , 3 }, { &quot;vee&quot; , 1 }, { &quot;tho&quot; , 7 }, { &quot;ism&quot; , 3 }, { &quot;ens&quot; , 3 }, { &quot;his&quot; , 13 }, { &quot;uff&quot; , 1 }, { &quot;ste&quot; , 6 }, { &quot;yme&quot; , 1 }, { &quot;def&quot; , 1 }, { &quot;var&quot; , 1 }, { &quot;sna&quot; , 1 }, { &quot;mpl&quot; , 23 }, { &quot;dup&quot; , 1 }, { &quot;yal&quot; , 3 }, { &quot;esy&quot; , 3 }, { &quot;rov&quot; , 1 }, { &quot;rha&quot; , 2 }, { &quot;ati&quot; , 17 }, { &quot;air&quot; , 2 }, { &quot;thc&quot; , 2 }, { &quot;dre&quot; , 2 }, { &quot;ani&quot; , 4 }, { &quot;try&quot; , 1 }, { &quot;dco&quot; , 1 }, { &quot;hma&quot; , 1 }, { &quot;oks&quot; , 1 }, { &quot;ake&quot; , 11 }, { &quot;hwe&quot; , 1 }, { &quot;ume&quot; , 1 }, { &quot;lal&quot; , 1 }, { &quot;alp&quot; , 28 }, { &quot;iex&quot; , 1 }, { &quot;oly&quot; , 3 }, { &quot;tib&quot; , 3 }, { &quot;irp&quot; , 1 }, { &quot;acl&quot; , 1 }, { &quot;sas&quot; , 4 }, { &quot;oml&quot; , 1 }, { &quot;nsl&quot; , 1 }, { &quot;cew&quot; , 1 }, { &quot;che&quot; , 3 }, { &quot;ipe&quot; , 2 }, { &quot;ngi&quot; , 2 }, { &quot;out&quot; , 8 }, { &quot;anc&quot; , 3 }, { &quot;adi&quot; , 1 }, { &quot;eve&quot; , 12 }, { &quot;nyn&quot; , 1 }, { &quot;lte&quot; , 2 }, { &quot;fwo&quot; , 1 }, { &quot;ter&quot; , 47 }, { &quot;ges&quot; , 2 }, { &quot;tsl&quot; , 1 }, { &quot;sym&quot; , 4 }, { &quot;sal&quot; , 4 }, { &quot;pha&quot; , 27 }, { &quot;ius&quot; , 1 }, { &quot;tom&quot; , 1 }, { &quot;iro&quot; , 4 }, { &quot;ocr&quot; , 2 }, { &quot;ese&quot; , 11 }, { &quot;hin&quot; , 6 }, { &quot;ind&quot; , 1 }, { &quot;ech&quot; , 10 }, { &quot;lsf&quot; , 2 }, { &quot;igh&quot; , 3 }, { &quot;oul&quot; , 16 }, { &quot;aza&quot; , 1 }, { &quot;sde&quot; , 3 }, { &quot;dth&quot; , 15 }, { &quot;ldw&quot; , 1 }, { &quot;mak&quot; , 2 }, { &quot;eby&quot; , 1 }, { &quot;dwe&quot; , 1 }, { &quot;omw&quot; , 1 }, { &quot;tod&quot; , 4 }, { &quot;dwr&quot; , 1 }, { &quot;tre&quot; , 2 }, { &quot;uso&quot; , 1 }, { &quot;ofw&quot; , 1 }, { &quot;fre&quot; , 8 }, { &quot;ept&quot; , 4 }, { &quot;reo&quot; , 4 }, { &quot;asw&quot; , 1 }, { &quot;lso&quot; , 6 }, { &quot;hks&quot; , 1 }, { &quot;tsi&quot; , 1 }, { &quot;atw&quot; , 1 }, { &quot;oug&quot; , 2 }, { &quot;hif&quot; , 1 }, { &quot;lty&quot; , 1 }, { &quot;ria&quot; , 1 }, { &quot;cwe&quot; , 1 }, { &quot;llb&quot; , 1 }, { &quot;end&quot; , 2 }, { &quot;tev&quot; , 1 }, { &quot;chm&quot; , 2 }, { &quot;ono&quot; , 3 }, { &quot;xty&quot; , 1 }, { &quot;ela&quot; , 2 }, { &quot;ple&quot; , 27 }, { &quot;oth&quot; , 13 }, { &quot;rss&quot; , 7 }, { &quot;sea&quot; , 2 }, { &quot;cei&quot; , 1 }, { &quot;eit&quot; , 1 }, { &quot;wth&quot; , 1 }, { &quot;edo&quot; , 7 }, { &quot;eni&quot; , 5 }, { &quot;eou&quot; , 1 }, { &quot;tte&quot; , 38 }, { &quot;nen&quot; , 1 }, { &quot;ouh&quot; , 1 }, { &quot;dba&quot; , 1 }, { &quot;cfo&quot; , 2 }, { &quot;rmu&quot; , 1 }, { &quot;emu&quot; , 3 }, { &quot;uth&quot; , 1 }, { &quot;how&quot; , 3 }, { &quot;wid&quot; , 1 }, { &quot;igm&quot; , 1 }, { &quot;owh&quot; , 1 }, { &quot;whe&quot; , 5 }, { &quot;mbo&quot; , 4 }, { &quot;ald&quot; , 1 }, { &quot;woe&quot; , 1 }, { &quot;ndd&quot; , 3 }, { &quot;arl&quot; , 1 }, { &quot;div&quot; , 1 }, { &quot;tby&quot; , 1 }, { &quot;rce&quot; , 2 }, { &quot;enw&quot; , 3 }, { &quot;ows&quot; , 3 }, { &quot;oge&quot; , 1 }, { &quot;eva&quot; , 1 }, { &quot;ead&quot; , 5 }, { &quot;que&quot; , 7 }, { &quot;rti&quot; , 6 }, { &quot;gem&quot; , 2 }, { &quot;mbl&quot; , 2 }, { &quot;ymb&quot; , 4 }, { &quot;ceb&quot; , 1 }, { &quot;iat&quot; , 1 }, { &quot;eri&quot; , 9 }, { &quot;mse&quot; , 2 }, { &quot;yna&quot; , 1 }, { &quot;der&quot; , 17 }, { &quot;eot&quot; , 1 }, { &quot;elf&quot; , 2 }, { &quot;hos&quot; , 3 }, { &quot;lel&quot; , 1 }, { &quot;nwh&quot; , 1 }, { &quot;dte&quot; , 1 }, { &quot;eun&quot; , 1 }, { &quot;isj&quot; , 1 }, { &quot;oba&quot; , 1 }, { &quot;ota&quot; , 1 }, { &quot;lli&quot; , 1 }, { &quot;lda&quot; , 2 }, { &quot;hym&quot; , 1 }, { &quot;lic&quot; , 2 }, { &quot;hep&quot; , 3 }, { &quot;ewi&quot; , 2 }, { &quot;tsu&quot; , 1 }, { &quot;nfr&quot; , 1 }, { &quot;oro&quot; , 4 }, { &quot;cis&quot; , 2 }, { &quot;hth&quot; , 6 }, { &quot;wne&quot; , 1 }, { &quot;dlo&quot; , 2 }, { &quot;nof&quot; , 1 }, { &quot;cel&quot; , 1 }, { &quot;mns&quot; , 2 }, { &quot;ged&quot; , 2 }, { &quot;dfr&quot; , 1 }, { &quot;eca&quot; , 6 }, { &quot;eel&quot; , 1 }, { &quot;ous&quot; , 4 }, { &quot;sec&quot; , 10 }, { &quot;ner&quot; , 5 }, { &quot;lit&quot; , 2 }, { &quot;sob&quot; , 2 }, { &quot;mri&quot; , 1 }, { &quot;eak&quot; , 5 }, { &quot;dbb&quot; , 1 }, { &quot;was&quot; , 3 }, { &quot;hmo&quot; , 1 }, { &quot;pol&quot; , 4 }, { &quot;fyo&quot; , 1 }, { &quot;mno&quot; , 1 }, { &quot;isi&quot; , 6 }, { &quot;xte&quot; , 2 }, { &quot;put&quot; , 1 }, { &quot;len&quot; , 2 }, { &quot;esa&quot; , 18 }, { &quot;orl&quot; , 2 }, { &quot;ett&quot; , 41 }, { &quot;lde&quot; , 2 }, { &quot;efr&quot; , 4 }, { &quot;sci&quot; , 2 }, { &quot;hro&quot; , 2 }, { &quot;maw&quot; , 1 }, { &quot;hle&quot; , 2 }, { &quot;toh&quot; , 1 }, { &quot;awe&quot; , 1 }, { &quot;eke&quot; , 8 }, { &quot;dac&quot; , 1 }, { &quot;met&quot; , 9 }, { &quot;stt&quot; , 1 }, { &quot;shg&quot; , 1 }, { &quot;ths&quot; , 3 }, { &quot;sap&quot; , 1 }, { &quot;eju&quot; , 1 }, { &quot;teo&quot; , 2 }, { &quot;pre&quot; , 5 }, { &quot;yci&quot; , 1 }, { &quot;uar&quot; , 4 }, { &quot;sbi&quot; , 1 }, { &quot;uha&quot; , 1 }, { &quot;thi&quot; , 13 }, { &quot;rth&quot; , 12 }, { &quot;rgr&quot; , 2 }, { &quot;bei&quot; , 2 }, { &quot;tma&quot; , 1 }, { &quot;men&quot; , 2 }, { &quot;tle&quot; , 6 }, { &quot;eag&quot; , 2 }, { &quot;ris&quot; , 4 }, { &quot;tan&quot; , 12 }, { &quot;ort&quot; , 6 }, { &quot;hse&quot; , 1 }, { &quot;fap&quot; , 1 }, { &quot;ywa&quot; , 1 }, { &quot;kci&quot; , 1 }, { &quot;dst&quot; , 1 }, { &quot;leo&quot; , 7 }, { &quot;lfc&quot; , 1 }, { &quot;wik&quot; , 2 }, { &quot;uch&quot; , 11 }, { &quot;wci&quot; , 1 }, { &quot;oha&quot; , 1 }, { &quot;hic&quot; , 5 }, { &quot;lin&quot; , 5 }, { &quot;lbe&quot; , 1 }, { &quot;tkn&quot; , 1 }, { &quot;eth&quot; , 32 }, { &quot;saz&quot; , 1 }, { &quot;nwo&quot; , 2 }, { &quot;xam&quot; , 18 }, { &quot;dei&quot; , 2 }, { &quot;edm&quot; , 3 }, { &quot;beu&quot; , 3 }, { &quot;rop&quot; , 1 }, { &quot;oac&quot; , 1 }, { &quot;xal&quot; , 1 }, { &quot;eda&quot; , 1 }, { &quot;hei&quot; , 5 }, { &quot;avi&quot; , 3 }, { &quot;hta&quot; , 1 }, { &quot;ofa&quot; , 2 }, { &quot;ike&quot; , 3 }, { &quot;par&quot; , 2 }, { &quot;opo&quot; , 1 }, { &quot;lkn&quot; , 1 }, { &quot;con&quot; , 2 }, { &quot;eew&quot; , 1 }, { &quot;utn&quot; , 1 }, { &quot;tnu&quot; , 1 }, { &quot;ack&quot; , 14 }, { &quot;ric&quot; , 3 }, { &quot;vio&quot; , 1 }, { &quot;mem&quot; , 2 }, { &quot;pen&quot; , 1 }, { &quot;edr&quot; , 1 }, { &quot;tes&quot; , 1 }, { &quot;rig&quot; , 6 }, { &quot;dsy&quot; , 1 }, { &quot;dia&quot; , 5 }, { &quot;fus&quot; , 1 }, { &quot;mat&quot; , 2 }, { &quot;yxy&quot; , 1 }, { &quot;dsu&quot; , 1 }, { &quot;edl&quot; , 1 }, { &quot;odf&quot; , 3 }, { &quot;sco&quot; , 1 }, { &quot;dch&quot; , 1 }, { &quot;opl&quot; , 2 }}</td></tr>
+<tr class="separator:a7229df0557d27b7221cf944066faa323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Основной файл </p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="a65b82dfcf5d0f2ad7dd89dba6073638b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b82dfcf5d0f2ad7dd89dba6073638b">&#9670;&nbsp;</a></span>alphabetcorrelation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double alphabetcorrelation </td>
+          <td>(</td>
+          <td class="paramtype">map&lt; char, double &gt;&#160;</td>
+          <td class="paramname"><em>msg_frequency</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Корреляция алфавита </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg_frequency</td><td>сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a7a2e470bc9542fcb1ff14b14455c9515">breakcaesar()</a>.</p>
+
+</div>
+</div>
+<a id="a7a2e470bc9542fcb1ff14b14455c9515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2e470bc9542fcb1ff14b14455c9515">&#9670;&nbsp;</a></span>breakcaesar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char breakcaesar </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>chiphertext</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Взлом цезаря </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chiphertext</td><td>зашифрованное сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#af1c6b7a014d3a7ac4733b768901ae446">recovervigenerekey()</a>.</p>
+
+</div>
+</div>
+<a id="ab62035af87109c24dd1ad405fa110a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab62035af87109c24dd1ad405fa110a22">&#9670;&nbsp;</a></span>caesar_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string caesar_decrypt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>chiphertext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>step</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Расшифровка цезаря </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chiphertext</td><td>зашифрованное сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>шаг </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a7a2e470bc9542fcb1ff14b14455c9515">breakcaesar()</a>.</p>
+
+</div>
+</div>
+<a id="aa9366e01e655f794dc68ca1a288d0e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9366e01e655f794dc68ca1a288d0e7e">&#9670;&nbsp;</a></span>columnrepresentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string columnrepresentation </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>start</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Представление в виде столбцов </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>шаг </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>старт </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#af1c6b7a014d3a7ac4733b768901ae446">recovervigenerekey()</a>.</p>
+
+</div>
+</div>
+<a id="ae50a28be55a088be549b7a16a671c1f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50a28be55a088be549b7a16a671c1f7">&#9670;&nbsp;</a></span>decode_rev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decode_rev </td>
+          <td>(</td>
+          <td class="paramtype">ulong *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>декодирование char в ulong в обратном порядке бит </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>результат </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>исходный ulong </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>размер </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a5be68b9cf00d63e2d6f392b4d98ec8d2">des_break()</a>, <a class="el" href="choph_8cpp.html#ac4870045cbac50ea2ccf790d4285f9a5">des_decrypt_ecb()</a> и <a class="el" href="choph_8cpp.html#ae321186e7d851b6a95b0061df1104300">des_encrypt_ecb()</a>.</p>
+
+</div>
+</div>
+<a id="a5be68b9cf00d63e2d6f392b4d98ec8d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be68b9cf00d63e2d6f392b4d98ec8d2">&#9670;&nbsp;</a></span>des_break()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong des_break </td>
+          <td>(</td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>srclen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>dst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Взлом des </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>входные данные </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srclen</td><td>длина входных данных </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>назначение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="a8ab508dc9c6552a6bab041b90c9efc3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab508dc9c6552a6bab041b90c9efc3f">&#9670;&nbsp;</a></span>des_create_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void des_create_keys </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> *&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Основное (раундовое) преобразование </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>пароль </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ac4870045cbac50ea2ccf790d4285f9a5">des_decrypt_ecb()</a> и <a class="el" href="choph_8cpp.html#ae321186e7d851b6a95b0061df1104300">des_encrypt_ecb()</a>.</p>
+
+</div>
+</div>
+<a id="a35d2ed8fc7946e569676ed266b86fa61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d2ed8fc7946e569676ed266b86fa61">&#9670;&nbsp;</a></span>des_decrypt_block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> des_decrypt_block </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> *&#160;</td>
+          <td class="paramname"><em>keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Дешифрование </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">src</td><td>входные данные </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keys</td><td>ключи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ac4870045cbac50ea2ccf790d4285f9a5">des_decrypt_ecb()</a>.</p>
+
+</div>
+</div>
+<a id="ac4870045cbac50ea2ccf790d4285f9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4870045cbac50ea2ccf790d4285f9a5">&#9670;&nbsp;</a></span>des_decrypt_ecb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong des_decrypt_ecb </td>
+          <td>(</td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>srclen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Дешифрование по протоколу ecb </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>входные данные </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srclen</td><td>длина входных данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>назначение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5b5a6e675b0e4513057ec56b57f6918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b5a6e675b0e4513057ec56b57f6918">&#9670;&nbsp;</a></span>des_encrypt_block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> des_encrypt_block </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> *&#160;</td>
+          <td class="paramname"><em>keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Шифрование </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">src</td><td>входные данные </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keys</td><td>ключи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ae321186e7d851b6a95b0061df1104300">des_encrypt_ecb()</a>.</p>
+
+</div>
+</div>
+<a id="ae321186e7d851b6a95b0061df1104300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae321186e7d851b6a95b0061df1104300">&#9670;&nbsp;</a></span>des_encrypt_ecb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong des_encrypt_ecb </td>
+          <td>(</td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>srclen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uchar *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Шифрование по протоколу ecb </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>входные данные </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">srclen</td><td>длина входных данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>назначение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="a3ca4d0af16188b041e1af649c460b98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca4d0af16188b041e1af649c460b98a">&#9670;&nbsp;</a></span>encode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void encode </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>coding ulong in char </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>result </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>source ulong </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a61d315464ffdb36f599f2b0f8067e000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d315464ffdb36f599f2b0f8067e000">&#9670;&nbsp;</a></span>encode_rev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void encode_rev </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>кодирование ulong в char с обратным порядком бит </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>результат </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>исходный ulong </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>размер </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ac4870045cbac50ea2ccf790d4285f9a5">des_decrypt_ecb()</a> и <a class="el" href="choph_8cpp.html#ae321186e7d851b6a95b0061df1104300">des_encrypt_ecb()</a>.</p>
+
+</div>
+</div>
+<a id="aa51a81bbb99f03b6e97c134f89fde1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa51a81bbb99f03b6e97c134f89fde1e2">&#9670;&nbsp;</a></span>ep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> ep </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Расширяющая перестановка </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ab24b3386abfd3e1188be96b23a7a52ee">fk()</a>.</p>
+
+</div>
+</div>
+<a id="ac5d7d9e2d516baabee4fc6305589715e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d7d9e2d516baabee4fc6305589715e">&#9670;&nbsp;</a></span>findvigenerekeylength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint findvigenerekeylength </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>chiphertext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>serchborder</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Поиск длины ключа шифра Виженера </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chiphertext</td><td>зашифрованное сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>шаг </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>старт </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="ab24b3386abfd3e1188be96b23a7a52ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24b3386abfd3e1188be96b23a7a52ee">&#9670;&nbsp;</a></span>fk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> fk </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Основное (раундовое) преобразование </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a35d2ed8fc7946e569676ed266b86fa61">des_decrypt_block()</a> и <a class="el" href="choph_8cpp.html#ad5b5a6e675b0e4513057ec56b57f6918">des_encrypt_block()</a>.</p>
+
+</div>
+</div>
+<a id="ad30c3f68889de7752a0e4bd40ffed47e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad30c3f68889de7752a0e4bd40ffed47e">&#9670;&nbsp;</a></span>frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;char, double&gt; frequency </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Частота букв </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a7a2e470bc9542fcb1ff14b14455c9515">breakcaesar()</a>.</p>
+
+</div>
+</div>
+<a id="a3047b71f458e416b39c120c9c1a9876f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3047b71f458e416b39c120c9c1a9876f">&#9670;&nbsp;</a></span>indexcoincidence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double indexcoincidence </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Подсчет indexcoincidence </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a30d1f38597ba7a35c171026bf169e534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d1f38597ba7a35c171026bf169e534">&#9670;&nbsp;</a></span>ip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> ip </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Начальная перестановка </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a35d2ed8fc7946e569676ed266b86fa61">des_decrypt_block()</a> и <a class="el" href="choph_8cpp.html#ad5b5a6e675b0e4513057ec56b57f6918">des_encrypt_block()</a>.</p>
+
+</div>
+</div>
+<a id="a114c1b88516cb2dfa3e4b187be27036b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a114c1b88516cb2dfa3e4b187be27036b">&#9670;&nbsp;</a></span>letterscount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;char, uint&gt; letterscount </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Подсчет букв </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ad30c3f68889de7752a0e4bd40ffed47e">frequency()</a> и <a class="el" href="choph_8cpp.html#a3047b71f458e416b39c120c9c1a9876f">indexcoincidence()</a>.</p>
+
+</div>
+</div>
+<a id="abf9e6b7e6f15df4b525a2e7705ba3089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9e6b7e6f15df4b525a2e7705ba3089">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Функция <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="Функция main() − точка входа в программу. ">main()</a> − точка входа в программу. </p>
+<p>Текст специального комментария. Этот текст попадет в документацию Doxygen. Кстати, символы оформления ’*’ в начале строк в документации отображаться не будут.</p>
+<p>Новый абзац. </p>
+
+</div>
+</div>
+<a id="a684ff62b705d2cee96d311e5d7f0edd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a684ff62b705d2cee96d311e5d7f0edd7">&#9670;&nbsp;</a></span>p()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong p </td>
+          <td>(</td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перестановка </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ab24b3386abfd3e1188be96b23a7a52ee">fk()</a>.</p>
+
+</div>
+</div>
+<a id="a4c5e58fd0158cbc22713a1a52d0ea38e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c5e58fd0158cbc22713a1a52d0ea38e">&#9670;&nbsp;</a></span>pc1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> pc1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Перестановка 1 </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>блок, проведенный через перестановку </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a8ab508dc9c6552a6bab041b90c9efc3f">des_create_keys()</a>.</p>
+
+</div>
+</div>
+<a id="a3a8662dee8b44b10f657fbf505eed4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8662dee8b44b10f657fbf505eed4af">&#9670;&nbsp;</a></span>pc2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> pc2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Перестановка 2 </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a8ab508dc9c6552a6bab041b90c9efc3f">des_create_keys()</a>.</p>
+
+</div>
+</div>
+<a id="a9816b1afec7350cd2a746cdf7324e901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9816b1afec7350cd2a746cdf7324e901">&#9670;&nbsp;</a></span>polibiy_break()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt;string, string&gt; polibiy_break </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Взлом Полибия </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>зашифрованное сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="aed234856c1bd5b094a088ca3b552f80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed234856c1bd5b094a088ca3b552f80e">&#9670;&nbsp;</a></span>polibiy_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string polibiy_decrypt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Дешифрование Полибия </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>зашифрованное сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7ea6838ef647048d812f8b5b567e48c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea6838ef647048d812f8b5b567e48c7">&#9670;&nbsp;</a></span>polibiy_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string polibiy_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Шифрование Подстановки </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pl</td><td>сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="ada09d21882f492e26698430c55561f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada09d21882f492e26698430c55561f1f">&#9670;&nbsp;</a></span>polibiy_generate_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string polibiy_generate_key </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Генерация ключа шифра полибия </p>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="af1c6b7a014d3a7ac4733b768901ae446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c6b7a014d3a7ac4733b768901ae446">&#9670;&nbsp;</a></span>recovervigenerekey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string recovervigenerekey </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>chiphertext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>keylength</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Восстановление ключа шифра Виженера </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chiphertext</td><td>зашифрованное сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keylength</td><td>длина ключа </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="a9ed46a7091b0ec3c8169cb8c0513692b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed46a7091b0ec3c8169cb8c0513692b">&#9670;&nbsp;</a></span>rip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a> rip </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обратная к начальной перестановка </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#a35d2ed8fc7946e569676ed266b86fa61">des_decrypt_block()</a> и <a class="el" href="choph_8cpp.html#ad5b5a6e675b0e4513057ec56b57f6918">des_encrypt_block()</a>.</p>
+
+</div>
+</div>
+<a id="aa55f5557fa0e92b71bc73e28225f15d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa55f5557fa0e92b71bc73e28225f15d3">&#9670;&nbsp;</a></span>s_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong s_matrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="choph_8cpp.html#a1e2a6c46722a3c5b52b2fe6e7ff96680">ulong64</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Матрица S. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">v</td><td>блок </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#ab24b3386abfd3e1188be96b23a7a52ee">fk()</a>.</p>
+
+</div>
+</div>
+<a id="a427f14fb678ee255afc52fd7e0d6975e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a427f14fb678ee255afc52fd7e0d6975e">&#9670;&nbsp;</a></span>substitute_break()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pair&lt;string,string&gt; substitute_break </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Взлом Подстановки </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>зашифрованное сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="a9c53a049332fae6cdfad786bf4eeea11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c53a049332fae6cdfad786bf4eeea11">&#9670;&nbsp;</a></span>substitute_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string substitute_decrypt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>chiphertext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Дешифрование Подстановки </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chiphertext</td><td>зашифрованное сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="a3a6c1ce5c2f56412885a40fcd2bc8e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a6c1ce5c2f56412885a40fcd2bc8e86">&#9670;&nbsp;</a></span>substitute_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string substitute_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>plaintext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Шифрование Подстановки </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">plaintext</td><td>сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="acad9c4fabb6634dc5ef1416c7c834757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad9c4fabb6634dc5ef1416c7c834757">&#9670;&nbsp;</a></span>substitute_generate_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string substitute_generate_key </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Генерация ключа шифра подстановки </p>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="ab84334abaf3c4ee10870aab4a92031c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84334abaf3c4ee10870aab4a92031c9">&#9670;&nbsp;</a></span>trigram_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trigram_count </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Подсчет количества триграм </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aafef85ef482b36718e0e0f7de6681ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafef85ef482b36718e0e0f7de6681ab1">&#9670;&nbsp;</a></span>trigram_fit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double trigram_fit </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Подсчет совпадения триграмм </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>сообщение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa5cc96c7e3b1423aa78b9508c2c1a74c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5cc96c7e3b1423aa78b9508c2c1a74c">&#9670;&nbsp;</a></span>trigram_freq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double trigram_freq </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>trig</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Подсчет частоты триграммы </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">trig</td><td>триграмма </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af37cb0f7ec33702d9c9b27eda1d5548c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37cb0f7ec33702d9c9b27eda1d5548c">&#9670;&nbsp;</a></span>viziner_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string viziner_decrypt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Дешифрование Виженера </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>зашифрованное сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<a id="a6852ebfd23ab1670561bbe3b730be912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6852ebfd23ab1670561bbe3b730be912">&#9670;&nbsp;</a></span>viziner_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string viziner_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Шифрование Виженера </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pl</td><td>сообщение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>ключ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="choph_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="aee6f420120b0fbc0fb096cb61655cec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6f420120b0fbc0fb096cb61655cec4">&#9670;&nbsp;</a></span>PADDING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char PADDING[64]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div><div class="line">    0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</div><div class="line">    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</div><div class="line">    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</div><div class="line">    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</div><div class="line">}</div></div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

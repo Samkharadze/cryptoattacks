@@ -1,0 +1,3 @@
+/root/project/atacks/.build/CMakeFiles/rebuild_cache.dir
+/root/project/atacks/.build/CMakeFiles/Chopch.cpp.dir
+/root/project/atacks/.build/CMakeFiles/edit_cache.dir

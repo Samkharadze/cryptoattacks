@@ -1,0 +1,17 @@
+
+os: linux
+sudo: required
+language: "minimal"
+services:
+  - docker
+
+
+
+jobs:
+  include:
+    
+      script:
+        docker run -it -v `pwd`:`pwd` -w `pwd` dockergosha ./scripts/run.sh
+
+notifications:
+email: false
